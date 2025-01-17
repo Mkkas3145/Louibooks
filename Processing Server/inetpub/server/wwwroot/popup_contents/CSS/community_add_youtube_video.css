@@ -1,0 +1,140 @@
+
+
+
+
+.community_add_youtube_video {
+    width: 100%; height: max-content;
+    padding: 20px; box-sizing: border-box;
+}
+
+.community_add_youtube_video_state {
+    width: 100%; height: max-content;
+    margin-bottom: 10px;
+}
+.community_add_youtube_video_state_nothing {
+    width: calc(100% - 24px); height: max-content;
+    background-color: var(--hover-color);
+    padding: 10px 12px; color: var(--color1);
+    border-radius: 20px; font-size: 14px;
+    display: none; align-items: center;
+    max-width: max-content;
+}
+.community_add_youtube_video_state_nothing svg {
+    width: 16px; height: 16px;
+    margin-right: 10px; min-width: 20px;
+    fill: var(--color1);
+}
+.community_add_youtube_video_state_invalid {
+    width: calc(100% - 24px); height: max-content;
+    background-color: var(--color-failure-trans2);
+    padding: 10px 12px; color: var(--color-failure);
+    border-radius: 20px; font-size: 14px;
+    display: none; align-items: center;
+    max-width: max-content;
+}
+.community_add_youtube_video_state_invalid svg {
+    width: 16px; height: 16px;
+    margin-right: 10px; min-width: 20px;
+    fill: var(--color-failure);
+}
+.community_add_youtube_video_state_available {
+    width: calc(100% - 24px); height: max-content;
+    background-color: var(--box-color-reversal);
+    padding: 8px 12px; color: var(--box-color);
+    border-radius: 20px; font-size: 14px;
+    display: none; align-items: center;
+    max-width: max-content;
+}
+.community_add_youtube_video_state_available svg {
+    width: 20px; height: 20px;
+    margin-right: 10px; min-width: 20px;
+    fill: var(--box-color);
+}
+
+.community_add_youtube_video_state[value = "0"] .community_add_youtube_video_state_nothing {
+    display: flex;
+}
+.community_add_youtube_video_state[value = "1"] .community_add_youtube_video_state_invalid {
+    display: flex;
+}
+.community_add_youtube_video_state[value = "2"] .community_add_youtube_video_state_available {
+    display: flex;
+}
+
+
+
+.community_add_youtube_video_input {
+    width: 100%; height: max-content;
+}
+.community_add_youtube_video_input input {
+    width: 100%; height: max-content;
+    border: none; outline: none; background-color: transparent;
+    font-size: 15px; color: var(--color1);
+    border-bottom: solid 1px var(--border-color);
+    padding: 10px 0px; box-sizing: border-box;
+}
+.community_add_youtube_video_input_line_wrap {
+    width: 0%; height: 2px; transition: width 0.2s;
+    background-color: var(--box-color-reversal);
+    margin-left: auto; margin-right: auto;
+    opacity: 0; margin-top: -1px; z-index: 1;
+    position: relative;
+}
+.community_add_youtube_video_input_focus .community_add_youtube_video_input_line_wrap {
+    width: 100%; opacity: 1;
+}
+
+.community_add_youtube_video_example {
+    width: 100%; height: max-content;
+    margin-top: 20px;
+}
+.community_add_youtube_video_title {
+    width: 100%; max-width: max-content; height: max-content;
+    font-size: 14px; color: var(--color1);
+}
+.community_add_youtube_video_example iframe {
+    width: 100%; height: max-content;
+    aspect-ratio: 16 / 9;
+}
+
+
+
+.community_add_youtube_video_bottom {
+    width: 100%; height: max-content;
+    display: flex; justify-content: right;
+    margin-top: 40px;
+}
+.community_add_youtube_video_bottom_button {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    padding: 12px 18px; box-sizing: border-box;
+    border: solid 1px var(--border-color);
+    border-radius: 50px; transition: all 0.1s;
+    cursor: pointer; justify-content: center;
+}
+.community_add_youtube_video_bottom_button_icon {
+    width: 20px; height: 20px;
+    margin-right: 15px; min-width: 20px;
+}
+.community_add_youtube_video_bottom_button_icon svg {
+    width: 20px; height: 20px;
+    fill: var(--color4);
+}
+.community_add_youtube_video_bottom_button_right {
+    width: calc(100% - 35px); height: max-content;
+    font-size: 14px; color: var(--color4);
+    max-width: max-content;
+}
+.community_add_youtube_video_bottom_button_disabled {
+    opacity: 0.5; pointer-events: none;
+}
+.community_add_youtube_video_bottom_button:hover {
+    background-color: var(--hover-color);
+    border-color: var(--color1);
+}
+.community_add_youtube_video_bottom_button:hover .community_add_youtube_video_bottom_button_right {
+    color: var(--color1);
+}
+.community_add_youtube_video_bottom_button:hover svg {
+    fill: var(--color1);
+}

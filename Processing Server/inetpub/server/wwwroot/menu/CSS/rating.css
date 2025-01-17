@@ -1,0 +1,14 @@
+
+
+@media screen and (max-width: 700px) {
+    .menu_rating_contents {
+        padding: 10px !important;
+    }
+}
+
+.menu_rating_contents {
+    width: 100%; height: max-content;
+    max-width: 1200px; margin-left: auto;
+    margin-right: auto; padding: 20px;
+    box-sizing: border-box;
+}

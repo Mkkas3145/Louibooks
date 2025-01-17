@@ -1,0 +1,142 @@
+
+
+.menu_my_user_list {
+    width: 100%; height: max-content;
+    padding: 20px; box-sizing: border-box;
+    margin-left: auto; margin-right: auto;
+    max-width: 1200px;
+}
+
+@media screen and (max-width: 1100px) {
+    .menu_my_user_list_item {
+        width: 25% !important;
+    }
+}
+@media screen and (max-width: 900px) {
+    .menu_my_user_list_item {
+        width: 33.333% !important;
+    }
+}
+@media screen and (max-width: 700px) {
+    .menu_my_user_list {
+        padding: 10px;
+    }
+    .menu_my_user_list_item {
+        min-width: calc(100% + 20px) !important;
+        display: flex; margin-left: -10px;
+        border-radius: 0px !important;
+        align-items: center;
+    }
+    .menu_my_user_list_item_profile {
+        margin-right: 15px !important;
+    }
+    .menu_my_user_list_item_info {
+        width: calc(100% - 85px) !important;
+        margin-top: 0px !important;
+    }
+    .menu_my_user_list_item_info_nickname {
+        text-align: left !important;
+    }
+    .menu_my_user_list_item_info_works_count {
+        text-align: left !important;
+        margin-top: 10px !important;
+        margin-left: inherit !important;
+        margin-right: inherit !important;
+    }
+}
+
+.menu_my_user_list_sort {
+    width: 100%; height: max-content;
+    margin-bottom: 20px;
+}
+.menu_my_user_list_items {
+    width: 100%; height: max-content;
+    display: flex; flex-wrap: wrap;
+    row-gap: 20px;
+}
+.menu_my_user_list_item {
+    width: 20%; height: max-content;
+    padding: 10px; box-sizing: border-box;
+    cursor: pointer; border-radius: 10px;
+    transition: all 0.1s;
+}
+.menu_my_user_list_item:hover {
+    background-color: var(--hover-color);
+}
+.menu_my_user_list_item_profile {
+    width: 70px; height: 70px;
+    border-radius: 50%; overflow: hidden;
+    margin-left: auto; margin-right: auto;
+}
+.menu_my_user_list_item_info {
+    width: 100%; height: max-content;
+    margin-top: 10px;
+}
+.menu_my_user_list_item_info_nickname {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    text-align: center; font-weight: bold;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.menu_my_user_list_item_info_works_count {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    display: flex; align-items: center;
+    margin-top: 5px; max-width: max-content;
+    margin-left: auto; margin-right: auto;
+}
+.menu_my_user_list_item_info_works_count svg {
+    width: 15px; height: 15px;
+    fill: var(--color6); margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu_my_user_list_no_data {
+    width: 100%; height: max-content;
+    padding: 40px; display: flex; align-items: center;
+    flex-direction: column; justify-content: center;
+    text-align: center; box-sizing: border-box;
+}
+.menu_my_user_list_no_data svg {
+    width: 60px; height: 60px;
+    fill: var(--color4); margin-bottom: 30px;
+}
+.menu_my_user_list_no_data_title {
+    width: 100%; height: max-content;
+    font-weight: bold; font-size: 18px;
+    color: var(--color1); line-height: calc(18px * 1.5);
+}
+.menu_my_user_list_no_data_description {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color6);
+    margin-top: 5px; line-height: calc(14px * 1.5);
+}

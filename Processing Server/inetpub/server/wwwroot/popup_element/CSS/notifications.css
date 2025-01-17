@@ -1,0 +1,85 @@
+
+
+
+
+@media screen and (min-width: 700px) {
+    .popup_notifications {
+        width: 500px !important;
+    }
+}
+@media screen and (max-width: 700px) {
+    .popup_notifications_top {
+        top: 24px !important;
+    }
+}
+
+.popup_notifications {
+    width: 100%; height: max-content;
+}
+.popup_notifications_top {
+    width: 100%; height: max-content;
+    padding: 10px 20px; box-sizing: border-box;
+    border-bottom: solid 1px var(--border-color);
+    display: flex; align-items: center;
+    background-color: var(--box-color-2);
+    position: sticky; top: 0px; z-index: 2;
+}
+.popup_notifications_top_left {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    font-size: 16px; color: var(--color1);
+}
+.popup_notifications_top_left svg {
+    width: 20px; height: 20px;
+    fill: var(--color1); margin-right: 15px;
+}
+.popup_notifications_top_right {
+    width: max-content; height: max-content;
+    padding: 10px 15px; border-radius: 50px;
+    color: var(--site-color-light);
+    transition: all 0.1s; cursor: pointer;
+    min-width: max-content; font-size: 14px;
+    margin-right: -10px;
+}
+.popup_notifications_top_right:hover {
+    background-color: var(--hover-color);
+}
+.popup_notifications_top_right_disabled {
+    color: var(--color9); pointer-events: none;
+}
+.popup_notifications_items {
+    width: 100%; height: max-content;
+    padding: 10px 20px; box-sizing: border-box;
+    display: flex; flex-direction: column;
+    row-gap: 10px; overflow: hidden;
+}
+
+.popup_notifications_loading {
+    width: 100%; height: max-content;
+    display: flex; justify-content: center;
+    align-items: center; padding: 100px 0px;
+    box-sizing: border-box;
+}
+
+.popup_notifications_no_data {
+    width: 100%; height: max-content;
+    display: flex; justify-content: center;
+    flex-direction: column; align-items: center;
+    padding: 100px 40px; box-sizing: border-box;
+}
+.popup_notifications_no_data svg {
+    width: 35px; height: 35px;
+    fill: var(--color6);
+}
+.popup_notifications_no_data_title {
+    width: 100%; height: max-content;
+    font-size: 17px; color: var(--color3);
+    margin-top: 20px; text-align: center;
+    font-weight: bold;
+}
+.popup_notifications_no_data_description {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color6);
+    text-align: center; margin-top: 5px;
+    line-height: calc(14px * 1.5);
+}

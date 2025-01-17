@@ -1,0 +1,278 @@
+
+
+@media screen and (max-width: 700px) {
+    .menu_my_account_details {
+        padding: 10px !important;
+    }
+}
+
+.menu_my_account_details {
+    width: 100%; height: max-content;
+    max-width: 700px; margin-left: auto;
+    margin-right: auto; padding: 20px;
+    box-sizing: border-box;
+}
+.menu_my_account_details_top {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+}
+.menu_my_account_details_top_left {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    margin-right: 20px;
+}
+.menu_my_account_details_top_left_back {
+    width: 50px; height: 50px;
+    cursor: pointer; transition: all 0.1s;
+    display: flex; justify-content: center;
+    border-radius: 50%; align-items: center;
+    margin-right: 10px;
+}
+.menu_my_account_details_top_left_back:hover {
+    background-color: var(--hover-color);
+}
+.menu_my_account_details_top_left_back svg {
+    width: 15px; height: 15px;
+    fill: var(--color1);
+}
+.menu_my_account_details_top_left_title {
+    width: calc(100% - 60px); height: max-content;
+    font-size: 16px; color: var(--color1);
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.menu_my_account_details_top_right {
+    width: max-content; height: max-content;
+}
+.menu_my_account_details_top_right_save {
+    width: max-content; height: max-content;
+    padding: 9px 16px; border-radius: 50px;
+    background-color: var(--border-color);
+    color: var(--color9); font-size: 14px;
+    cursor: pointer; pointer-events: none;
+    transition: all 0.1s;
+}
+.menu_my_account_details_top_right_save_possible {
+    background-color: var(--box-color-reversal);
+    color: var(--box-color); pointer-events: all;
+}
+
+
+
+.menu_my_account_details_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+    margin-top: 5px; margin-bottom: 20px;
+}
+
+
+
+.menu_my_account_details_notice {
+    width: 100%; height: 100%;
+    margin-bottom: 20px;
+}
+.menu_my_account_details_notice_items {
+    width: 100%; height: 100%;
+    background-color: var(--hover-color);
+    padding: 20px; box-sizing: border-box;
+    border-radius: 20px;
+}
+.menu_my_account_details_notice_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+    margin: 20px 0px;
+}
+.menu_my_account_details_notice_item {
+    width: 100%; height: max-content;
+    display: flex;
+}
+.menu_my_account_details_notice_item_icon {
+    width: 40px; height: 40px;
+    display: flex; justify-content: center;
+    align-items: center; margin-right: 20px;
+    border-radius: 50%;
+}
+.menu_my_account_details_notice_item_icon svg {
+    width: 20px; height: 20px;
+    fill: var(--color1);
+}
+.menu_my_account_details_notice_item_right {
+    width: calc(100% - 60px); height: max-content;
+}
+.menu_my_account_details_notice_item_right_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    font-weight: bold; line-height: calc(15px * 1.5);
+}
+.menu_my_account_details_notice_item_right_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    line-height: calc(13px * 1.5);
+    margin-top: 5px;
+}
+
+
+
+.menu_my_account_details_items {
+    width: 100%; height: max-content;
+    background-color: var(--hover-color);
+    padding: 20px; box-sizing: border-box;
+    border-radius: 20px;
+}
+.menu_my_account_details_item_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+    margin: 20px 0px;
+}
+
+
+
+.menu_my_account_details_item_input {
+    width: 100%; height: max-content;
+}
+.menu_my_account_details_item_input_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+    margin-bottom: 10px; font-weight: bold;
+}
+.menu_my_account_details_item_input input {
+    width: 100%; height: max-content;
+    padding: 15px; border: solid 3px var(--border-color);
+    background-color: var(--border-color);
+    transition: border-color 0.1s; outline: none;
+    box-sizing: border-box; font-size: 14px;
+    color: var(--color1); border-radius: 10px;
+}
+.menu_my_account_details_item_input input:hover {
+    border: solid 3px var(--site-color-trans);
+}
+.menu_my_account_details_item_input input:focus {
+    border: solid 3px var(--site-color-light);
+}
+
+
+
+.menu_my_account_details_item_textbox {
+    width: 100%; height: max-content;
+}
+.menu_my_account_details_item_textbox_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+    margin-bottom: 10px; font-weight: bold;
+}
+.menu_my_account_details_item_textbox div[contenteditable = "true"] {
+    width: 100%; height: max-content;
+    padding: 12px 15px; border: solid 3px var(--border-color);
+    background-color: var(--border-color);
+    transition: border-color 0.1s; outline: none;
+    box-sizing: border-box; font-size: 14px;
+    color: var(--color1); border-radius: 10px;
+    line-height: calc(15px * 1.4);
+    white-space: pre-wrap;
+}
+.menu_my_account_details_item_textbox div[contenteditable = "true"]:hover {
+    border: solid 3px var(--site-color-trans);
+}
+.menu_my_account_details_item_textbox div[contenteditable = "true"]:focus {
+    border: solid 3px var(--site-color-light);
+}
+.menu_my_account_details_item_textbox div[contenteditable = "true"][placeholder]:empty:before {
+    content: attr(placeholder);
+    pointer-events: none; display: block;
+    font-weight: lighter; color: var(--color9);
+    position: relative;
+}
+
+
+
+.menu_my_account_details_item_radio {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    transition: all 0.1s; cursor: pointer;
+    border-radius: 10px; padding: 15px 20px;
+    margin-left: -20px; margin-top: -15px;
+    margin-bottom: -15px;
+}
+.menu_my_account_details_item_radio_left {
+    width: 18px; height: 18px;
+    border: solid 3px var(--color1);
+    margin-right: 20px; border-radius: 50%;
+    display: flex; justify-content: center;
+    align-items: center;
+
+    transition: all 0.2s;
+}
+.menu_my_account_details_item_radio_left_in {
+    width: 13px; height: 13px;
+    transform: scale(0); transition: all 0.2s;
+    background-color: var(--color1);
+    border-radius: 50%;
+}
+.menu_my_account_details_item_radio_right {
+    width: calc(100% - 44px); height: max-content;
+}
+.menu_my_account_details_item_radio_right_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    font-weight: bold;
+}
+.menu_my_account_details_item_radio_right_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    margin-top: 2px; line-height: calc(13px * 1.5);
+}
+
+.menu_my_account_details_item_radio:hover .menu_my_account_details_item_radio_left_in {
+    transform: scale(0.6); background-color: var(--color6);
+}
+
+.menu_my_account_details_item_radio[checked = "true"] .menu_my_account_details_item_radio_left {
+    border-color: var(--site-color-light);
+}
+.menu_my_account_details_item_radio[checked = "true"] .menu_my_account_details_item_radio_left_in {
+    transform: scale(1) !important;
+    background-color: var(--site-color-light) !important;
+}
+
+
+
+.menu_my_account_details_item_select {
+    width: 100%; height: max-content;
+}
+.menu_my_account_details_item_select_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+    margin-bottom: 10px; font-weight: bold;
+}
+.menu_my_account_details_item_select_wrap {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    transition: all 0.1s; cursor: pointer;
+    background-color: var(--border-color);
+    padding: 15px 20px; box-sizing: border-box;
+    border: solid 1px transparent;
+    border-radius: 60px;
+}
+.menu_my_account_details_item_select_wrap:hover {
+    border-color: var(--color1);
+}
+.menu_my_account_details_item_select_wrap:hover svg {
+    fill: var(--color1);
+}
+.menu_my_account_details_item_select_wrap_left {
+    width: calc(100% - 35px); height: max-content;
+    font-size: 14px; color: var(--color1);
+
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.menu_my_account_details_item_select_wrap_right {
+    width: 15px; height: 15px;
+    margin-left: 20px;
+}
+.menu_my_account_details_item_select_wrap_right svg {
+    width: 15px; height: 15px;
+    fill: var(--color6); transition: all 0.1s;
+}

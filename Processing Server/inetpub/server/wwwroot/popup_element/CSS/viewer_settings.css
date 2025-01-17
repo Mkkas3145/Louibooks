@@ -1,0 +1,278 @@
+
+
+@media screen and (max-width: 700px) {
+    .popup_element_viewer_settings_items {
+        max-width: 100% !important;
+    }
+    .popup_element_viewer_settings_item {
+        max-width: 100% !important;
+    }
+}
+
+.popup_element_viewer_settings_items:hover::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-stick-color);
+}
+.popup_element_viewer_settings_items::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scroll-stick-color-hover);
+}
+.popup_element_viewer_settings_items::-webkit-scrollbar-thumb:active {
+    background-color: var(--scroll-stick-color-active);
+}
+
+.popup_element_viewer_settings_item {
+    width: 100%; height: max-content;
+    overflow: hidden; max-width: 400px;
+}
+
+.popup_element_viewer_settings_top_bottom_padding {
+    width: 100%; height: max-content;
+    padding: 10px 0px; box-sizing: border-box;
+}
+.popup_element_viewer_settings_line {
+    width: calc(100% - 40px); height: 1px;
+    background: var(--border-color); margin: 0px 20px;
+}
+
+
+
+.popup_element_viewer_settings_menu {
+    width: 100%; height: max-content;
+    padding: 12px 20px; box-sizing: border-box;
+    cursor: pointer; transition: all 0.1s;
+    display: flex; align-items: center;
+}
+.popup_element_viewer_settings_menu:hover {
+    background-color: var(--border-color);
+}
+
+.popup_element_viewer_settings_menu_icon {
+    width: 20px; height: 20px;
+    margin-right: 20px; min-width: 20px;
+}
+.popup_element_viewer_settings_menu_icon svg {
+    fill: var(--color1);
+}
+
+.popup_element_viewer_settings_menu_center {
+    width: 100%; height: max-content;
+}
+.popup_element_viewer_settings_menu_center_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.popup_element_viewer_settings_menu_center_description {
+    width: 100%; height: max-content;
+    font-size: 12px; color: var(--color6);
+    line-height: calc(12px * 1.3);
+    margin-top: 3px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.popup_element_viewer_settings_menu_value {
+    width: max-content; height: max-content;
+    min-width: max-content; font-size: 13px;
+    display: flex; align-items: center;
+    color: var(--color4); margin-left: 20px;
+}
+.popup_element_viewer_settings_menu_value svg {
+    width: 15px; height: 15px;
+    fill: var(--color4); margin-left: 5px;
+}
+
+.popup_element_viewer_settings_menu_color {
+    width: 20px; height: 20px; min-width: 20px;
+    border: solid 2px var(--border-color);
+    border-radius: 50%; margin-left: 5px;
+}
+
+.popup_element_viewer_settings_menu_toggle {
+    width: 30px; height: max-content;
+    max-width: 30px; min-width: 30px;
+    aspect-ratio: 2.25 / 1; border-radius: 200px;
+    background-color: #757575; margin-left: 20px;
+
+    transition: background-color 0.2s;
+}
+.popup_element_viewer_settings_menu_toggle_circle {
+    width: max-content; height: 100%;
+    background: #ffffff; transform: scale(1.25);
+    aspect-ratio: 1 / 1; border-radius: 100%;
+    border: solid 1px #757575;
+
+    transition: border-color 0.2s, margin-left 0.2s;
+}
+.popup_element_viewer_settings_menu[toggle = "true"] .popup_element_viewer_settings_menu_toggle {
+    background-color: var(--site-color-light);
+}
+.popup_element_viewer_settings_menu[toggle = "true"] .popup_element_viewer_settings_menu_toggle_circle {
+    border-color: var(--site-color-light); margin-left: 50%;
+}
+
+
+
+.popup_element_viewer_settings_go_back {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+}
+.popup_element_viewer_settings_go_back_button {
+    width: 50px; height: 50px;
+    display: flex; justify-content: center;
+    align-items: center; border-radius: 100%;
+    transition: all 0.1s; cursor: pointer;
+    margin-left: 5px; margin-right: 5px;
+}
+.popup_element_viewer_settings_go_back_button:hover {
+    background-color: var(--hover-color);
+}
+.popup_element_viewer_settings_go_back_button svg {
+    width: 15px; height: 15px;
+    fill: var(--color1);
+}
+.popup_element_viewer_settings_go_back_title {
+    width: calc(100% - 60px); height: max-content;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    font-size: 14px; color: var(--color1);
+}
+
+
+
+.popup_element_viewer_settings_value {
+    width: 100%; height: max-content;
+    padding: 12px 20px; box-sizing: border-box;
+    cursor: pointer; transition: all 0.1s;
+    display: flex; align-items: center;
+}
+.popup_element_viewer_settings_value:hover {
+    background-color: var(--hover-color);
+}
+.popup_element_viewer_settings_value_icon {
+    width: 20px; height: max-content;
+    margin-right: 20px; opacity: 0;
+    transition: opacity 0.2s;
+}
+.popup_element_viewer_settings_value_icon svg {
+    width: 20px; height: 20px;
+    fill: var(--color1);
+}
+.popup_element_viewer_settings_value_right {
+    width: calc(100% - 35px); height: max-content;
+}
+.popup_element_viewer_settings_value_right_title {
+    width: 100%; height: max-content;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    font-size: 14px; color: var(--color1);
+}
+.popup_element_viewer_settings_value_right_description {
+    width: 100%; height: max-content;
+    font-size: 12px; color: var(--color6);
+    line-height: calc(12px * 1.3);
+    margin-top: 3px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.popup_element_viewer_settings_value_color {
+    width: 20px; height: 20px; min-width: 20px;
+    border: solid 2px var(--border-color);
+    border-radius: 50%; margin-left: 10px;
+}
+.popup_element_viewer_settings_value[checked = "true"] .popup_element_viewer_settings_value_icon {
+    opacity: 1;
+}
+.popup_element_viewer_settings_value[disabled = "true"] {
+    opacity: 0.5; pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.popup_element_viewer_settings_color_picker {
+    width: 100%; height: max-content;
+    padding: 10px 20px; box-sizing: border-box;
+
+    overflow: hidden;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.popup_element_viewer_settings_color_picker_box {
+    width: 100%; height: max-content;
+    border-radius: 10px; overflow: hidden;
+    aspect-ratio: 2 / 1;
+}
+.popup_element_viewer_settings_color_picker_box_picker {
+    width: 0px; height: 0px;
+    position: absolute;
+}
+.popup_element_viewer_settings_color_picker_box_picker div {
+    width: 15px; height: 15px;
+    border-radius: 50%; border: solid 2px #ffffff;
+    box-shadow: 0px 0px 3px #000000;
+    margin-left: -9.5px; margin-top: -9.5px;
+    pointer-events: none;
+}
+.popup_element_viewer_settings_color_picker_box canvas {
+    width: 100%; height: 100%;
+}
+
+.popup_element_viewer_settings_color_picker_select {
+    width: 100%; height: 20px;
+    border-radius: 20px; overflow: hidden;
+    margin-top: 10px;
+}
+.popup_element_viewer_settings_color_picker_select_picker {
+    width: 0px; height: 0px;
+    position: absolute;
+}
+.popup_element_viewer_settings_color_picker_select_picker div {
+    width: 5px; height: 20px;
+    border-radius: 5px; border: solid 2px #ffffff;
+    box-shadow: 0px 0px 3px #000000;
+    margin-left: -4.5px; pointer-events: none;
+    margin-top: -2px;
+}
+.popup_element_viewer_settings_color_picker_select canvas {
+    width: 100%; height: 100%;
+}
+
+.popup_element_viewer_settings_color_picker_input {
+    width: 100%; height: max-content;
+    margin-top: 20px; margin-bottom: 5px;
+}
+.popup_element_viewer_settings_color_picker_input input {
+    width: 100%; height: max-content;
+    padding: 12px 15px; border: solid 3px var(--hover-color);
+    background-color: var(--hover-color);
+    transition: border-color 0.1s; outline: none;
+    box-sizing: border-box; font-size: 14px;
+    color: var(--color1); border-radius: 10px;
+    text-transform: uppercase;
+}
+.popup_element_viewer_settings_color_picker_input input:hover {
+    border: solid 3px var(--site-color-trans);
+}
+.popup_element_viewer_settings_color_picker_input input:focus {
+    border: solid 3px var(--site-color-light);
+}

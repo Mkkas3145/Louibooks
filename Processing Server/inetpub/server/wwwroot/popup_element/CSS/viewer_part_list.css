@@ -1,0 +1,45 @@
+
+
+
+
+@media screen and (min-width: 700px) {
+    .viewer_part_list_items {
+        max-width: 450px;
+        min-width: 350px;
+    }
+}
+
+.viewer_part_list {
+    width: 100%; height: max-content;
+    padding: 10px 15px; box-sizing: border-box;
+}
+.viewer_part_list_items {
+    width: 100%; height: max-content;
+}
+.viewer_part_list_item_watching {
+    background-color: var(--hover-color);
+}
+.viewer_part_list_item_left_watching {
+    display: none;
+}
+.viewer_part_list_item_left_watching svg {
+    display: none;
+}
+.viewer_part_list_item_watching .menu_work_part_list_item_left {
+    opacity: 0.5;
+}
+.viewer_part_list_item_watching .viewer_part_list_item_left_watching svg {
+    display: block;
+}
+
+
+.viewer_part_list_item_left_watching {
+    width: 80px; height: 120px;
+    display: flex; justify-content: center;
+    align-items: center; position: absolute;
+    z-index: 1;
+}
+.viewer_part_list_item_left_watching svg {
+    width: 30px; height: 30px;
+    fill: var(--box-color-reversal);
+}

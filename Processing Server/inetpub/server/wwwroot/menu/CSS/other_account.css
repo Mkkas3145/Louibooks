@@ -1,0 +1,23 @@
+
+
+
+
+.other_account {
+    width: 100%; height: max-content;
+    margin-top: 60px; margin-bottom: 60px;
+}
+.other_account_profile {
+    width: 100%; height: max-content;
+    display: flex; justify-content: center;
+}
+.other_account_profile_nickname {
+    width: 100%; height: max-content;
+    font-size: 17px; color: var(--color1);
+    text-align: center; margin-top: 20px;
+    font-weight: bold;
+}
+.other_account_profile_email {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color6);
+    text-align: center; margin-top: 5px;
+}

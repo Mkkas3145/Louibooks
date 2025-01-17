@@ -1,0 +1,43 @@
+
+
+.big_sidebar_my_work_list_item {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+}
+.big_sidebar_my_work_list_left {
+    width: 30px; height: 45px;
+    border-radius: 5px; overflow: hidden;
+    margin-right: 15px; margin-left: 15px;
+}
+.big_sidebar_my_work_list_left img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.big_sidebar_item_selected .big_sidebar_my_work_list_left_no_thumbnail {
+    background-color: var(--hover-color);
+}
+.big_sidebar_my_work_list_left_no_thumbnail {
+    width: 100%; height: 100%;
+    background-color: var(--border-color);
+    display: flex; justify-content: center;
+    align-items: center;
+}
+.big_sidebar_my_work_list_left_no_thumbnail svg {
+    width: 15px; height: 15px;
+    fill: var(--color6); min-width: 15px;
+}
+.big_sidebar_my_work_list_right {
+    width: calc(100% - 60px); height: max-content;
+    color: var(--color1); font-size: 14px;
+}
+.big_sidebar_my_work_list_right_title {
+    width: 100%; height: max-content;
+    color: var(--color1); font-size: 13px;
+
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.big_sidebar_my_work_list_right_count {
+    width: 100%; height: max-content;
+    color: var(--color4); font-size: 12px;
+    margin-top: 4px;
+}

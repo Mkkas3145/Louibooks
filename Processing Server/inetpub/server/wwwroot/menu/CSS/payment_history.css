@@ -1,0 +1,119 @@
+
+
+@media screen and (max-width: 700px) {
+    .menu_payment_history {
+        padding: 10px !important;
+    }
+}
+@media screen and (max-width: 450px) {
+    .menu_payment_history_box_bottom {
+        flex-direction: column;
+    }
+}
+
+.menu_payment_history {
+    width: 100%; height: max-content;
+    min-height: calc(calc(var(--vh, 1vh) * 100) - 55px);
+    max-width: 800px; margin-left: auto;
+    margin-right: auto; padding: 20px;
+    box-sizing: border-box;
+
+    display: flex; align-items: center; justify-content: center;
+}
+.menu_payment_history_box {
+    width: 100%; height: max-content;
+    border-radius: 20px; max-width: 600px;
+    display: flex; flex-direction: column;
+    align-items: center;
+}
+
+.menu_payment_history_box_pg_image {
+    width: 80px; height: 80px;
+    background-color: var(--hover-color);
+    border-radius: 50%; margin-top: 20px;
+}
+.menu_payment_history_box_pg_image img {
+    width: calc(100% + 2px); height: calc(100% + 2px);
+    margin-left: -1px; margin-top: -1px;
+}
+.menu_payment_history_box_pg_name {
+    width: 100%; height: 100%;
+    font-size: 18px; font-weight: bold;
+    margin-top: 20px; text-align: center;
+    color: var(--color1);
+}
+
+.menu_payment_history_box_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+    margin: 30px 0px;
+}
+
+.menu_payment_history_box_items {
+    width: 100%; height: max-content;
+    margin-top: 40px;
+}
+.menu_payment_history_box_item {
+    width: 100%; height: max-content;
+    background-color: var(--hover-color);
+    padding: 20px; box-sizing: border-box;
+    border-radius: 20px;
+}
+.menu_payment_history_box_item:not(:first-child) {
+    margin-top: 30px;
+}
+.menu_payment_history_box_item_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color4);
+    font-weight: bold; margin-bottom: 20px;
+}
+
+.menu_payment_history_box_item .payment_history_element_right_item_value_icon img {
+    background-color: var(--border-color);
+}
+.menu_payment_history_box_item .payment_history_element_right_status_2 .payment_history_element_right_status_icon {
+    background-color: var(--border-color);
+}
+.menu_payment_history_box_item .payment_history_element_right_status_3 .payment_history_element_right_status_icon {
+    background-color: var(--border-color);
+}
+
+.menu_payment_history_box_bottom {
+    width: 100%; height: max-content;
+    display: flex; gap: 20px; row-gap: 15px;
+}
+.menu_payment_history_box_button {
+    width: 100%; height: max-content;
+    display: flex; justify-content: center;
+    align-items: center; padding: 15px 20px;
+    background-color: var(--hover-color);
+    border: solid 1px transparent;
+    border-radius: 50px; transition: all 0.1s;
+    cursor: pointer; box-sizing: border-box;
+}
+.menu_payment_history_box_button_icon {
+    width: 20px; height: 20px;
+    margin-right: 15px;
+}
+.menu_payment_history_box_button_icon svg {
+    width: 20px; height: 20px;
+    fill: var(--color4); transition: all 0.1s;
+}
+.menu_payment_history_box_button_text {
+    width: calc(100% - 35px); height: max-content;
+    font-size: 14px; color: var(--color4); max-width: max-content;
+    transition: all 0.1s;
+
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.menu_payment_history_box_button:hover {
+    background-color: var(--border-color);
+    border-color: var(--color1); color: var(--color1) !important;
+}
+.menu_payment_history_box_button svg {
+    fill: var(--color1) !important;
+}
+
+.menu_payment_history_box_button_disabled {
+    pointer-events: none; opacity: 0.5;
+}

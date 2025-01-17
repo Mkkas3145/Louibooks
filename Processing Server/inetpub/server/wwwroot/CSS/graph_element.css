@@ -1,0 +1,148 @@
+
+.graph_element {
+    width: 100%; height: max-content;
+}
+
+.graph {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%; height: 200px;
+
+    margin: auto auto;
+}
+
+
+.graph-top {
+    display: flex;
+    flex-direction: row;
+    width: 100%; height: 100%;
+}
+
+.graph-canvas {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 70px);
+    height: 200px;
+}
+
+.graph-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70px; height: 100%;
+}
+
+.graph-info > p {
+    margin: 0;
+    color: var(--color4);
+    font-size: 12px;
+    padding-left: 20px;
+}
+
+
+.graph-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100% - 70px);
+    border-top: 2px solid var(--color11);
+}
+
+.graph-bottom > div > div {
+    width: 2px;
+    height: 10px;
+    margin: 0 auto;
+    background-color: var(--color11);
+}
+
+.graph-bottom > div > p {
+    margin: 0;
+    color: var(--color4);
+    font-size: 12px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+
+.graph-value-view {
+    position: absolute;
+    visibility: hidden;
+    left: 0; top: 0;
+    pointer-events: none;
+    padding: 15px 20px;
+    background-color: var(--box-color);
+    box-shadow: 0px 0px 3px var(--shadow-color);
+    border-radius: 10px;
+}
+.graph-value-view-top {
+    display: flex; align-items: center;
+    margin-bottom: 10px;
+}
+
+.graph-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color1);
+}
+
+.graph-description {
+    font-size: 13px;
+    color: var(--color1);
+}
+
+.graph-additional {
+    font-size: 12px;
+    color: var(--color6);
+    margin-left: 5px;
+}
+
+
+
+.graph-value-differential-view {
+    position: absolute;
+    visibility: hidden;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    background-color: var(--box-color);
+    padding: 15px;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
+
+.graph-differential-increase {
+    font-size: 14px;
+    margin: 0; font-weight: bold;
+}
+
+.graph-differential-description {
+    font-size: 14px;
+    margin: 5px 0px;
+    font-size: 12px;
+    color: var(--color4);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,782 @@
+
+
+
+@media screen and (max-width: 700px) {
+    .menu_workspace_monetization {
+        padding: 10px !important;
+    }
+    .menu_workspace_monetization_contents_item_status {
+        width: 50px !important;
+    }
+    .menu_workspace_monetization_contents_item_status_0 {
+        width: 50px !important; height: 50px !important;
+    }
+    .menu_workspace_monetization_contents_item_status_1 {
+        width: 50px !important; height: 50px !important;
+    }
+    .menu_workspace_monetization_contents_item_status_2 {
+        width: 50px !important; height: 50px !important;
+    }
+    .menu_workspace_monetization_contents_item_status_0 svg {
+        margin-right: 0px !important;
+    }
+    .menu_workspace_monetization_contents_item_status_1 svg {
+        margin-right: 0px !important;
+    }
+    .menu_workspace_monetization_contents_item_status_2 svg {
+        margin-right: 0px !important;
+    }
+    .menu_workspace_monetization_contents_item_status_0_text {
+        display: none !important;
+    }
+    .menu_workspace_monetization_contents_item_status_1_text {
+        display: none !important;
+    }
+    .menu_workspace_monetization_contents_item_status_2_text {
+        display: none !important;
+    }
+
+    .menu_workspace_monetization_contents_item_revenue {
+        width: calc(40% - 20px) !important;
+    }
+
+    .menu_workspace_monetization_contents_top_item:nth-child(1) {
+        width: 60% !important;
+    }
+    .menu_workspace_monetization_contents_top_item:nth-child(2) {
+        width: 40% !important;
+    }
+    .menu_workspace_monetization_contents_top_item:nth-child(3) {
+        width: 50px !important;
+    }
+
+    .menu_workspace_monetization_contents_item_work_left {
+        width: 46px !important; height: 70px !important;
+        border-radius: 5px !important;
+    }
+    .menu_workspace_monetization_contents_item_work_right {
+        width: calc(100% - 56px) !important;
+    }
+
+    .menu_workspace_monetization_contents_items {
+        padding: 20px 10px !important;
+    }
+    .menu_workspace_monetization_contents_top {
+        padding: 20px 10px !important;
+    }
+
+    .menu_workspace_monetization_payment_threshold_right {
+        display: none !important;
+    }
+}
+
+
+.menu_workspace_monetization {
+    width: 100%; height: max-content;
+    padding: 20px; margin-left: auto;
+    margin-right: auto; max-width: 900px;
+    box-sizing: border-box;
+}
+.menu_workspace_monetization_top {
+    width: 100%; height: max-content;
+    font-size: 18px; font-weight: bold;
+    color: var(--color1);
+}
+.menu_workspace_monetization_status_bar {
+    width: 100%; height: max-content;
+    display: flex; flex-wrap: wrap;
+    margin-top: 15px; gap: 15px;
+}
+.menu_workspace_monetization_status_bar_item {
+    width: 100%; height: 45px;
+    background-color: var(--hover-color);
+    padding: 0px 16px; border-radius: 50px;
+    font-size: 14px; color: var(--color3);
+    display: flex; align-items: center;
+    max-width: max-content;
+}
+.menu_workspace_monetization_status_bar_item svg {
+    width: 20px; height: 20px;
+    fill: var(--color3); margin-right: 12px;
+}
+
+
+.menu_workspace_monetization_status_bar_item_activate {
+    background-color: var(--site-color-trans2);
+    color: var(--site-color-light);
+}
+.menu_workspace_monetization_status_bar_item_activate svg {
+    fill: var(--site-color-light);
+}
+
+
+@keyframes workspaceMonetizationStatusBarItemWarning {
+    0% { background-color: var(--hover-color); }
+    50% { background-color: var(--color-failure-trans2); }
+    100% { background-color: var(--hover-color); }
+}
+.menu_workspace_monetization_status_bar_item_warning {
+    animation: workspaceMonetizationStatusBarItemWarning 3s infinite;
+    color: var(--color-failure);
+}
+.menu_workspace_monetization_status_bar_item_warning svg {
+    width: 17px; height: 17px;
+    fill: var(--color-failure);
+}
+
+.menu_workspace_monetization_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+    margin: 40px 0px;
+}
+
+.menu_workspace_monetization_ready {
+    width: 100%; height: max-content;
+}
+.menu_workspace_monetization_ready_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    font-weight: bold;
+}
+.menu_workspace_monetization_ready_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    margin-top: 5px; line-height: calc(13px * 1.5);
+}
+.menu_workspace_monetization_ready_items {
+    width: 100%; height: max-content;
+    margin-top: 50px; padding: 0px 20px;
+    background-color: var(--hover-color);
+    box-sizing: border-box; border-radius: 20px;
+}
+.menu_workspace_monetization_ready_item {
+    width: 100%; height: max-content;
+    display: flex; padding: 20px 0px;
+}
+.menu_workspace_monetization_ready_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+}
+.menu_workspace_monetization_ready_item_left {
+    width: 25px; height: 25px;
+    margin-right: 20px;
+}
+.menu_workspace_monetization_ready_item_left svg {
+    width: 25px; height: 25px;
+    fill: var(--color4);
+}
+.menu_workspace_monetization_ready_item_right {
+    width: calc(100% - 45px); height: max-content;
+}
+.menu_workspace_monetization_ready_item_right_status {
+    width: 100%; height: max-content;
+    background-color: var(--border-color);
+    font-size: 13px; color: var(--color3);
+    padding: 9px 13px; box-sizing: border-box;
+    border-radius: 50px; max-width: max-content;
+    margin-bottom: 10px; line-height: 13px;
+}
+.menu_workspace_monetization_ready_item_right_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    font-weight: bold; line-height: calc(15px * 1.5);
+}
+.menu_workspace_monetization_ready_item_right_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    margin-top: 5px; margin-bottom: 10px;
+    line-height: calc(13px * 1.5);
+}
+.menu_workspace_monetization_ready_item_right_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    margin-top: 5px; margin-bottom: 10px;
+}
+
+.menu_workspace_monetization_ready_item_right_button {
+    width: 100%; height: max-content;
+    background-color: var(--border-color);
+    padding: 12px 15px; border-radius: 50px;
+    max-width: max-content; font-size: 13px;
+    color: var(--site-color-light);
+    transition: all 0.1s; cursor: pointer;
+    margin-top: 20px; margin-bottom: 10px;
+    display: flex; align-items: center;
+    box-sizing: border-box;
+}
+.menu_workspace_monetization_ready_item_right_button:hover {
+    background-color: var(--site-color-trans2);
+}
+.menu_workspace_monetization_ready_item_right_button svg {
+    width: 16px; height: 16px; min-width: 16px;
+    margin-right: 10px; fill: var(--site-color-light);
+}
+
+.menu_workspace_monetization_ready_item_complete .menu_workspace_monetization_ready_item_left svg {
+    fill: var(--color-success);
+}
+.menu_workspace_monetization_ready_item_complete .menu_workspace_monetization_ready_item_right_status {
+    background-color: var(--color-success-trans2);
+    color: var(--color-success);
+}
+.menu_workspace_monetization_ready_item_complete .menu_workspace_monetization_ready_item_right_button {
+    opacity: 0.5; pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu_workspace_monetization_history {
+    width: 100%; height: max-content;
+}
+.menu_workspace_monetization_history_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    font-weight: bold;
+}
+.menu_workspace_monetization_history_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    margin-top: 5px; line-height: calc(13px * 1.5);
+}
+.menu_workspace_monetization_history_items {
+    width: 100%; height: max-content;
+    margin-top: 40px; padding: 0px 20px;
+    background-color: var(--hover-color);
+    box-sizing: border-box; border-radius: 20px;
+}
+.menu_workspace_monetization_history_item {
+    width: 100%; height: max-content;
+    display: flex; padding: 20px 0px;
+}
+.menu_workspace_monetization_history_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+}
+.menu_workspace_monetization_history_item_left {
+    width: 40px; height: 40px;
+    background-color: var(--border-color);
+    margin-right: 20px; border-radius: 50%;
+    display: flex; justify-content: center;
+    align-items: center;
+}
+.menu_workspace_monetization_history_item_left svg {
+    width: 20px; height: 20px;
+    fill: var(--color4);
+}
+.menu_workspace_monetization_history_item_right {
+    width: calc(100% - 60px); height: max-content;    
+}
+.menu_workspace_monetization_history_item_right_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    font-weight: bold;
+}
+.menu_workspace_monetization_history_item_right_amount {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color4);
+    margin-top: 5px;
+}
+.menu_workspace_monetization_history_item_right_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color4);
+    margin-top: 5px; line-height: calc(13px * 1.5);
+}
+.menu_workspace_monetization_history_item_right_date {
+    width: 100%; height: max-content;
+    font-size: 12px; color: var(--color6);
+    margin-top: 15px;
+}
+
+.menu_workspace_monetization_history_item_right_button {
+    width: max-content; height: max-content;
+    padding: 11px 15px; border-radius: 50px;
+    display: flex; align-items: center;
+    font-size: 13px; color: var(--color3);
+    border: solid 1px var(--border-color);
+    transition: all 0.1s; cursor: pointer;
+    min-width: max-content; margin-top: 10px;
+}
+.menu_workspace_monetization_history_item_right_button:hover {
+    background-color: var(--hover-color);
+    border-color: var(--color1);
+}
+.menu_workspace_monetization_history_item_right_button svg {
+    width: 17px; height: 17px;
+    fill: var(--color3); margin-right: 10px;
+}
+
+.menu_workspace_monetization_history_item_right_button_disabled {
+    opacity: 0.5; pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu_workspace_monetization_contents {
+    width: 100%; height: max-content;
+    background-color: var(--hover-color);
+    border-radius: 20px;
+}
+.menu_workspace_monetization_contents_top {
+    width: 100%; height: max-content;
+    padding: 20px; box-sizing: border-box;
+    display: flex; align-items: baseline;
+    border-bottom: solid 1px var(--border-color);
+}
+.menu_workspace_monetization_contents_top_item {
+    font-size: 14px; color: var(--color1);
+    font-weight: bold;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.menu_workspace_monetization_contents_top_item:nth-child(1) {
+    width: 60%;
+}
+.menu_workspace_monetization_contents_top_item:nth-child(2) {
+    width: 25%;
+}
+.menu_workspace_monetization_contents_top_item:nth-child(3) {
+    width: 15%;
+}
+
+.menu_workspace_monetization_contents_items {
+    width: 100%; height: max-content;
+    padding: 20px; box-sizing: border-box;
+}
+.menu_workspace_monetization_contents_item {
+    width: 100%; height: max-content;
+    display: flex;
+}
+.menu_workspace_monetization_contents_lines {
+    width: 100%; height: 40px;
+    display: flex; align-items: center;
+}
+.menu_workspace_monetization_contents_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+}
+.menu_workspace_monetization_contents_item_work {
+    width: calc(60% - 20px); height: max-content;
+    display: flex; margin-right: 20px;
+}
+.menu_workspace_monetization_contents_item_work_left {
+    width: 60px; height: 90px;
+    margin-right: 10px; border-radius: 10px;
+    overflow: hidden;
+}
+.menu_workspace_monetization_contents_item_work_left img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.menu_workspace_monetization_contents_item_work_right {
+    width: calc(100% - 70px); height: max-content;
+    margin: 5px 0px;
+}
+.menu_workspace_monetization_contents_item_work_right_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+    font-weight: bold;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.menu_workspace_monetization_contents_item_work_right_description {
+    width: 100%; height: max-content;
+    font-size: 12px; color: var(--color6);
+    margin-top: 5px; line-height: calc(12px * 1.5);
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.menu_workspace_monetization_contents_item_revenue {
+    width: calc(25% - 20px); height: max-content;
+    margin-right: 20px; margin-top: 5px; margin-bottom: 5px;
+}
+.menu_workspace_monetization_contents_item_revenue_title {
+    width: 100%; height: max-content;
+    font-size: 16px; color: var(--color1);
+    font-weight: bold;
+}
+.menu_workspace_monetization_contents_item_revenue_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    margin-top: 5px;
+}
+
+.menu_workspace_monetization_contents_item_status {
+    width: 15%; height: max-content;
+    margin: 5px 0px;
+}
+
+.menu_workspace_monetization_contents_item_status[status = "0"] .menu_workspace_monetization_contents_item_status_0 {
+    display: flex;
+}
+.menu_workspace_monetization_contents_item_status[status = "1"] .menu_workspace_monetization_contents_item_status_1 {
+    display: flex;
+}
+.menu_workspace_monetization_contents_item_status[status = "2"] .menu_workspace_monetization_contents_item_status_2 {
+    display: flex;
+}
+
+.menu_workspace_monetization_contents_item_status_0 {
+    width: 100%; height: max-content;
+    max-width: max-content; padding: 11px 15px;
+    border-radius: 50px; font-size: 14px;
+    background-color: var(--color1);
+    display: none; align-items: center;
+    color: var(--box-color); cursor: pointer;
+    transition: all 0.1s; box-sizing: border-box;
+}
+.menu_workspace_monetization_contents_item_status_0_text {
+    width: calc(100% - 30px); height: max-content;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.menu_workspace_monetization_contents_item_status_0 svg {
+    width: 20px; height: 20px; min-width: 20px;
+    margin-right: 10px; fill: var(--box-color);
+}
+.menu_workspace_monetization_contents_item_status_0:hover {
+    background-color: var(--border-color);
+    color: var(--color1);
+}
+.menu_workspace_monetization_contents_item_status_0:hover svg {
+    fill: var(--color1);
+}
+
+.menu_workspace_monetization_contents_item_status_0_disabled {
+    opacity: 0.5; pointer-events: none;
+    background-color: var(--border-color);
+    color: var(--color1);
+}
+.menu_workspace_monetization_contents_item_status_0_disabled svg {
+    fill: var(--color1);
+}
+
+
+
+.menu_workspace_monetization_contents_item_status_1 {
+    width: 100%; height: max-content;
+    max-width: max-content; padding: 11px 15px;
+    border-radius: 50px; font-size: 14px;
+    background-color: var(--border-color);
+    display: none; align-items: center;
+    color: var(--color3); box-sizing: border-box;
+}
+.menu_workspace_monetization_contents_item_status_1 svg {
+    width: 20px; height: 20px; min-width: 20px;
+    margin-right: 12px; fill: var(--color3);
+}
+.menu_workspace_monetization_contents_item_status_1_text {
+    width: calc(100% - 32px); height: max-content;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.menu_workspace_monetization_contents_item_status_2 {
+    width: 100%; height: max-content;
+    max-width: max-content; padding: 11px 15px;
+    border-radius: 50px; font-size: 14px;
+    background-color: var(--color-success-trans2);
+    display: none; align-items: center;
+    color: var(--color-success); box-sizing: border-box;
+}
+.menu_workspace_monetization_contents_item_status_2 svg {
+    width: 20px; height: 20px; min-width: 20px;
+    margin-right: 10px; fill: var(--color-success);
+}
+.menu_workspace_monetization_contents_item_status_2_text {
+    width: calc(100% - 30px); height: max-content;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu_workspace_monetization_graph_wrap {
+    width: 100%; height: max-content;
+    padding-bottom: 25px;
+}
+.menu_workspace_monetization_graph_title {
+    width: 100%; height: max-content;
+    font-size: 20px; font-weight: bold;
+    text-align: center; margin-bottom: 50px;
+    color: var(--color1);
+}
+.menu_workspace_monetization_graph {
+    width: 100%; height: max-content;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu_workspace_monetization_payment_threshold {
+    width: 100%; height: max-content;
+    display: flex; padding: 20px; box-sizing: border-box;
+    background-color: var(--hover-color);
+    border-radius: 20px; margin-top: 40px;
+    display: flex; align-items: center;
+}
+.menu_workspace_monetization_payment_threshold_left {
+    width: 100%; height: max-content;
+}
+.menu_workspace_monetization_payment_threshold_left_title {
+    width: 100%; height: max-content;
+    font-size: 20px; color: var(--color1);
+    font-weight: bold;
+}
+.menu_workspace_monetization_payment_threshold_left_description {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color6);
+    line-height: calc(14px * 1.5);
+    margin-top: 5px;
+}
+.menu_workspace_monetization_payment_threshold_left_progress_wrap {
+    width: 100%; height: 10px; border-radius: 10px;
+    background-color: var(--border-color);
+    overflow: hidden; margin-top: 15px;
+}
+.menu_workspace_monetization_payment_threshold_left_progress_line {
+    width: 0%; height: 100%;
+    background-color: var(--site-color-light);
+}
+.menu_workspace_monetization_payment_threshold_left_bottom {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    margin-top: 10px;
+}
+.menu_workspace_monetization_payment_threshold_left_bottom_left {
+    width: 100%; height: max-content;
+    color: var(--color6); font-size: 12px;
+    text-align: left;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.menu_workspace_monetization_payment_threshold_left_bottom_right {
+    width: max-content; height: max-content;
+    color: var(--color6); font-size: 12px;
+    text-align: right; margin-left: 20px;
+    min-width: max-content;
+}
+.menu_workspace_monetization_payment_threshold_right {
+    width: max-content; height: max-content;
+    font-size: 24px; color: var(--color1);
+    margin-left: 40px; min-width: max-content;
+    font-weight: bold;
+}
+
+.menu_workspace_monetization_bank_remittance_details {
+    width: 100%; height: max-content;
+    display: flex; padding: 20px; box-sizing: border-box;
+    background-color: var(--hover-color);
+    border-radius: 20px; margin-top: 40px;
+}
+.menu_workspace_monetization_bank_remittance_details_left {
+    width: 50px; height: 50px;
+    background-color: var(--color1);
+    margin-right: 20px; border-radius: 50%;
+    display: flex; justify-content: center;
+    align-items: center; overflow: hidden;
+}
+.menu_workspace_monetization_bank_remittance_details_left svg {
+    width: 25px; height: 25px;
+    fill: var(--box-color);
+}
+.menu_workspace_monetization_bank_remittance_details_right {
+    width: calc(100% - 70px); height: max-content;
+}
+.menu_workspace_monetization_bank_remittance_details_right_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    font-weight: bold;
+}
+.menu_workspace_monetization_bank_remittance_details_right_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    display: flex; align-items: center;
+    margin-top: 5px;
+}
+.menu_workspace_monetization_bank_remittance_details_right_description img {
+    width: 20px; height: 20px;
+    margin-right: 10px;
+}
+.menu_workspace_monetization_bank_remittance_details_right_items {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    margin-top: 15px;
+}
+.menu_workspace_monetization_bank_remittance_details_right_item {
+    width: max-content; height: max-content;
+    padding: 11px 15px; border-radius: 50px;
+    display: flex; align-items: center;
+    font-size: 13px; color: var(--color3);
+    background-color: var(--border-color);
+    border: solid 1px transparent;
+    transition: all 0.1s; cursor: pointer;
+    min-width: max-content;
+}
+.menu_workspace_monetization_bank_remittance_details_right_item:hover {
+    border-color: var(--color1); color: var(--color1);
+}
+.menu_workspace_monetization_bank_remittance_details_right_item svg {
+    width: 17px; height: 17px;
+    fill: var(--color3); margin-right: 10px;
+}
+.menu_workspace_monetization_bank_remittance_details_right_item:not(:first-child) {
+    margin-left: 15px;
+}
+
+.menu_workspace_monetization_bank_remittance_details_right_item_disabled {
+    opacity: 0.5; pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu_workspace_monetization_analysis_processing {
+    width: 100%; height: 225px;
+    padding: 20px; box-sizing: border-box;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+}
+.menu_workspace_monetization_analysis_processing svg {
+    width: 40px; height: 40px;
+    fill: var(--color4);
+}
+.menu_workspace_monetization_analysis_processing_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    text-align: center; margin-top: 20px;
+    font-weight: bold;
+}
+.menu_workspace_monetization_analysis_processing_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    text-align: center; margin-top: 5px;
+}

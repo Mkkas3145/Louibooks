@@ -1,0 +1,23 @@
+<?php
+
+    include_once('default_function.php');
+    
+    $index = $_GET["index"];
+    $urlList = getUrlSiteMap();
+    $urlList_length = count($urlList);
+
+    echo '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+    for ($i = (50000 * $index); $i < $urlList_length; $i++) {
+        if ($i < (50000 * ($index + 1))) {
+            echo '
+                <url>
+                    <loc>' . $urlList[$i] . '</loc>
+                </url>
+            ';
+        } else {
+            break;
+        }
+    }
+    echo '</urlset>';
+
+?>

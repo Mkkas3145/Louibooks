@@ -1,0 +1,26 @@
+
+
+@keyframes showCaretBar {
+    0% { opacity: 0; }
+    10% { opacity: 0; }
+    20% { opacity: 0; }
+    30% { opacity: 0; }
+    40% { opacity: 1; }
+    50% { opacity: 1; }
+    60% { opacity: 1; }
+    70% { opacity: 1; }
+    80% { opacity: 1; }
+    90% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@keyframes hideCaretBar {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.caret_bar {
+    width: 2px; height: 0px;
+    background-color: var(--site-color-light);
+    position: fixed; top: 0px; left: 0px;
+    z-index: 1; pointer-events: none;
+}

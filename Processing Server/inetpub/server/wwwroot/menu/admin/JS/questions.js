@@ -1,0 +1,701 @@
+
+
+function registerMenuAdminQuestionsLoad(menuNumber) {
+    function callback() {
+        if (loginStatus != null) {
+            menuAdminQuestionsLoad(menuNumber);
+        } else {
+            window.requestAnimationFrame(callback);
+        }
+    }
+    window.requestAnimationFrame(callback);
+}
+
+
+var adminQuestionsLoadNumbers = new Array();
+
+function menuAdminQuestionsLoad(menuNumber) {
+    let contents = document.getElementById("contents_" + menuNumber);
+    let questionsInfo = JSON.parse(contents.getElementsByClassName("questions_info")[0].innerHTML);
+
+    let numbers = questionsInfo["numbers"].split(",");
+    let info = questionsInfo["info"];
+
+    //문의 번호들 변수에 등록
+    adminQuestionsLoadNumbers[menuNumber] = numbers;
+
+    if (info != null && info.length != 0) {
+        for (let i = 0; i < info.length; i++) {
+            addItemAdminQuestions(menuNumber, info[i]);
+    
+            let array = adminQuestionsLoadNumbers[menuNumber];
+            array = array.remove("" + info[i]["number"]);
+            adminQuestionsLoadNumbers[menuNumber] = array;
+        }
+        checkAdminQuestionsMoreLoading(menuNumber);
+    } else {
+        noDataAdminQuestions(menuNumber);
+    }
+
+    //데이터 없음
+    let no_data = contents.getElementsByClassName("menu_admin_questions_no_data")[0];
+    no_data.getElementsByClassName("menu_admin_questions_no_data_title")[0].innerHTML = getLanguage("menu_admin_questions_no_data");
+    no_data.getElementsByClassName("menu_admin_questions_no_data_description")[0].innerHTML = getLanguage("no_data_description");
+
+    let title = contents.getElementsByClassName("menu_admin_questions_title")[0];
+    title.innerHTML = getLanguage("menu_admin_questions_title");
+
+    //정렬
+    let sort_box_title = contents.getElementsByClassName("sort_box_title");
+    sort_box_title[0].innerHTML = getLanguage("menu_admin_questions_sort:1");
+    sort_box_title[1].innerHTML = getLanguage("menu_admin_questions_type:all");
+    sort_box_title[2].innerHTML = getLanguage("language:select_item:all");
+}
+
+function noDataAdminQuestions(menuNumber) {
+    let contents = document.getElementById("contents_" + menuNumber);
+    let no_data = contents.getElementsByClassName("menu_admin_questions_no_data")[0];
+    no_data.style.display = "flex";
+}
+
+function addItemAdminQuestions(menuNumber, info) {
+    let contents = document.getElementById("contents_" + menuNumber);
+    let items = contents.getElementsByClassName("menu_admin_questions_items")[0];
+
+    let no_data = contents.getElementsByClassName("menu_admin_questions_no_data")[0];
+    no_data.style.display = "none";
+
+    //스크린샷
+    let screenshot = "";
+    if (info["screenshot"] != null) {
+        let screenshotInfo = info["screenshot"];
+        let screenshotItem = "";
+        for (let i = 0; i < screenshotInfo.length; i++) {
+            screenshotItem += `
+                <div class = "menu_admin_questions_image">
+                    <div class = "md-ripples" style = "cursor: pointer;" onclick = "fullScreenImage(new Array('` + screenshotInfo[i]["url"] + `'));">
+                        <img src = "` + screenshotInfo[i]["url"] + `" width = "` + screenshotInfo[i]["width"] + `" height = "` + screenshotInfo[i]["height"] + `" onload = "imageLoad(event);" alt = "">
+                    </div>
+                </div>
+            `;
+        }
+
+        let countStyle = '';
+        if (screenshotInfo.length == 1) {
+            countStyle = 'display: none;';
+        }
+
+        screenshot = `
+            <div class = "menu_admin_questions_item_right_screenshot_title">
+                ` + getLanguage("menu_admin_questions_screenshot") + `
+            </div>
+            <div class = "menu_admin_questions_item_right_screenshot" style = "width: calc(100% - 10px); max-width: 600px; border-radius: 10px;">
+                <div class = "menu_admin_questions_images_count" style = "` + countStyle + `">
+                    <div class = "menu_admin_questions_images_count_box_wrap">
+                        <div class = "menu_admin_questions_images_count_box">
+                            <span>1</span> / ` + screenshotInfo.length + `
+                        </div>
+                    </div>
+                </div>
+                <div class = "horizontal_transform" item_count = "` + screenshotInfo.length + `">
+                    <div class = "menu_admin_questions_images">
+                        ` + screenshotItem + `
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    let programIcon = null;
+    if (info["program"] == "application") {
+        programIcon = getSVGLouibooksLogo(0);
+    } else {
+        programIcon = `<img src="/IMG/program/` + info["program"] + `.png" onload="imageLoad(event);" alt = "">`;
+    }
+
+    let operatingSystemIcon = null;
+    if (info["operatingSystem"] == "unknown") {
+        operatingSystemIcon = '<!-- Generated by IcoMoon.io --><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M14.090 2.233c-1.14-0.822-2.572-1.233-4.296-1.233-1.311 0-2.418 0.289-3.317 0.868-1.427 0.906-2.185 2.445-2.277 4.615h3.307c0-0.633 0.185-1.24 0.553-1.828 0.369-0.586 0.995-0.879 1.878-0.879 0.898 0 1.517 0.238 1.854 0.713 0.339 0.477 0.508 1.004 0.508 1.582 0 0.504-0.252 0.965-0.557 1.383-0.167 0.244-0.387 0.469-0.661 0.674 0 0-1.793 1.15-2.58 2.074-0.456 0.535-0.497 1.338-0.538 2.488-0.002 0.082 0.029 0.252 0.315 0.252s2.316 0 2.571 0c0.256 0 0.309-0.189 0.312-0.274 0.018-0.418 0.064-0.633 0.141-0.875 0.144-0.457 0.538-0.855 0.979-1.199l0.91-0.627c0.822-0.641 1.477-1.166 1.767-1.578 0.494-0.676 0.842-1.51 0.842-2.5-0.001-1.615-0.571-2.832-1.711-3.656zM9.741 14.924c-1.139-0.035-2.079 0.754-2.115 1.99-0.035 1.234 0.858 2.051 1.998 2.084 1.189 0.035 2.104-0.727 2.141-1.963 0.034-1.236-0.834-2.076-2.024-2.111z"></path></svg>';
+    } else {
+        operatingSystemIcon = `<img src="/IMG/operating_system/` + info["operatingSystem"] + `.png" onload="imageLoad(event);" alt = "">`;
+    }
+
+    let newEl = document.createElement("div");
+    newEl.setAttribute("number", info["number"]);
+    newEl.classList.add("visible_element");
+    newEl.classList.add("variable_element");
+    newEl.classList.add("menu_admin_questions_item");
+    newEl.innerHTML = `
+        <div class = "menu_admin_questions_item_left immutable_element md-ripples" onclick = "loadMenu_user(` + info["userNumber"] + `);">
+            <div class = "profile_element">
+                <div class = "profile_info">` + JSON.stringify(info["profile"]) + `</div>
+                <div class = "profile_image"></div>
+            </div>
+        </div>
+        <div class = "menu_admin_questions_item_right">
+            <div class = "menu_admin_questions_item_right_top immutable_element">
+                <div class = "menu_admin_questions_item_right_top_nickname md-ripples" onclick = "loadMenu_user(` + info["userNumber"] + `);">
+                    ` + info["nickname"] + `
+                </div>
+                <div class = "menu_admin_questions_item_right_top_date">
+                    · ` + getTimePast(new Date(info["date"])) + `
+                </div>
+            </div>
+            <div class = "menu_admin_questions_item_right_type immutable_element">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50"><defs><clipPath id="b"><rect width="50" height="50"></rect></clipPath></defs><g id="a" clip-path="url(#b)"><path d="M25,50A25.007,25.007,0,0,1,15.269,1.965,25.007,25.007,0,0,1,34.731,48.036,24.843,24.843,0,0,1,25,50ZM25,3A22,22,0,1,0,47,25,22.025,22.025,0,0,0,25,3Z"></path><g transform="translate(-24 6)"><rect width="3" height="24" rx="1.5" transform="translate(48 11)"></rect><rect width="3" height="4" rx="1.5" transform="translate(48 3)"></rect></g></g></svg>
+                <div class = "menu_admin_questions_item_right_type_text">
+                    ` + getLanguage("menu_write_questions_type:" + info["type"]) + `
+                </div>
+            </div>
+            <div class = "menu_admin_questions_item_right_content">` + textToURL(info["content"]) + `</div>
+            ` + screenshot + `
+            <div class = "menu_admin_questions_item_right_line"></div>
+            <div class = "menu_admin_questions_user_info">
+                <div class = "menu_admin_questions_user_info_box">
+                    <div class = "menu_admin_questions_user_info_left">
+                        ` + operatingSystemIcon + `
+                    </div>
+                    <div class = "menu_admin_questions_user_info_right">
+                        <div class = "menu_admin_questions_user_info_right_title">
+                            ` + getLanguage("menu_write_questions_user_info:operating_system") + `
+                        </div>
+                        <div class = "menu_admin_questions_user_info_right_value">
+                            ` + getLanguage("operating_system:" + info["operatingSystem"]) + `
+                        </div>
+                    </div>
+                </div>
+                <div class = "menu_admin_questions_user_info_box">
+                    <div class = "menu_admin_questions_user_info_left">
+                        ` + programIcon + `
+                    </div>
+                    <div class = "menu_admin_questions_user_info_right">
+                        <div class = "menu_admin_questions_user_info_right_title">
+                            ` + getLanguage("menu_write_questions_user_info:program") + `
+                        </div>
+                        <div class = "menu_admin_questions_user_info_right_value">
+                            ` + getLanguage("program:" + info["program"]) + `
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "menu_admin_questions_item_right_line"></div>
+            <div class = "menu_admin_questions_item_right_items">
+                <div class = "menu_admin_questions_item_right_item md-ripples" onclick = "menuAdminQuestionsWriting(` + menuNumber + `, ` + info["number"] + `, '` + getLanguage("menu_admin_questions_write:0") + `');">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50"><defs><clipPath id="b"><rect width="50" height="50"></rect></clipPath></defs><g id="a" clip-path="url(#b)"><g transform="translate(8.029 8.029)"><rect width="3" height="30" rx="1.5"></rect><rect width="3" height="45" rx="1.5" transform="translate(0 2.121) rotate(-45)"></rect><rect width="3" height="30" rx="1.5" transform="translate(0 3) rotate(-90)"></rect></g></g></svg>
+                    ` + getLanguage("menu_admin_questions_write:0") + `
+                </div>
+                <div class = "menu_admin_questions_item_right_item md-ripples" onclick = "menuAdminQuestionsWriting(` + menuNumber + `, ` + info["number"] + `, '` + getLanguage("menu_admin_questions_write:1").replaceAll("{R:0}", info["nickname"]).replaceAll("{R:1}", loginStatus["nickname"]) + `');">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50"><defs><clipPath id="b"><rect width="50" height="50"></rect></clipPath></defs><g id="a" clip-path="url(#b)"><g transform="translate(8.029 8.029)"><rect width="3" height="30" rx="1.5"></rect><rect width="3" height="45" rx="1.5" transform="translate(0 2.121) rotate(-45)"></rect><rect width="3" height="30" rx="1.5" transform="translate(0 3) rotate(-90)"></rect></g></g></svg>
+                    ` + getLanguage("menu_admin_questions_write:1").replaceAll("{R:0}", info["nickname"]).replaceAll("{R:1}", loginStatus["nickname"]) + `
+                </div>
+                <div class = "menu_admin_questions_item_right_item md-ripples" onclick = "menuAdminQuestionsWriting(` + menuNumber + `, ` + info["number"] + `, '');">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50"><defs><clipPath id="b"><rect width="50" height="50"></rect></clipPath></defs><g id="a" clip-path="url(#b)"><g transform="translate(8.029 8.029)"><rect width="3" height="30" rx="1.5"></rect><rect width="3" height="45" rx="1.5" transform="translate(0 2.121) rotate(-45)"></rect><rect width="3" height="30" rx="1.5" transform="translate(0 3) rotate(-90)"></rect></g></g></svg>
+                    ` + getLanguage("menu_admin_questions_write:2") + `
+                </div>
+            </div>
+            <div class = "menu_admin_questions_item_right_write_wrap"></div>
+        </div>
+    `;
+    
+    items.appendChild(newEl);
+}
+
+function submitAdminQuestionsButton(menuNumber, questionsNumber) {
+    confirmPopup(getLanguage("menu_admin_questions_write_submit_confirm_popup:title"), getLanguage("menu_admin_questions_write_submit_confirm_popup:description"), 'requestSubmitAdminQuestions(' + menuNumber + ', ' + questionsNumber + ');');
+}
+
+function requestSubmitAdminQuestions(menuNumber, questionsNumber) {
+    let contents = document.getElementById("contents_" + menuNumber);
+    let item = null;
+    let children = contents.getElementsByClassName("menu_admin_questions_items")[0].children;
+    for (let i = 0; i < children.length; i++) {
+        let number = Number.parseInt(children[i].getAttribute("number"));
+        if (number == questionsNumber) {
+            item = children[i];
+        }
+    }
+    let input = item.getElementsByClassName("menu_admin_questions_item_right_write_input_textbox")[0];
+    let content = input.innerText.replaceAll('\n\n','\n').trim();
+
+    loading();
+
+    const xhr = new XMLHttpRequest();
+    const method = "POST";
+    
+    xhr.open(method, "/menu/admin/php/questions/reply.php");
+    
+    xhr.addEventListener('readystatechange', function (event) {
+        const { target } = event;
+        if (target.readyState === XMLHttpRequest.DONE) {
+            const { status } = target;
+            if (status === 0 || (status >= 200 && status < 400)) {
+                let xhrHtml = xhr.responseText;
+
+                let height = item.clientHeight;
+                item.style.maxHeight = height + "px";
+                item.style.transition = "all 0.2s";
+                function callback() {
+                    item.style.maxHeight = "0px";
+                    item.style.marginBottom = "0px";
+                    item.style.animation = "deleteAdminQuestionsItem 0.2s forwards";
+
+                    setTimeout(() => {
+                        item.remove();
+
+                        //데이터 없음
+                        if (children.length == 0 && (adminQuestionsLoadNumbers[menuNumber] == null || adminQuestionsLoadNumbers[menuNumber][0] == "")) {
+                            noDataAdminQuestions(menuNumber);
+                        }
+                    }, 200);
+                }
+                window.requestAnimationFrame(callback);
+
+                actionMessage(getLanguage("menu_admin_questions_write_submit_message"));
+            } else {
+                if (status == 504) {
+                    //시간 초과
+                    serverResponseErrorMessage(0);
+                } else {
+                    //오류 발생
+                    serverResponseErrorMessage(1);
+                }
+            }
+            loadingComplete();
+        }
+    });
+
+    var formData = new FormData();
+    formData.append("questionsNumber", questionsNumber);
+    formData.append("content", content);
+
+    xhr.send(formData);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function showAdminQuestionsMoreLoading(menuNumber) {
+    let contents = document.getElementById("contents_" + menuNumber);
+    let loading = contents.getElementsByClassName("admin_questions_contents_loading")[0];
+    loading.style.display = "block";
+}
+function hideAdminQuestionsMoreLoading(menuNumber) {
+    let contents = document.getElementById("contents_" + menuNumber);
+    let loading = contents.getElementsByClassName("admin_questions_contents_loading")[0];
+    loading.style.display = "none";
+}
+function checkAdminQuestionsMoreLoading(menuNumber) {
+    if (adminQuestionsLoadNumbers[menuNumber].length == 0) {
+        hideAdminQuestionsMoreLoading(menuNumber);
+        adminQuestionsLoadNumbers[menuNumber] = null;
+    } else {
+        showAdminQuestionsMoreLoading(menuNumber);
+    }
+}
+
+let isAdminQuestionsMoreLoad = new Array();
+
+function checkAdminQuestionsLoad() {
+    if (getCurrentMenuName() == "admin_questions") {
+        let boxSize = 75;
+
+        let scrollPercent = ((document.documentElement.scrollTop + window.innerHeight) / (document.documentElement.scrollHeight - boxSize)) * 100;
+        if (scrollPercent >= 100) {
+            let number = getCurrentMenuNumber();
+            if (isAdminQuestionsMoreLoad[number] == null && adminQuestionsLoadNumbers[number] != null && adminQuestionsLoadNumbers[number][0] != "") {
+                isAdminQuestionsMoreLoad[number] = true;
+                moreLoadAdminQuestions(number);
+            }
+        }
+    }
+}
+addEventListener("scroll", checkAdminQuestionsLoad);
+addEventListener("resize", checkAdminQuestionsLoad);
+addEventListener("focus", checkAdminQuestionsLoad);
+
+function moreLoadAdminQuestions(menuNumber) {
+    if (adminQuestionsLoadNumbers[menuNumber] == null || adminQuestionsLoadNumbers[menuNumber].length == 0) {
+        adminQuestionsLoadNumbers[menuNumber] = null;
+        isAdminQuestionsMoreLoad[menuNumber] = null;
+        return;
+    }
+
+    const xhr = new XMLHttpRequest();
+    const method = "POST";
+    
+    xhr.open(method, "/menu/admin/php/questions/getInfo.php");
+    
+    xhr.addEventListener('readystatechange', function (event) {
+        const { target } = event;
+        if (target.readyState === XMLHttpRequest.DONE) {
+            const { status } = target;
+            if (status === 0 || (status >= 200 && status < 400)) {
+                let xhrHtml = xhr.responseText;
+                let info = JSON.parse(xhrHtml);
+
+                for (let i = 0; i < info.length; i++) {
+                    addItemAdminQuestions(menuNumber, info[i]);
+            
+                    let array = adminQuestionsLoadNumbers[menuNumber];
+                    array = array.remove("" + info[i]["number"]);
+                    adminQuestionsLoadNumbers[menuNumber] = array;
+                }
+
+                isAdminQuestionsMoreLoad[menuNumber] = null;
+                checkAdminQuestionsMoreLoading(menuNumber);
+            } else {
+                if (status == 504) {
+                    //시간 초과
+                    serverResponseErrorMessage(0);
+                } else {
+                    //오류 발생
+                    serverResponseErrorMessage(1);
+                }
+            }
+        }
+    });
+
+    let numbers = adminQuestionsLoadNumbers[menuNumber];
+    let numbersMaxCount = (numbers.length >= 15) ? 15 : numbers.length;
+    numbers = numbers.splice(0, numbersMaxCount);
+    
+    var formData = new FormData();
+    formData.append("numbers", numbers.join(","));
+
+    xhr.send(formData);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getMenuAdminQuestionsSortItems() {
+    let items = new Array();
+    items[0] = {
+        "title": getLanguage("menu_admin_questions_sort:0"),
+        "value": 0
+    }
+    items[1] = {
+        "title": getLanguage("menu_admin_questions_sort:1"),
+        "value": 1
+    }
+    return items;
+}
+function getMenuAdminQuestionsTypeItems() {
+    let items = new Array();
+    items[0] = {
+        "title": getLanguage("menu_admin_questions_type:all"),
+        "value": 0
+    }
+    items[1] = {
+        "title": getLanguage("menu_write_questions_type:0"),
+        "value": 1
+    }
+    items[2] = {
+        "title": getLanguage("menu_write_questions_type:1"),
+        "value": 2
+    }
+    items[3] = {
+        "title": getLanguage("menu_write_questions_type:2"),
+        "value": 3
+    }
+    return items;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function menuAdminQuestionsOptionLoad(menuNumber) {
+    let contents = document.getElementById("contents_" + menuNumber);
+    let items = contents.getElementsByClassName("menu_admin_questions_items")[0];
+    let sort_box = contents.getElementsByClassName("sort_box");
+
+    loading();
+
+    const xhr = new XMLHttpRequest();
+    const method = "POST";
+    
+    xhr.open(method, "/menu/admin/php/questions/getInfoNumbers.php");
+    
+    xhr.addEventListener('readystatechange', function (event) {
+        const { target } = event;
+        if (target.readyState === XMLHttpRequest.DONE) {
+            const { status } = target;
+            if (status === 0 || (status >= 200 && status < 400)) {
+                let xhrHtml = xhr.responseText;
+                let info = JSON.parse(xhrHtml);
+
+                items.textContent = "";
+                let numbers = info["numbers"].split(",");
+                adminQuestionsLoadNumbers[menuNumber] = numbers;
+
+                //
+                if (numbers.length != 0 && numbers[0] != "") {
+                    let worksInfo = info["info"];
+                    for (let i = 0; i < worksInfo.length; i++) {
+                        addItemAdminQuestions(menuNumber, worksInfo[i]);
+                
+                        let array = adminQuestionsLoadNumbers[menuNumber];
+                        array = array.remove("" + worksInfo[i]["number"]);
+                        adminQuestionsLoadNumbers[menuNumber] = array;
+                    }
+                    checkAdminQuestionsMoreLoading(menuNumber);
+                } else {
+                    noDataAdminQuestions(menuNumber);
+                    hideAdminQuestionsMoreLoading(menuNumber);
+                }
+
+                isAdminQuestionsMoreLoad[menuNumber] = null;
+            } else {
+                if (status == 504) {
+                    //시간 초과
+                    serverResponseErrorMessage(0);
+                } else {
+                    //오류 발생
+                    serverResponseErrorMessage(1);
+                }
+            }
+            loadingComplete();
+        }
+    });
+
+    var formData = new FormData();
+    formData.append("sort", sort_box[0].getAttribute("value"));
+    formData.append("type", sort_box[1].getAttribute("value"));
+    formData.append("language", sort_box[2].getAttribute("value"));
+
+    xhr.send(formData);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function menuAdminQuestionsWriting(menuNumber, questionsNumber, text) {
+    let contents = document.getElementById("contents_" + menuNumber);
+    let item = null;
+    let children = contents.getElementsByClassName("menu_admin_questions_items")[0].children;
+    for (let i = 0; i < children.length; i++) {
+        let number = Number.parseInt(children[i].getAttribute("number"));
+        if (number == questionsNumber) {
+            item = children[i];
+        }
+    }
+
+    //에전 Height 기록
+    let previousHeight = item.clientHeight;
+
+    let write_wrap = item.getElementsByClassName("menu_admin_questions_item_right_write_wrap")[0];
+    let items = item.getElementsByClassName("menu_admin_questions_item_right_items")[0];
+    items.style.display = "none";
+    write_wrap.style.display = "block";
+
+    write_wrap.innerHTML = `
+        <div class = "menu_admin_questions_item_right_write">
+            <div class = "menu_admin_questions_item_right_write_left">
+                <div class = "profile_element">
+                    <div class = "profile_info">` + JSON.stringify(loginStatus["profile"]) + `</div>
+                    <div class = "profile_image"></div>
+                </div>
+            </div>
+            <div class = "menu_admin_questions_item_right_write_right">
+                <div class = "menu_admin_questions_item_right_write_right_nickname">
+                    ` + loginStatus["nickname"] + `
+                </div>
+                <div class = "menu_admin_questions_item_right_write_input">
+                    <div class = "menu_admin_questions_item_right_write_input_textbox" contenteditable = "true" placeholder = "` + getLanguage("menu_admin_questions_write_placeholder") + `" onkeydown = "textbox_remove_spaces(this); checkInputMenuAdminQuestionsWriting(this);" onpaste = "contenteditable_paste(event);" onfocus = "menuAdminQuestionsWriteInputFocus(this);" onblur = "menuAdminQuestionsWriteInputBlur(this);">` + text + `</div>
+                    <div class = "menu_admin_questions_item_right_write_input_line_wrap"></div>
+                </div>
+                <div class = "menu_admin_questions_item_right_write_bottom">
+                    <div class = "menu_admin_questions_item_right_write_bottom_right">
+                        <div class = "menu_admin_questions_item_right_write_bottom_right_cancel md-ripples" onclick = "menuAdminQuestionsWritingCancel(` + menuNumber + `, ` + questionsNumber + `);" onmouseenter = "hoverInformation(this, getLanguage('menu_admin_questions_write_cancel'));">
+                            <!-- Generated by IcoMoon.io -->
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path d="M9 1c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zM3 9c0-1.294 0.416-2.491 1.116-3.472l8.356 8.356c-0.981 0.7-2.178 1.116-3.472 1.116-3.309 0-6-2.691-6-6zM13.884 12.472l-8.356-8.356c0.981-0.7 2.178-1.116 3.472-1.116 3.309 0 6 2.691 6 6 0 1.294-0.416 2.491-1.116 3.472z"></path></svg>
+                        </div>
+                        <div class = "menu_admin_questions_item_right_write_bottom_right_submit md-ripples" onclick = "submitAdminQuestionsButton(` + menuNumber + `, ` + questionsNumber + `);" onmouseenter = "hoverInformation(this, getLanguage('menu_admin_questions_write_submit'));">
+                            <!-- Generated by IcoMoon.io -->
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2.016 21v-6.984l15-2.016-15-2.016v-6.984l21 9z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    let textbox = item.getElementsByClassName("menu_admin_questions_item_right_write_input_textbox")[0];
+    textbox.focus();
+    checkInputMenuAdminQuestionsWriting(textbox);
+
+    if (textbox.hasChildNodes()) {
+        let selection = window.getSelection();
+        let range = document.createRange();
+        let element = textbox.childElementCount > 0 ? textbox.lastChild : textbox;
+        range.setStart(element, 1);
+        range.setEnd(element, 1);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+
+    let height = item.clientHeight;
+    item.style.height = previousHeight + "px";
+    item.style.transition = "height 0.2s";
+    item.style.overflow = "hidden";
+    function callback() {
+        item.style.height = height + "px";
+        setTimeout(() => {
+            item.style.height = null;
+            item.style.transition = null;
+            item.style.overflow = null;
+        }, 200);
+    }
+    window.requestAnimationFrame(callback);
+}
+function menuAdminQuestionsWriteInputFocus(el) {
+    let parent = el.parentElement;
+    parent.classList.add('menu_admin_questions_item_right_write_input_focus');
+}
+function menuAdminQuestionsWriteInputBlur(el) {
+    let parent = el.parentElement;
+    parent.classList.remove('menu_admin_questions_item_right_write_input_focus');
+}
+
+function menuAdminQuestionsWritingCancel(menuNumber, questionsNumber) {
+    let contents = document.getElementById("contents_" + menuNumber);
+    let item = null;
+    let children = contents.getElementsByClassName("menu_admin_questions_items")[0].children;
+    for (let i = 0; i < children.length; i++) {
+        let number = Number.parseInt(children[i].getAttribute("number"));
+        if (number == questionsNumber) {
+            item = children[i];
+        }
+    }
+
+    //에전 Height 기록
+    let previousHeight = item.clientHeight;
+
+    let write_wrap = item.getElementsByClassName("menu_admin_questions_item_right_write_wrap")[0];
+    let items = item.getElementsByClassName("menu_admin_questions_item_right_items")[0];
+    items.style.display = null;
+    write_wrap.textContent = "";
+    write_wrap.style.display = null;
+
+    let height = item.clientHeight;
+    item.style.height = previousHeight + "px";
+    item.style.transition = "height 0.2s";
+    item.style.overflow = "hidden";
+    function callback() {
+        item.style.height = height + "px";
+        setTimeout(() => {
+            item.style.height = null;
+            item.style.transition = null;
+            item.style.overflow = null;
+        }, 200);
+    }
+    window.requestAnimationFrame(callback);
+}
+
+function checkInputMenuAdminQuestionsWriting(el) {
+    function callback() {
+        let parent = el.parentElement.parentElement;
+        let submit = parent.getElementsByClassName("menu_admin_questions_item_right_write_bottom_right_submit")[0];
+        
+        let text = el.textContent.trim();
+        if (text != "") {
+            submit.classList.add("menu_admin_questions_item_right_write_bottom_right_submit_activate");
+        } else {
+            submit.classList.remove("menu_admin_questions_item_right_write_bottom_right_submit_activate");
+        }
+    }
+    window.requestAnimationFrame(callback);
+}

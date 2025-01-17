@@ -1,0 +1,288 @@
+<?php
+
+    $menuNumber = $_POST["menuNumber"];
+
+    include_once('../../default_function.php');
+    $userInfo = getMyLoginInfo();
+
+    //필요한 정보
+    $stmt = $pdo->prepare("SELECT remittance_info, revenue, remitted_revenue FROM user WHERE number = :number");
+    $stmt->execute(array(
+        "number" => $userInfo["number"]
+    ));
+    $user = $stmt->fetch();
+
+    $remittanceInfo = null;
+    if (isset($user["remittance_info"])) {
+        $remittanceInfo = json_decode($user["remittance_info"], true);
+    }
+
+    //크리에이터 가이드 검토 여부
+    $isCreatorGuideReview = false;
+    if ($userInfo["workspace"]["countWorks"] > 0) {
+        $isCreatorGuideReview = true;
+    }
+
+    //작품 정보 불러오기
+    $stmt = $pdo->prepare("SELECT number, monetization, monetization_date FROM works WHERE user_number = :user_number");
+    $stmt->execute(array(
+        "user_number" => $userInfo["number"]
+    ));
+    $works = $stmt->fetchAll();
+    $works_length = count($works);
+    $monetizationNumbers = array(); //수익 창출 상태인 작품 번호
+    $monetizationDate = array(); //수익 창출 시작 날짜
+    $workNumbers = array();
+    for ($i = 0; $i < $works_length; $i++) {
+        $workNumbers[] = $works[$i]["number"];
+
+        if ($works[$i]["monetization"] == 1) {
+            $monetizationNumbers[] = $works[$i]["number"];
+        }
+        if (isset($works[$i]["monetization_date"])) {
+            $monetizationDate[$works[$i]["number"]] = $works[$i]["monetization_date"];
+        }
+    }
+    $worksInfo = array();
+    $worksInfo_length = 0;
+    if (count($workNumbers) != 0) {
+        $worksInfo = getWorkInfo(implode(",", $workNumbers));
+        $worksInfo_length = count($worksInfo);
+    }
+
+    //수익 창출 검토 대기 중인지
+    if (count($workNumbers) != 0) {
+        $stmt = $pdo->prepare("SELECT work_number FROM monetization_approval WHERE work_number IN (" . implode(",", $workNumbers) . ")");
+        $stmt->execute();
+        $monetizationApproval = $stmt->fetchAll();
+        $monetizationApproval_length = count($monetizationApproval);
+        for ($i = 0; $i < $monetizationApproval_length; $i++) {
+            for ($j = 0; $j < $worksInfo_length; $j++) {
+                if ($worksInfo[$j]["number"] == $monetizationApproval[$i]["work_number"]) {
+                    $worksInfo[$j]["awaitingReview"] = true;
+                }
+            }
+        }
+    }
+    //수익 창출 승인 여부
+    if (count($workNumbers) != 0) {
+        $monetizationNumbers_length = count($monetizationNumbers);
+        for ($i = 0; $i < $monetizationNumbers_length; $i++) {
+            for ($j = 0; $j < $worksInfo_length; $j++) {
+                if ($worksInfo[$j]["number"] == $monetizationNumbers[$i]) {
+                    $worksInfo[$j]["monetized"] = true;
+                }
+            }
+        }
+        for ($i = 0; $i < $worksInfo_length; $i++) {
+            if (isset($monetizationDate[$worksInfo[$i]["number"]])) {
+                $worksInfo[$i]["monetizationDate"] = $monetizationDate[$worksInfo[$i]["number"]];
+            }
+        }
+    }
+
+    //작품 예상 수익 분석 데이터
+    $analysisInfo = getWorksAnalysisVariousInfo(implode(",", $workNumbers));
+
+    $info = array(
+        "revenue" => $user["revenue"],
+        "remittedRevenue" => $user["remitted_revenue"],
+        "remittanceInfo" => $remittanceInfo,
+        "isCreatorGuideReview" => $isCreatorGuideReview,
+        "worksInfo" => $worksInfo,
+        "analysisInfo" => $analysisInfo
+    );
+
+?>
+
+<div class = "info" style = "display: none;">
+    <?php echo json_encode($info); ?>
+</div>
+
+<div class = "menu_workspace_monetization">
+    <div class = "menu_workspace_monetization_top">
+        ...
+    </div>
+    <div class = "menu_workspace_monetization_status_bar">
+        <!-- item -->
+    </div>
+    <div class = "menu_workspace_monetization_payment_threshold">
+        <div class = "menu_workspace_monetization_payment_threshold_left">
+            <div class = "menu_workspace_monetization_payment_threshold_left_title">
+                ...
+            </div>
+            <div class = "menu_workspace_monetization_payment_threshold_left_description">
+                ...
+            </div>
+            <div class = "menu_workspace_monetization_payment_threshold_left_progress_wrap">
+                <div class = "menu_workspace_monetization_payment_threshold_left_progress_line"></div>
+            </div>
+            <div class = "menu_workspace_monetization_payment_threshold_left_bottom">
+                <div class = "menu_workspace_monetization_payment_threshold_left_bottom_left">
+                    ...
+                </div>
+                <div class = "menu_workspace_monetization_payment_threshold_left_bottom_right">
+                    ...
+                </div>
+            </div>
+        </div>
+        <div class = "menu_workspace_monetization_payment_threshold_right">
+            ...
+        </div>
+    </div>
+    <div class = "menu_workspace_monetization_bank_remittance_details">
+        <div class = "menu_workspace_monetization_bank_remittance_details_left">
+            <!-- Generated by IcoMoon.io -->
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.484 0.984l9.516 5.016v2.016h-18.984v-2.016zM15.984 9.984h3v7.031h-3v-7.031zM2.016 21.984v-3h18.984v3h-18.984zM9.984 9.984h3v7.031h-3v-7.031zM3.984 9.984h3v7.031h-3v-7.031z"></path></svg>
+        </div>
+        <div class = "menu_workspace_monetization_bank_remittance_details_right">
+            <div class = "menu_workspace_monetization_bank_remittance_details_right_title">
+                ...
+            </div>
+            <div class = "menu_workspace_monetization_bank_remittance_details_right_description">
+                ...
+            </div>
+            <div class = "menu_workspace_monetization_bank_remittance_details_right_items scroll">
+                <div class = "menu_workspace_monetization_bank_remittance_details_right_item md-ripples" onclick = "openPopupContents('bank_remittance_details');">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50"><defs><clipPath id="b"><rect width="50" height="50"></rect></clipPath></defs><g id="a" clip-path="url(#b)"><path d="M-4.438,42.27v0L.4,28.587,21.847,7.145a2.12,2.12,0,0,1,1.506-.632,1.945,1.945,0,0,1,1.387.567l7.071,7.071a1.944,1.944,0,0,1,.567,1.433,2.125,2.125,0,0,1-.632,1.459L10.3,38.487-4.436,42.27ZM23.387,9.839h0L3.162,30.064-.327,38.621l9.154-2.892L29.052,15.5,23.387,9.839Z" transform="translate(5.102 6.536)"></path><path d="M28.7,19.1a1.987,1.987,0,0,1-1.414-.586l-7.071-7.071a2,2,0,0,1,0-2.828l6.368-6.368a2,2,0,0,1,2.829,0l7.071,7.071a2,2,0,0,1,0,2.828L30.116,18.51A1.987,1.987,0,0,1,28.7,19.1ZM27.995,5.067h0l-4.95,4.95,5.666,5.665,4.95-4.949L27.995,5.067Z" transform="translate(12.102 -0.464)"></path></g></svg>
+                    <span>...</span>
+                </div>
+                <div class = "menu_workspace_monetization_bank_remittance_details_right_item md-ripples" onclick = "deleteworkspaceMonetizationBankRemittanceDetails(<?php echo $menuNumber; ?>);">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50"><defs><clipPath id="b"><rect width="50" height="50"></rect></clipPath></defs><g id="a" clip-path="url(#b)"><rect width="50" height="3" rx="1.5" transform="translate(0 11)"></rect><path d="M31,39H5a5.006,5.006,0,0,1-5-5V0H4.932A2,2,0,0,0,3,2V34a2,2,0,0,0,2,2H31a2,2,0,0,0,2-2V2a2,2,0,0,0-1.914-2L36,0V34A5.006,5.006,0,0,1,31,39Z" transform="translate(7 11)"></path><path d="M5,14,0,14V5A5.006,5.006,0,0,1,5,0H21a5.006,5.006,0,0,1,5,5v9H21.007A2,2,0,0,0,23,12V5a2,2,0,0,0-2-2H5A2,2,0,0,0,3,5v7a2,2,0,0,0,2,2H5Z" transform="translate(12)"></path><rect width="3" height="15" rx="1.5" transform="translate(24 22)"></rect><rect width="3" height="15" rx="1.5" transform="translate(33 22)"></rect><rect width="3" height="15" rx="1.5" transform="translate(15 22)"></rect></g></svg>
+                    <span>...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "menu_workspace_monetization_ready_wrap">
+        <div class = "menu_workspace_monetization_line"></div>
+        <div class = "menu_workspace_monetization_ready">
+            <div class = "menu_workspace_monetization_ready_title">
+                ...
+            </div>
+            <div class = "menu_workspace_monetization_ready_description">
+                ...
+            </div>
+            <div class = "menu_workspace_monetization_ready_items">
+                <div class = "menu_workspace_monetization_ready_item">
+                    <div class = "menu_workspace_monetization_ready_item_left">
+                        ...
+                    </div>
+                    <div class = "menu_workspace_monetization_ready_item_right">
+                        <div class = "menu_workspace_monetization_ready_item_right_status">
+                            ...
+                        </div>
+                        <div class = "menu_workspace_monetization_ready_item_right_title">
+                            ...
+                        </div>
+                        <div class = "menu_workspace_monetization_ready_item_right_description">
+                            ...
+                        </div>
+                        <div class = "menu_workspace_monetization_ready_item_right_button md-ripples" onclick = "openPopupContents('create_work');">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50"><defs><clipPath id="b"><rect width="50" height="50"></rect></clipPath></defs><g id="a" clip-path="url(#b)"><path d="M23.709,37.886h0L0,24.772,23.71,12.207,49.543,24.772,23.71,37.886Zm.134-22.5L6.133,24.772l17.71,9.8,19.3-9.8Z" transform="translate(0.228 -11.772)"></path><g transform="translate(1.456)"><path d="M1.451-.035A1.6,1.6,0,0,1,3,1.543L3.434,25.3a1.466,1.466,0,0,1-1.488,1.521A1.6,1.6,0,0,1,.4,25.244L-.037,1.486A1.466,1.466,0,0,1,1.451-.035Z" transform="translate(-0.648 25.64) rotate(-60)"></path><path d="M2.639.067A1.466,1.466,0,0,1,4.127,1.588L3.689,25.347a1.6,1.6,0,0,1-1.545,1.578A1.466,1.466,0,0,1,.656,25.4L1.094,1.645A1.6,1.6,0,0,1,2.639.067Z" transform="translate(43.172 22.047) rotate(60)"></path></g><g transform="translate(1.456 11)"><path d="M1.451-.035A1.6,1.6,0,0,1,3,1.543L3.434,25.3a1.466,1.466,0,0,1-1.488,1.521A1.6,1.6,0,0,1,.4,25.244L-.037,1.486A1.466,1.466,0,0,1,1.451-.035Z" transform="translate(-0.648 25.64) rotate(-60)"></path><path d="M2.639.067A1.466,1.466,0,0,1,4.127,1.588L3.689,25.347a1.6,1.6,0,0,1-1.545,1.578A1.466,1.466,0,0,1,.656,25.4L1.094,1.645A1.6,1.6,0,0,1,2.639.067Z" transform="translate(43.172 22.047) rotate(60)"></path></g></g></svg>
+                            <span>...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class = "menu_workspace_monetization_ready_line"></div>
+                <div class = "menu_workspace_monetization_ready_item">
+                    <div class = "menu_workspace_monetization_ready_item_left">
+                        ...
+                    </div>
+                    <div class = "menu_workspace_monetization_ready_item_right">
+                        <div class = "menu_workspace_monetization_ready_item_right_status">
+                            ...
+                        </div>
+                        <div class = "menu_workspace_monetization_ready_item_right_title">
+                            ...
+                        </div>
+                        <div class = "menu_workspace_monetization_ready_item_right_description">
+                            ...
+                        </div>
+                        <div class = "menu_workspace_monetization_ready_item_right_button md-ripples" onclick = "openPopupContents('bank_remittance_details');">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50"><defs><clipPath id="b"><rect width="50" height="50"/></clipPath></defs><g id="a" clip-path="url(#b)"><path d="M32,50H18V44.8a20.917,20.917,0,0,1-6.33-3.577L7,43.924,0,31.8l4.429-2.557a21.187,21.187,0,0,1,0-8.487L0,18.2,7,6.075l4.671,2.7A20.917,20.917,0,0,1,18,5.195V0H32V5.195a20.917,20.917,0,0,1,6.33,3.577L43,6.075,50,18.2l-4.429,2.557a21.187,21.187,0,0,1,0,8.487L50,31.8,43,43.924l-4.67-2.7A20.917,20.917,0,0,1,32,44.8V50ZM11.953,37.578h0a22.447,22.447,0,0,0,9.062,5.093v4.3H29.03v-4.3a16.377,16.377,0,0,0,2.854-1.023,23.142,23.142,0,0,0,6.1-4.039l3.891,2.235L45.89,32.89,42.2,30.75a21.8,21.8,0,0,0,0-11.485l3.7-2.14L41.89,10.187l-3.86,2.25a21.509,21.509,0,0,0-9.047-5.109c.005-.331.059-4.27,0-4.328-.021.014-.725.021-2.092.021C24.569,3.021,21.066,3,21.031,3V7.328A22.161,22.161,0,0,0,12,12.422L8.094,10.187,4.14,17.109l3.625,2.126c-.017.06-1.679,6.056.062,11.5l-3.7,2.156L8.094,39.8l3.859-2.219Z" transform="translate(0)"/><path d="M10,20A10,10,0,1,1,20,10,10.011,10.011,0,0,1,10,20ZM10,3.294A6.706,6.706,0,1,0,16.706,10,6.713,6.713,0,0,0,10,3.294Z" transform="translate(15 15)"/></g></svg>
+                            <span>...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class = "menu_workspace_monetization_ready_line"></div>
+                <div class = "menu_workspace_monetization_ready_item">
+                    <div class = "menu_workspace_monetization_ready_item_left">
+                        ...
+                    </div>
+                    <div class = "menu_workspace_monetization_ready_item_right">
+                        <div class = "menu_workspace_monetization_ready_item_right_status">
+                            ...
+                        </div>
+                        <div class = "menu_workspace_monetization_ready_item_right_title">
+                            ...
+                        </div>
+                        <div class = "menu_workspace_monetization_ready_item_right_description">
+                            ...
+                        </div>
+                        <div class = "menu_workspace_monetization_ready_item_right_button md-ripples" onclick = "loadMenu_creator_guide();">
+                            <!-- Generated by IcoMoon.io -->
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M13.757 19.868c-0.416 0-0.832-0.159-1.149-0.476-2.973-2.973-2.973-7.81 0-10.783l6-6c1.44-1.44 3.355-2.233 5.392-2.233s3.951 0.793 5.392 2.233c2.973 2.973 2.973 7.81 0 10.783l-2.743 2.743c-0.635 0.635-1.663 0.635-2.298 0s-0.635-1.663 0-2.298l2.743-2.743c1.706-1.706 1.706-4.481 0-6.187-0.826-0.826-1.925-1.281-3.094-1.281s-2.267 0.455-3.094 1.281l-6 6c-1.706 1.706-1.706 4.481 0 6.187 0.635 0.635 0.635 1.663 0 2.298-0.317 0.317-0.733 0.476-1.149 0.476z"></path><path d="M8 31.625c-2.037 0-3.952-0.793-5.392-2.233-2.973-2.973-2.973-7.81 0-10.783l2.743-2.743c0.635-0.635 1.664-0.635 2.298 0s0.635 1.663 0 2.298l-2.743 2.743c-1.706 1.706-1.706 4.481 0 6.187 0.826 0.826 1.925 1.281 3.094 1.281s2.267-0.455 3.094-1.281l6-6c1.706-1.706 1.706-4.481 0-6.187-0.635-0.635-0.635-1.663 0-2.298s1.663-0.635 2.298 0c2.973 2.973 2.973 7.81 0 10.783l-6 6c-1.44 1.44-3.355 2.233-5.392 2.233z"></path></svg>
+                            <span>...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "menu_workspace_monetization_graph_wrap">
+        <div class = "menu_workspace_monetization_line"></div>
+        <div class = "menu_workspace_monetization_graph_title">
+            ...
+        </div>
+        <div class = "menu_workspace_monetization_graph">
+            <div class = "graph" data-type = "">
+                <div class = "graph-top">
+                    <canvas class = "graph-canvas" width = "1" height = "1"></canvas>
+                    <div class = "graph-info"></div>
+                </div>
+                <div class = "graph-bottom"></div>
+                <div class = "graph-value-view">
+                    <div class = "graph-value-view-top">
+                        <span class = "graph-description">...</span>
+                        <span class = "graph-additional">...</span>
+                    </div>
+                    <span class = "graph-value">0</span>
+                </div>
+                <div class = "graph-value-differential-view">
+                    <span class = "graph-differential-increase">...</span>
+                    <span class = "graph-differential-description">...</span>
+                </div>
+            </div>
+        </div>
+        <div class = "menu_workspace_monetization_analysis_processing" style = "display: none;">
+            <!-- Generated by IcoMoon.io -->
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 5.002c0 0 0.003-0.095 0.213-0.288 0.245-0.225 0.671-0.483 1.306-0.73 1.499-0.585 3.821-0.984 6.481-0.984s4.982 0.399 6.482 0.984c0.634 0.247 1.061 0.505 1.306 0.73 0.205 0.189 0.212 0.281 0.212 0.288 0 0.003-0.007 0.095-0.213 0.284-0.245 0.225-0.671 0.483-1.306 0.73-1.499 0.585-3.821 0.984-6.481 0.984s-4.982-0.399-6.482-0.984c-0.634-0.247-1.061-0.505-1.306-0.73-0.208-0.192-0.212-0.284-0.212-0.284zM20 14.532v4.471c-0.041 0.097-0.096 0.181-0.217 0.291-0.245 0.225-0.671 0.482-1.303 0.728-1.495 0.582-3.809 0.978-6.48 0.978s-4.985-0.396-6.48-0.978c-0.633-0.246-1.058-0.503-1.303-0.728-0.12-0.11-0.176-0.194-0.199-0.242l-0.006-4.514c0.248 0.126 0.51 0.242 0.782 0.348 1.797 0.699 4.377 1.114 7.206 1.114s5.409-0.415 7.206-1.114c0.277-0.108 0.543-0.225 0.794-0.354zM20 7.527v4.463c0 0.004 0 0.008 0 0.013-0.041 0.097-0.096 0.181-0.217 0.291-0.245 0.225-0.671 0.482-1.303 0.728-1.495 0.582-3.809 0.978-6.48 0.978s-4.985-0.396-6.48-0.978c-0.633-0.246-1.058-0.503-1.303-0.728-0.12-0.11-0.176-0.194-0.199-0.242-0.001-0.040-0.004-0.079-0.009-0.117l-0.005-4.407c0.248 0.128 0.513 0.244 0.788 0.352 1.801 0.702 4.388 1.12 7.208 1.12s5.407-0.418 7.208-1.12c0.276-0.108 0.542-0.225 0.792-0.353zM2 5v14c0 0.058 0.002 0.116 0.007 0.174 0.057 0.665 0.425 1.197 0.857 1.594 0.498 0.457 1.175 0.824 1.93 1.118 1.797 0.699 4.377 1.114 7.206 1.114s5.409-0.415 7.206-1.114c0.755-0.294 1.432-0.661 1.93-1.118 0.432-0.397 0.8-0.929 0.857-1.594 0.005-0.058 0.007-0.116 0.007-0.174v-14c0-0.056-0.002-0.112-0.007-0.168-0.055-0.664-0.422-1.195-0.852-1.59-0.498-0.459-1.177-0.827-1.933-1.122-1.801-0.702-4.388-1.12-7.208-1.12s-5.407 0.418-7.208 1.12c-0.756 0.295-1.435 0.664-1.933 1.122-0.43 0.395-0.797 0.927-0.852 1.59-0.005 0.056-0.007 0.112-0.007 0.168z"></path></svg>
+            <div class = "menu_workspace_monetization_analysis_processing_title">
+                ...
+            </div>
+            <div class = "menu_workspace_monetization_analysis_processing_description">
+                ...
+            </div>
+        </div>
+    </div>
+    <div class = "menu_workspace_monetization_wrap_works">
+        <div class = "menu_workspace_monetization_line" style = "margin: 60px 0px;"></div>
+        <div class = "menu_workspace_monetization_contents">
+            <div class = "menu_workspace_monetization_contents_top">
+                <div class = "menu_workspace_monetization_contents_top_item">
+                    ...
+                </div>
+                <div class = "menu_workspace_monetization_contents_top_item">
+                    ...
+                </div>
+                <div class = "menu_workspace_monetization_contents_top_item">
+                    ...
+                </div>
+            </div>
+            <div class = "menu_workspace_monetization_contents_items">
+                <!-- item -->
+            </div>
+        </div>
+    </div>
+</div>

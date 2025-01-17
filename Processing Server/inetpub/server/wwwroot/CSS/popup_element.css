@@ -1,0 +1,86 @@
+
+@media screen and (min-width: 701px) {
+    .popup_element {
+        background-color: transparent !important;
+    }
+    .popup_element_touch_line_wrap {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 700px) {
+    .popup_element_box {
+        left: 0px !important;
+        top: unset !important;
+        bottom: 0px !important;
+        width: 100% !important;
+        margin: 0px !important;
+        transform-origin: center bottom !important;
+        max-width: 100% !important;
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        border: unset !important;
+    }
+}
+@media screen and (max-width: 700px) and (min-height: 300px) {
+    .popup_element_box {
+        max-height: calc(100% - 130px) !important;
+    }
+}
+
+
+@keyframes show_popup_element_box {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes hide_popup_element_box {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes show_popup_element_box_mobile {
+    0% {  }
+    100% {  }
+}
+@keyframes hide_popup_element_box_mobile {
+    0% {  }
+    100% {  }
+}
+
+
+.popup_element {
+    position: fixed; width: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+    height: -webkit-fill-available;
+    height: fill-available; top: 0px;
+    left: 0px; z-index: 2; display: none;
+    transition: background-color 0.2s;
+}
+.popup_element_box {
+    width: max-content; height: max-content;
+    background-color: var(--box-color-2);
+    border: solid 1px var(--border-color);
+    position: absolute; border-radius: 10px;
+    transition: width 0.2s, height 0.2s;
+    overflow-x: hidden !important;
+    max-height: calc(100% - 30px);
+    overflow: overlay;
+}
+
+
+
+
+
+
+
+.popup_element_touch_line_wrap {
+    width: 100%; height: max-content;
+    padding: 10px; box-sizing: border-box;
+    display: flex; justify-content: center;
+    background-color: var(--box-color-2);
+    position: sticky; top: 0px; z-index: 2;
+}
+.popup_element_touch_line {
+    width: 50px; height: 4px;
+    background-color: var(--border-color);
+    border-radius: 4px;
+}

@@ -1,0 +1,21 @@
+{
+    "name": "vender/name",
+    "description": "My name is Mkkas3145",
+    "type": "library",
+    "license": [
+        "MIT",
+        "GPL"
+    ],
+    "authors": [
+        {
+            "name": "Mkkas3145"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php-ffmpeg/php-ffmpeg": "*",
+        "robthree/twofactorauth": "*",
+        "matthiasmullie/minify": "*"
+    }
+}

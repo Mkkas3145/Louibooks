@@ -1,0 +1,90 @@
+
+
+
+
+.upload_work_part_clound_files_wrap {
+    margin-bottom: 10px;
+}
+.upload_work_part_clound_files_wrap[value = "0"] .upload_work_part_clound_files_title {
+    display: flex; align-items: center;
+}
+.upload_work_part_clound_files_wrap[value = "0"] .upload_work_part_clound_files_title_selected {
+    display: none;
+}
+.upload_work_part_clound_files_wrap[value = "1"] .upload_work_part_clound_files_title {
+    display: none;
+}
+.upload_work_part_clound_files_wrap[value = "1"] .upload_work_part_clound_files_title_selected {
+    display: flex; align-items: center;
+}
+
+.upload_work_part_clound_files_title {
+    width: calc(100% - 24px); height: max-content;
+    background-color: var(--hover-color);
+    padding: 9px 12px; color: var(--color-failure);
+    border-radius: 50px; font-size: 14px;
+    display: flex; align-items: center;
+}
+.upload_work_part_clound_files_title svg {
+    width: 16px; height: 16px;
+    fill: var(--color-failure);
+    margin-right: 10px; min-width: 20px;
+}
+
+.upload_work_part_clound_files_title_selected {
+    width: calc(100% - 24px); height: max-content;
+    background-color: var(--hover-color);
+    padding: 9px 12px; color: var(--color-success);
+    border-radius: 50px; font-size: 14px;
+    display: flex; align-items: center;
+}
+.upload_work_part_clound_files_title_selected svg {
+    width: 16px; height: 16px;
+    fill: var(--color-success);
+    margin-right: 10px; min-width: 20px;
+    transform: scale(1.2);
+}
+
+.upload_work_part_clound_files_loading {
+    width: 100%; height: max-content;
+    padding: 50px 0px;
+}
+
+
+.upload_work_part_clound_files_item_disabled {
+    opacity: 0.5; pointer-events: none;
+}
+.upload_work_part_clound_files_item_selected {
+    background-color: var(--color-success-trans2);
+    transition: all 0.2s;
+}
+.upload_work_part_clound_files_item_selected .upload_work_part_clound_files_item_selected_svg {
+    width: 20px !important;
+    margin-right: 15px !important;
+}
+.upload_work_part_clound_files_item_selected .upload_work_part_clound_files_item_selected_svg svg {
+    transform: scale(1) !important;
+}
+.upload_work_part_clound_files_item_selected_svg {
+    width: 0px; height: max-content;
+    margin-right: 0px; overflow: hidden;
+    transition: all 0.2s;
+}
+.upload_work_part_clound_files_item_selected_svg svg {
+    width: 20px; height: 20px;
+    fill: var(--color-success) !important;
+    transform: scale(0); transition: all 0.2s;
+}
+.upload_work_part_clound_files_item_selected:hover {
+    background-color: var(--color-failure-trans2);
+}
+.upload_work_part_clound_files_item_selected:hover .upload_work_part_clound_files_item_selected_svg svg {
+    fill: var(--color-failure) !important;
+}
+
+.upload_work_part_clound_files_contents {
+    width: 100%; height: max-content;
+    display: flex; flex-direction: column;
+    max-height: 300px; margin-left: -10px;
+    padding: 0px 10px;
+}

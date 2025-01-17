@@ -1,0 +1,311 @@
+
+
+@media screen and (max-width: 700px) {
+    .menu_my_account_management {
+        padding: 10px !important;
+    }
+    .menu_my_account_management_items {
+        flex-direction: column;
+    }
+    .menu_my_account_management_item {
+        width: 100% !important;
+    }
+}
+
+
+.menu_my_account_management {
+    width: 100%; height: max-content;
+    max-width: 900px; margin-left: auto;
+    margin-right: auto; padding: 20px;
+    box-sizing: border-box;
+}
+.menu_my_account_management_bottom {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color4);
+    line-height: calc(14px * 1.5); font-style: italic;
+}
+.menu_my_account_management_profile {
+    width: 100%; height: max-content;
+    padding: 20px; box-sizing: border-box;
+    display: flex; justify-content: center;
+    align-items: center;
+}
+.menu_my_account_management_profile_img {
+    width: 100px; height: 100px; border-radius: 50%;
+    overflow: hidden; cursor: pointer; display: flex;
+    justify-content: center; align-items: center;
+}
+.menu_my_account_management_profile_img .my_profile {
+    width: 100px; height: 100px;
+    position: absolute; transition: all 0.1s;
+}
+.menu_my_account_management_profile_img .my_profile:hover {
+    opacity: 0.5; filter: blur(3px);
+}
+.menu_my_account_management_profile_img_icon {
+    width: 30px; height: 30px;
+    position: absolute; pointer-events: none;
+    opacity: 0; transition: all 0.1s;
+}
+.menu_my_account_management_profile_img_icon svg {
+    fill: var(--color3);
+}
+.menu_my_account_management_profile_img:hover .menu_my_account_management_profile_img_icon {
+    opacity: 1;
+}
+.menu_my_account_management_title {
+    width: 100%; height: max-content;
+    text-align: center; font-size: 24px;
+    color: var(--color1); font-weight: bold;
+    line-height: calc(24px * 1.5);
+}
+.menu_my_account_management_description {
+    width: 100%; height: max-content;
+    text-align: center; font-size: 14px;
+    color: var(--color6); margin-top: 5px;
+    line-height: calc(14px * 1.5);
+}
+
+.menu_my_account_management_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+    margin: 40px 0px;
+}
+
+.menu_my_account_management_items {
+    width: 100%; height: max-content;
+    display: flex; flex-wrap: wrap;
+    gap: 20px;
+}
+.menu_my_account_management_item {
+    width: calc(50% - 10px); height: auto;
+    background-color: var(--hover-color);
+    padding: 20px; box-sizing: border-box;
+    border-radius: 20px; display: flex;
+    flex-direction: column;
+}
+.menu_my_account_management_item_top {
+    width: 100%; height: max-content;
+}
+.menu_my_account_management_item_bottom {
+    width: 100%; height: max-content;
+    margin-top: auto;
+}
+.menu_my_account_management_item_title {
+    width: 100%; height: max-content;
+    font-size: 16px; color: var(--color1);
+    line-height: calc(16px * 1.5);
+    font-weight: bold;
+}
+.menu_my_account_management_item_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    line-height: calc(13px * 1.5);
+    margin-top: 5px;
+}
+.menu_my_account_management_item_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+    margin: 20px 0px;
+}
+.menu_my_account_management_item_button {
+    width: 100%; height: max-content;
+    padding: 15px 20px; box-sizing: border-box;
+    background-color: var(--border-color);
+    display: flex; align-items: center;
+    border: solid 1px transparent;
+    cursor: pointer; transition: all 0.1s;
+    border-radius: 50px;
+}
+.menu_my_account_management_item_button:hover {
+    border-color: var(--color1);
+}
+.menu_my_account_management_item_button:hover .menu_my_account_management_item_button_right {
+    transform: translateX(5px);
+}
+.menu_my_account_management_item_button_text {
+    width: calc(100% - 25px); height: max-content;
+    font-size: 13px; color: var(--color1);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.menu_my_account_management_item_button_right {
+    width: 15px; height: 15px;
+    margin-left: 10px; transition: all 0.2s;
+}
+.menu_my_account_management_item_button_right svg {
+    width: 15px; height: 15px;
+    fill: var(--color4);
+}
+
+
+
+
+
+
+.menu_my_account_management_item_cloud_items {
+    width: 100%; height: max-content;
+    margin-top: 20px;
+}
+.menu_my_account_management_item_cloud {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+}
+.menu_my_account_management_item_cloud:not(:first-child) {
+    margin-top: 30px;
+}
+.menu_my_account_management_item_cloud_left {
+    width: 40px; height: 40px;
+    margin-right: 20px;
+
+    display: flex; justify-content: center;
+    align-items: center;
+}
+.menu_my_account_management_item_cloud_left svg {
+    width: 40px; height: 40px;
+    fill: var(--color4);
+}
+.menu_my_account_management_item_cloud_right {
+    width: calc(100% - 60px); height: max-content;
+}
+.menu_my_account_management_item_cloud_right_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+    font-weight: bold;
+}
+.menu_my_account_management_item_cloud_right_lines {
+    width: 100%; height: 5px;
+    background-color: var(--border-color);
+    border-radius: 10px; margin-top: 10px;
+    overflow: hidden;
+}
+.menu_my_account_management_item_cloud_right_line {
+    width: 0%; height: 100%;
+    background-color: var(--site-color-light);
+    border-radius: 10px;
+}
+.menu_my_account_management_item_cloud_right_bottom {
+    width: 100%; height: max-content;
+    font-size: 12px; color: var(--color6);
+    margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+.menu_my_account_management_item_check_items {
+    width: 100%; height: max-content;
+    margin-top: 20px;
+}
+.menu_my_account_management_item_check_item {
+    width: 100%; height: max-content;
+    display: flex;
+}
+.menu_my_account_management_item_check_item:not(:first-child) {
+    margin-top: 20px;
+}
+.menu_my_account_management_item_check_item_icon {
+    width: 35px; height: 35px;
+    background-color: var(--border-color);
+    display: flex; justify-content: center;
+    align-items: center; border-radius: 50%;
+    margin-right: 15px;
+}
+.menu_my_account_management_item_check_item_icon svg {
+    width: 18px; height: 18px;
+    fill: var(--color4);
+}
+.menu_my_account_management_item_check_item_icon_true {
+    width: 18px; height: 18px;
+    display: none;
+}
+.menu_my_account_management_item_check_item_icon_false {
+    width: 18px; height: 18px;
+    display: block;
+}
+.menu_my_account_management_item_check_item_icon[checked = "true"] {
+    background-color: var(--site-color-trans2);
+}
+.menu_my_account_management_item_check_item_icon[checked = "true"] svg {
+    fill: var(--site-color-light);
+}
+.menu_my_account_management_item_check_item_icon[checked = "true"] .menu_my_account_management_item_check_item_icon_true {
+    display: block;
+}
+.menu_my_account_management_item_check_item_icon[checked = "true"] .menu_my_account_management_item_check_item_icon_false {
+    display: none;
+}
+.menu_my_account_management_item_check_item_right {
+    width: calc(100% - 50px); height: max-content;
+}
+.menu_my_account_management_item_check_item_right_title {
+    font-size: 14px; color: var(--color1);
+    font-weight: bold;
+}
+.menu_my_account_management_item_check_item_right_description {
+    font-size: 12px; color: var(--color6);
+    margin-top: 3px; line-height: calc(12px * 1.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu_my_account_management_notice {
+    width: 100%; height: 100%;
+    margin-bottom: 20px;
+}
+.menu_my_account_management_notice_items {
+    width: 100%; height: 100%;
+    background-color: var(--hover-color);
+    padding: 20px; box-sizing: border-box;
+    border-radius: 20px;
+}
+.menu_my_account_management_notice_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+    margin: 20px 0px;
+}
+.menu_my_account_management_notice_item {
+    width: 100%; height: max-content;
+    display: flex;
+}
+.menu_my_account_management_notice_item_icon {
+    width: 40px; height: 40px;
+    display: flex; justify-content: center;
+    align-items: center; margin-right: 20px;
+    border-radius: 50%;
+}
+.menu_my_account_management_notice_item_icon svg {
+    width: 20px; height: 20px;
+    fill: var(--color1);
+}
+.menu_my_account_management_notice_item_right {
+    width: calc(100% - 60px); height: max-content;
+}
+.menu_my_account_management_notice_item_right_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    font-weight: bold; line-height: calc(15px * 1.5);
+}
+.menu_my_account_management_notice_item_right_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    line-height: calc(13px * 1.5);
+    margin-top: 5px;
+}

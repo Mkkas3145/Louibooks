@@ -1,0 +1,82 @@
+
+
+@keyframes show_confirm_popup {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes hide_confirm_popup {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes show_confirm_popup_box {
+    0% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+@keyframes hide_confirm_popup_box {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.confirm_popup {
+    position: fixed; width: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+    height: -webkit-fill-available;
+    height: fill-available; top: 0px;
+    left: 0px; z-index: 2; display: none;
+    background-color: var(--popup-background-color);
+    justify-content: center; align-items: center;
+}
+
+.confirm_popup_box {
+    width: 425px; max-width: max-content; height: max-content;
+    background-color: var(--box-color);
+    box-shadow: 0px 0px 3px var(--shadow-color);
+    border-radius: 20px; margin: 15px;
+    max-height: calc(100% - 30px);
+}
+.confirm_popup_box_title {
+    width: calc(100% - 40px); height: max-content;
+    border-bottom: solid 1px var(--border-color);
+    font-size: 16px; color: var(--color1);
+    padding: 15px 20px; font-weight: bold;
+    margin-top: 5px; margin-bottom: 15px;
+    line-height: calc(16px * 1.5);
+}
+.confirm_popup_box_subject {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    box-sizing: border-box; padding: 0px 20px;
+    line-height: calc(15px * 1.5); margin-bottom: 10px;
+}
+.confirm_popup_box_bottom {
+    width: 100%; height: max-content;
+    display: flex; justify-content: end;
+}
+.confirm_popup_box_bottom_items {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    padding: 20px; box-sizing: border-box;
+}
+.confirm_popup_box_bottom_item {
+    width: 50%; height: max-content;
+    font-size: 15px; padding: 12px 20px;
+    border-radius: 50px; transition: all 0.1s;
+    cursor: pointer; text-align: center;
+    background-color: var(--hover-color);
+}
+.confirm_popup_box_bottom_item:not(:first-child) {
+    margin-left: 20px;
+}
+.confirm_popup_box_bottom_item:hover {
+    background-color: var(--border-color);
+}
+.confirm_popup_box_bottom_item[type = "cancel"] {
+    color: var(--color-failure);
+}
+.confirm_popup_box_bottom_item[type = "confirm"] {
+    color: var(--color6);
+}
+.confirm_popup_box_bottom_item[type = "confirm"]:hover {
+    color: var(--site-color-light);
+}

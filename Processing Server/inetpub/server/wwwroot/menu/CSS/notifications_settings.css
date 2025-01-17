@@ -1,0 +1,38 @@
+
+
+@media screen and (max-width: 700px) {
+    .menu_notifications_settings {
+        padding: 10px !important;
+    }
+}
+
+.menu_notifications_settings {
+    width: 100%; height: max-content;
+    box-sizing: border-box; padding: 20px;
+    margin-left: auto; margin-right: auto;
+}
+.menu_notifications_settings_sort {
+    display: flex; align-items: center;
+    margin-bottom: 20px;
+}
+
+.menu_notifications_settings_no_data {
+    width: 100%; height: max-content;
+    padding: 40px; display: flex; align-items: center;
+    flex-direction: column; justify-content: center;
+    text-align: center; box-sizing: border-box;
+}
+.menu_notifications_settings_no_data svg {
+    width: 60px; height: 60px;
+    fill: var(--color4); margin-bottom: 30px;
+}
+.menu_notifications_settings_no_data_title {
+    width: 100%; height: max-content;
+    font-weight: bold; font-size: 18px;
+    color: var(--color1); line-height: calc(18px * 1.5);
+}
+.menu_notifications_settings_no_data_description {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color6);
+    margin-top: 5px; line-height: calc(14px * 1.5);
+}

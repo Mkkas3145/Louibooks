@@ -1,0 +1,151 @@
+
+
+@media screen and (max-width: 700px) {
+    .menu_privacy_policy {
+        padding: 10px !important;
+    }
+}
+
+
+.menu_privacy_policy {
+    width: 100%; height: max-content;
+    max-width: 800px; box-sizing: border-box;
+    padding: 20px; box-sizing: border-box;
+    margin-left: auto; margin-right: auto;
+    display: flex; flex-direction: column;
+    align-items: center;
+}
+.menu_privacy_policy_banner {
+    width: 100%; height: max-content;
+    aspect-ratio: 2 / 1; border-radius: 10px;
+    overflow: hidden; margin-bottom: 30px;
+}
+.menu_privacy_policy_banner img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.menu_privacy_policy_title {
+    width: 100%; height: max-content;
+    font-size: 24px; color: var(--color1);
+    font-weight: bold; text-align: center;
+    margin-top: 15px;
+}
+.menu_privacy_policy_description {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color6);
+    margin-top: 10px; text-align: center;
+    line-height: calc(14px * 1.5);
+    margin-bottom: 10px;
+}
+.menu_privacy_policy_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+    margin: 60px 0px;
+}
+
+.menu_privacy_policy_items {
+    width: 100%; height: max-content;
+}
+.menu_privacy_policy_item {
+    width: 100%; height: max-content;
+}
+.menu_privacy_policy_item:not(:first-child) {
+    margin-top: 60px;
+}
+.menu_privacy_policy_item_top {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+}
+.menu_privacy_policy_item_top_left {
+    width: 35px; height: 35px;
+    display: flex; justify-content: center;
+    align-items: center; background-color: var(--color1);
+    color: var(--box-color); margin-right: 15px;
+    border-radius: 50%; font-weight: bold;
+    font-size: 17px;
+}
+.menu_privacy_policy_item_top_right {
+    width: calc(100% - 45px); height: max-content;
+    color: var(--color1); font-size: 17px;
+    font-weight: bold; line-height: calc(17px * 1.5);
+}
+.menu_privacy_policy_item_contents {
+    width: 100%; height: max-content;
+    margin-top: 30px;
+}
+.menu_privacy_policy_item_contents_title {
+    width: 100%; height: max-content;
+    color: var(--color1); font-size: 17px;
+    font-weight: bold;
+}
+.menu_privacy_policy_item_contents_description {
+    width: 100%; height: max-content;
+    color: var(--color4); font-size: 13px;
+    margin-top: 10px; line-height: calc(13px * 1.8);
+}
+
+.menu_privacy_policy_box_wrap {
+    width: 100%; height: max-content;
+    padding: 20px; box-sizing: border-box;
+    background-color: var(--hover-color);
+    border-radius: 20px;
+}
+.menu_privacy_policy_box_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    font-weight: bold;
+}
+.menu_privacy_policy_box_title svg {
+    width: 20px; height: 20px;
+    fill: var(--color1); margin-right: 15px;
+}
+.menu_privacy_policy_box_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    margin-top: 5px;
+}
+.menu_privacy_policy_box_items {
+    width: 100%; height: max-content;
+    margin-top: 12.5px;
+}
+.menu_privacy_policy_box_item {
+    width: calc(100% + 40px); height: max-content;
+    display: flex; align-items: center;
+    padding: 15px 20px; box-sizing: border-box;
+    margin-left: -20px; transition: all 0.1s;
+    cursor: pointer;
+}
+.menu_privacy_policy_box_item:hover {
+    background-color: var(--border-color);
+}
+.menu_privacy_policy_box_item_left {
+    width: 40px; height: 40px;
+    margin-right: 20px; border-radius: 50%;
+    overflow: hidden;
+}
+.menu_privacy_policy_box_item_left img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.menu_privacy_policy_box_item_right {
+    width: calc(100% - 60px); height: max-content;
+}
+.menu_privacy_policy_box_item_right_realname {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+    font-weight: bold;
+}
+.menu_privacy_policy_box_item_right_nickname {
+    width: 100%; height: max-content;
+    font-size: 12px; color: var(--color6);
+    margin-top: 3px;
+}
+.menu_privacy_policy_box_item_right_description {
+    width: 100%; height: max-content;
+    font-size: 12px; color: var(--color1);
+    margin-top: 5px;
+}
+.menu_privacy_policy_box_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+}

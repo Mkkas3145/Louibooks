@@ -1,0 +1,84 @@
+
+
+
+
+@keyframes show_select_list {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes hide_select_list {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes change_select_list_item {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.select_list {
+    position: fixed; width: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+    height: -webkit-fill-available;
+    height: fill-available;
+    top: 0px; left: 0px;
+    z-index: 999; display: none;
+}
+
+.select_list_box {
+    width: max-content; height: max-content;
+    background-color: var(--box-color-2);
+    border: solid 1px var(--border-color);
+    border-radius: 15px; position: relative;
+    left: 0px; top: 0px; font-size: 14px;
+    color: var(--color1); backdrop-filter: blur(20px);
+    box-sizing: border-box; pointer-events: all;
+    margin: 10px 0px;
+}
+.select_list_box_item {
+    width: 100%; height: max-content;
+    transition: all 0.1s; cursor: pointer;
+    display: flex; align-items: center;
+    padding: 15px 20px; box-sizing: border-box;
+}
+.select_list_box_item:hover {
+    background-color: var(--hover-color);
+}
+.select_list_box_item_left {
+    width: calc(100% - 38px); height: max-content;
+}
+.select_list_box_item_right {
+    width: 18px; height: max-content;
+    margin-left: 20px; opacity: 0;
+}
+.select_list_box_item_right svg {
+    width: 18px; height: 18px;
+    fill: var(--color1);
+}
+.select_list_box_item_icon {
+    width: 20px; height: 20px;
+    margin-right: 20px;
+}
+.select_list_box_item_icon svg {
+    width: 20px; height: 20px;
+    fill: var(--color1);
+}
+.select_list_box_item_icon img {
+    width: 20px; height: 20px;
+    object-fit: contain;
+}
+.select_list_box_item_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+}
+.select_list_box_item_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color4);
+    margin-top: 2px;
+}
+.select_list_box_item_selected {
+    background-color: var(--select-list-selected);
+}
+.select_list_box_item_selected .select_list_box_item_right {
+    opacity: 1;
+}

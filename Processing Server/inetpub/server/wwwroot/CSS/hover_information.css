@@ -1,0 +1,32 @@
+
+
+
+
+@keyframes show_hover_information {
+    0% { opacity: 0; transform: scale(0.7); }
+    100% { opacity: 1; transform: scale(1); }
+}
+@keyframes hide_hover_information {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.7); }
+}
+
+.hover_information {
+    position: fixed; width: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+    height: -webkit-fill-available;
+    height: fill-available;
+    top: 0px; left: 0px;
+    z-index: 999; display: none;
+    pointer-events: none;
+}
+
+.hover_information_box {
+    width: max-content; height: max-content;
+    background-color: var(--border-color-trans);
+    box-shadow: 0px 0px 3px var(--shadow-color);
+    border-radius: 10px; position: relative;
+    left: 0px; top: 0px; padding: 7px 15px;
+    font-size: 14px; color: var(--color1);
+    backdrop-filter: blur(20px);
+}

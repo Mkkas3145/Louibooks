@@ -1,0 +1,28 @@
+
+
+
+
+@media screen and (max-width: 1400px) {
+    .work_art_upload_provided_images_contents_img {
+        width: calc(50% - 10px) !important;
+    }
+}
+@media screen and (max-width: 900px) {
+    .work_art_upload_provided_images_contents_img {
+        width: calc(100% - 10px) !important;
+    }
+}
+
+.work_art_upload_provided_images_contents_img {
+    width: calc(50% - 10px); height: max-content;
+    border-radius: 10px; aspect-ratio: 5 / 1;
+    overflow: hidden; transition: all 0.1s;
+    cursor: pointer;
+}
+.work_art_upload_provided_images_contents_img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.work_art_upload_provided_images_contents_img:hover {
+    transform: scale(1.02); filter: grayscale(0.5);
+}

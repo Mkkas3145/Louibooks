@@ -1,0 +1,52 @@
+
+
+@media screen and (max-width: 700px) {
+    .menu_explore {
+        padding: 10px !important;
+    }   
+}
+
+.menu_explore {
+    width: 100%; height: max-content;
+    box-sizing: border-box; max-width: 800px;
+    padding: 20px; margin-left: auto;
+    margin-right: auto;
+}
+.menu_explore_items {
+    width: 100%; height: max-content;
+}
+.menu_explore_item {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    background-color: var(--hover-color);
+    padding: 20px; box-sizing: border-box;
+    transition: all 0.1s; cursor: pointer;
+    border-radius: 20px;
+}
+.menu_explore_item:not(:first-child) {
+    margin-top: 20px;
+}
+.menu_explore_item:hover {
+    background-color: var(--border-color);
+}
+.menu_explore_item_icon {
+    width: 35px; height: 35px;
+    margin-right: 20px;
+}
+.menu_explore_item_icon svg {
+    width: 35px; height: 35px;
+    fill: var(--color4);
+}
+.menu_explore_item_right {
+    width: calc(100% - 65px); height: max-content;
+}
+.menu_explore_item_right_title {
+    width: 100%; height: max-content;
+    font-size: 16px; color: var(--color1);
+    font-weight: bold;
+}
+.menu_explore_item_right_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    margin-top: 5px; line-height: calc(13px * 1.5);
+}

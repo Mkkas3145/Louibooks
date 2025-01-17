@@ -1,0 +1,151 @@
+
+
+@media screen and (max-width: 700px) {
+    .menu_my_account_privacy {
+        padding: 10px !important;
+    }
+    .menu_my_account_privacy_box_wrap {
+        flex-direction: column;
+    }
+    .menu_my_account_privacy_box {
+        width: 100% !important;
+    }
+}
+
+.menu_my_account_privacy {
+    width: 100%; height: max-content;
+    max-width: 900px; margin-left: auto;
+    margin-right: auto; padding: 20px;
+    box-sizing: border-box;
+}
+.menu_my_account_privacy_top {
+    width: 100%; height: max-content;
+    padding: 40px 0px; box-sizing: border-box;
+    padding-bottom: 0px;
+}
+.menu_my_account_privacy_top_title {
+    width: 100%; height: max-content;
+    text-align: center; font-size: 24px;
+    color: var(--color1); font-weight: bold;
+    line-height: calc(24px * 1.5);
+}
+.menu_my_account_privacy_top_description {
+    width: 100%; height: max-content;
+    text-align: center; font-size: 14px;
+    color: var(--color6); margin-top: 5px;
+    line-height: calc(14px * 1.5);
+}
+
+.menu_my_account_privacy_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+    margin: 40px 0px;
+}
+
+.menu_my_account_privacy_box_wrap {
+    width: 100%; height: max-content;
+    display: flex; flex-wrap: wrap;
+    gap: 20px;
+}
+.menu_my_account_privacy_box {
+    width: calc(50% - 10px); height: auto;
+    background-color: var(--hover-color);
+    padding: 20px; box-sizing: border-box;
+    border-radius: 20px;
+}
+.menu_my_account_privacy_box_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    display: flex; align-items: center;
+    font-weight: bold;
+}
+.menu_my_account_privacy_box_title svg {
+    width: 20px; height: 20px;
+    fill: var(--color1); margin-right: 15px;
+}
+.menu_my_account_privacy_box_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    margin-top: 5px;
+}
+.menu_my_account_privacy_box_items {
+    width: 100%; height: max-content;
+    margin-top: 12.5px;
+}
+.menu_my_account_privacy_box_item {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    padding: 15px 20px; margin-left: -20px;
+    cursor: pointer; transition: all 0.1s;
+}
+.menu_my_account_privacy_box_item:hover {
+    background-color: var(--border-color);
+}
+.menu_my_account_privacy_box_item:hover .menu_my_account_privacy_box_item_icon {
+    background-color: var(--hover-color);
+}
+.menu_my_account_privacy_box_item_icon {
+    width: 40px; height: 40px;
+    display: flex; justify-content: center;
+    align-items: center; margin-right: 20px;
+    background-color: var(--border-color);
+    transition: all 0.1s; border-radius: 50%;
+}
+.menu_my_account_privacy_box_item_icon svg {
+    width: 20px; height: 20px;
+    fill: var(--color1);
+}
+.menu_my_account_privacy_box_item_center {
+    width: calc(100% - 112px); height: max-content;
+}
+.menu_my_account_privacy_box_item_center_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+    font-weight: bold;
+}
+.menu_my_account_privacy_box_item_center_description {
+    width: 100%; height: max-content;
+    font-size: 12px; color: var(--color6);
+    line-height: calc(12px * 1.5);
+    margin-top: 3px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.menu_my_account_privacy_box_item_toggle {
+    width: 32px; height: max-content;
+    aspect-ratio: 2.25 / 1; border-radius: 200px;
+    background-color: #757575; margin-left: 20px;
+
+    transition: background-color 0.2s;
+}
+.menu_my_account_privacy_box_item_toggle_circle {
+    width: max-content; height: 100%;
+    background: #ffffff; transform: scale(1.25);
+    aspect-ratio: 1 / 1; border-radius: 100%;
+    border: solid 1px #757575;
+
+    transition: border-color 0.2s, margin-left 0.2s;
+}
+.menu_my_account_privacy_box_item[toggle = "true"] .menu_my_account_privacy_box_item_toggle {
+    background-color: var(--site-color-light);
+}
+.menu_my_account_privacy_box_item[toggle = "true"] .menu_my_account_privacy_box_item_toggle_circle {
+    border-color: var(--site-color-light); margin-left: 50%;
+}
+.menu_my_account_privacy_box_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+}
+
+
+
+
+.menu_my_account_privacy_bottom {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color4);
+    line-height: calc(14px * 1.5);
+    font-style: italic;
+}

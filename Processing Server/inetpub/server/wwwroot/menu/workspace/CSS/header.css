@@ -1,0 +1,26 @@
+
+
+
+
+.workspace_header {
+    width: 100%; height: 55px;
+    background-color: var(--box-color);
+    position: sticky; top: 0px;
+    display: flex; align-items: center;
+}
+
+.workspace_header_create_work_button {
+    width: max-content; height: max-content;
+    padding: 10px 16px; color: var(--site-color-light);
+    font-size: 13px; border-radius: 5px; cursor: pointer;
+    transition: all 0.1s; margin-right: 10px;
+    display: flex; align-items: center;
+}
+.workspace_header_create_work_button:hover {
+    background-color: var(--hover-color);
+}
+.workspace_header_create_work_button svg {
+    width: 17px; height: 17px;
+    fill: var(--site-color-light);
+    margin-right: 10px;
+}

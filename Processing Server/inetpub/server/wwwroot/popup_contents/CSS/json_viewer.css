@@ -1,0 +1,33 @@
+
+
+.popup_contents_json_viewer {
+    width: 100%; height: max-content;
+    padding: 20px; box-sizing: border-box;
+    max-width: 600px; padding-top: 0px;
+}
+
+.popup_contents_json_viewer_input {
+    width: 100%; height: max-content;
+}
+
+.popup_contents_json_viewer_input_textbox {
+    width: 100%; height: max-content;
+    color: var(--color1); font-size: 14px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: transparent; padding: 5px 0px;
+    line-height: calc(14px * 2); outline: none;
+}
+.popup_contents_json_viewer_input_textbox[placeholder]:empty:before {
+    content: attr(placeholder);
+    pointer-events: none; display: block;
+    color: var(--color6);
+}
+.popup_contents_json_viewer_input_line_wrap {
+    width: 0%; height: 2px; transition: width 0.2s;
+    background-color: var(--box-color-reversal);
+    margin-left: auto; margin-right: auto;
+    opacity: 0; margin-top: -1px;
+}
+.popup_contents_json_viewer_input_focus .popup_contents_json_viewer_input_line_wrap {
+    width: 100%; opacity: 1;
+}

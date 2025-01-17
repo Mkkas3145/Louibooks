@@ -1,0 +1,241 @@
+
+
+@media screen and (min-width: 700px) {
+    .popup_work_list {
+        max-width: 600px;
+        min-width: 280px;
+    }
+}
+
+.popup_work_list {
+    width: 100%; height: max-content;
+}
+.popup_work_list_top {
+    width: 100%; height: 50px;
+    font-size: 15px; color: var(--color1);
+    border-bottom: solid 1px var(--border-color);
+    padding: 0px 20px; box-sizing: border-box;
+    display: flex; align-items: center;
+    background-color: var(--box-color-2);
+    position: sticky; top: 0px; z-index: 1;
+}
+.popup_work_list_top svg {
+    width: 20px; height: 20px;
+    fill: var(--color1); margin-right: 17.5px;
+    margin-left: 2.5px;
+}
+.popup_work_list_items {
+    width: 100%; height: max-content;
+    overflow: hidden;
+}
+.popup_work_list_item {
+    width: calc(100% - 10px); height: max-content;
+    display: flex; align-items: center;
+    padding: 13px 15px; box-sizing: border-box;
+    transition: all 0.1s; cursor: pointer;
+    margin: 5px; border-radius: 10px;
+}
+.popup_work_list_item[checked = 'true'] .popup_work_list_item_left_check_box {
+    border-color: transparent;
+    background-color: var(--box-color-reversal);
+}
+.popup_work_list_item[checked = 'true'] .popup_work_list_item_left_check_box svg {
+    transform: scale(1) !important;
+}
+.popup_work_list_item:hover {
+    background-color: var(--hover-color);
+}
+.popup_work_list_item_left {
+    width: 26px; height: 26px;
+    margin-right: 15px;
+}
+.popup_work_list_item_left_check_box {
+    width: 26px; height: 26px;
+    border: solid 2px var(--color1);
+    box-sizing: border-box; border-radius: 50%;
+    display: flex; justify-content: center;
+    transition: all 0.2s; align-items: center;
+}
+.popup_work_list_item_left_check_box svg {
+    width: 14px; height: 14px;
+    fill: var(--box-color); transform: scale(0);
+    transition: transform 0.2s;
+}
+.popup_work_list_item_right {
+    width: calc(100% - 41px); height: max-content;
+}
+.popup_work_list_item_right_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+    font-weight: bold;
+
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.popup_work_list_item_right_count {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color4);
+    margin-top: 2px;
+}
+
+.popup_work_list_item[checked = 'false'] .popup_work_list_item_right_count_0 {
+    display: block;
+}
+.popup_work_list_item[checked = 'false'] .popup_work_list_item_right_count_1 {
+    display: none;
+}
+.popup_work_list_item[checked = 'true'] .popup_work_list_item_right_count_0 {
+    display: none;
+}
+.popup_work_list_item[checked = 'true'] .popup_work_list_item_right_count_1 {
+    display: block;
+}
+
+.popup_work_list_line {
+    width: calc(100% - 20px); height: 1px;
+    background-color: var(--border-color);
+    margin: 0px 10px;
+}
+
+.popup_work_list_add {
+    width: calc(100% - 10px); height: max-content;
+    display: flex; align-items: center;
+    padding: 13px 18px; box-sizing: border-box;
+    transition: all 0.1s; cursor: pointer;
+    font-size: 14px; color: var(--color1);
+    margin: 5px; border-radius: 50px;
+}
+.popup_work_list_add:hover {
+    background-color: var(--hover-color);
+}
+.popup_work_list_add svg {
+    width: 20px; height: 20px;
+    fill: var(--color1); margin-right: 17px;
+}
+
+.popup_no_work_list {
+    width: 100%; height: max-content;
+    font-size: 16px; color: var(--color4);
+    padding: 40px; display: flex; align-items: center;
+    flex-direction: column; justify-content: center;
+    text-align: center; box-sizing: border-box;
+}
+.popup_no_work_list svg {
+    width: 30px; height: 30px;
+    fill: var(--color4); margin-bottom: 10px;
+}
+
+
+.popup_add_work_list_top {
+    width: 100%; height: 50px;
+    border-bottom: solid 1px var(--border-color);
+    padding: 0px 20px; box-sizing: border-box;
+    display: flex; align-items: center;
+    background-color: var(--box-color-2);
+    position: sticky; top: 0px; z-index: 1;
+}
+.popup_add_work_list_top_back {
+    width: 38px; height: 38px;
+    display: flex; justify-content: center;
+    border-radius: 50%; align-items: center;
+    transition: all 0.1s; cursor: pointer;
+    margin-right: 10px; margin-left: -10px;
+}
+.popup_add_work_list_top_back:hover {
+    background-color: var(--hover-color);
+}
+.popup_add_work_list_top_back svg {
+    width: 17px; height: 17px;
+    fill: var(--color1);
+}
+.popup_add_work_list_top_title {
+    width: calc(100% - 40px);
+    font-size: 15px; color: var(--color1);
+}
+.popup_add_work_list_contents {
+    width: 100%; height: max-content;
+    padding: 15px 20px; box-sizing: border-box;
+}
+.popup_add_work_list_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color6);
+}
+
+.popup_add_work_list_input {
+    width: 100%; height: max-content;
+    margin-bottom: 15px;
+}
+.popup_add_work_list_input input {
+    width: 100%; height: max-content;
+    border: none; outline: none;
+    background-color: transparent;
+    font-size: 14px; color: var(--color1);
+    border-bottom: solid 1px var(--border-color);
+    padding: 10px 0px; box-sizing: border-box;
+}
+.popup_add_work_list_input_line_wrap {
+    width: 0%; height: 2px; transition: width 0.2s;
+    background-color: var(--box-color-reversal);
+    margin-left: auto; margin-right: auto;
+    opacity: 0; margin-top: -1px; z-index: 1;
+    position: relative;
+}
+.popup_add_work_list_input_focus .popup_add_work_list_input_line_wrap {
+    width: 100%; opacity: 1;
+}
+
+.popup_add_work_list_input_public_status {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    padding: 10px 12px; transition: all 0.1s;
+    cursor: pointer; margin-left: -12px;
+    border-radius: 30px; 
+}
+.popup_add_work_list_input_public_status:hover {
+    background-color: var(--hover-color);
+}
+.popup_add_work_list_input_public_status_title {
+    width: calc(100% - 25px); height: max-content;
+    font-size: 14px; color: var(--color1);
+}
+.popup_add_work_list_input_public_status_icon {
+    width: 15px; height: 15px; margin-left: 10px;
+}
+.popup_add_work_list_input_public_status_icon svg {
+    width: 15px; height: 15px;
+    fill: var(--color1);
+}
+
+
+.popup_add_work_list_bottom {
+    width: 100%; height: max-content;
+    box-sizing: border-box; padding: 15px;
+    padding-top: 0px;
+}
+.popup_add_work_list_bottom_button {
+    width: 100%; height: max-content;
+    margin-left: auto; box-sizing: border-box;
+    background-color: var(--hover-color);
+    max-width: max-content; padding: 9px 16px;
+    font-size: 14px; color: var(--color9);
+    border-radius: 30px; cursor: pointer;
+    pointer-events: none; transition: all 0.1s;
+}
+.popup_add_work_list_bottom_button:hover {
+    background-color: var(--hover-color);
+    color: var(--color1);
+}
+.popup_add_work_list_bottom_button_activate {
+    background-color: var(--box-color-reversal);
+    pointer-events: all;color: var(--box-color);
+}
+
+
+
+
+
+
+
+@keyframes deletePopupWorkList {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.95); }
+}

@@ -1,0 +1,226 @@
+
+
+
+
+@media screen and (max-width: 700px) {
+    .menu_my_account_session_list {
+        padding: 10px !important;
+    }
+    .menu_my_account_session_list_item_left {
+        margin-right: 15px !important;
+    }
+    .menu_my_account_session_list_item_right {
+        width: calc(100% - 75px) !important;
+    }
+}
+
+
+
+.menu_my_account_session_list {
+    width: 100%; height: max-content;
+    padding: 20px; box-sizing: border-box;
+    max-width: 900px; margin-left: auto;
+    margin-right: auto;
+}
+.menu_my_account_session_list_title {
+    width: 100%; height: max-content;
+    font-size: 18px; color: var(--color1);
+    display: flex; align-items: center;
+    font-weight: bold;
+}
+.menu_my_account_session_list_title svg {
+    width: 25px; height: 25px;
+    fill: var(--color1); margin-right: 20px;
+    margin-left: 10px;
+}
+.menu_my_account_session_list_sort {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    margin: 20px 0px; margin-bottom: 40px;
+}
+
+.menu_my_account_session_list_items {
+    width: 100%; height: max-content;
+}
+.menu_my_account_session_list_item {
+    width: 100%; height: max-content;
+    display: flex; transition: all 0.2s;
+}
+.menu_my_account_session_list_item:not(:last-child) {
+    margin-bottom: 50px;
+}
+.menu_my_account_session_list_item_left {
+    width: 60px; height: 60px;
+    background-color: var(--hover-color);
+    margin-right: 20px; border-radius: 50%;
+    display: flex; justify-content: center;
+    align-items: center;
+}
+.menu_my_account_session_list_item_left svg {
+    width: 25px; height: 25px;
+    fill: var(--color1);
+}
+.menu_my_account_session_list_item_left img {
+    width: 30px; height: 30px;
+}
+.menu_my_account_session_list_item_right {
+    width: calc(100% - 80px); height: max-content;
+}
+.menu_my_account_session_list_item_right_operating_system {
+    width: 100%; height: max-content;
+    font-size: 16px; font-weight: bold;
+    color: var(--color1);
+
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.menu_my_account_session_list_item_right_recent_activity {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    margin-top: 3px;
+}
+.menu_my_account_session_list_item_right_box {
+    width: 100%; height: max-content;
+    padding: 20px; box-sizing: border-box;
+    background-color: var(--hover-color);
+    margin-top: 10px; border-radius: 20px;
+}
+.menu_my_account_session_list_item_right_box_title {
+    width: 100%; height: max-content;
+    font-size: 12px; color: var(--color6);
+
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.menu_my_account_session_list_item_right_box_value {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color1);
+    display: flex; align-items: center;
+    margin-top: 5px;
+}
+.menu_my_account_session_list_item_right_box_value svg {
+    width: 20px; height: 20px;
+    fill: var(--color1); margin-right: 10px;
+}
+.menu_my_account_session_list_item_right_box_value img {
+    width: 20px; height: 20px;
+    object-fit: contain; margin-right: 10px;
+}
+.menu_my_account_session_list_item_right_top {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    gap: 20px; flex-wrap: wrap;
+}
+.menu_my_account_session_list_item_right_current_session {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    max-width: max-content;
+}
+.menu_my_account_session_list_item_right_current_session_left {
+    width: 20px; height: 20px;
+    background-color: var(--site-color-light);
+    border-radius: 50%; margin-right: 10px;
+    display: flex; justify-content: center;
+    align-items: center;
+}
+.menu_my_account_session_list_item_right_current_session_left svg {
+    width: 15px; height: 15px;
+    fill: var(--box-color);
+}
+.menu_my_account_session_list_item_right_current_session_right {
+    width: calc(100% - 30px); height: max-content;
+    font-size: 14px; color: var(--color1);
+}
+.menu_my_account_session_list_item_right_security_issue {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color-failure);
+    display: flex; align-items: center;
+    max-width: max-content;
+}
+.menu_my_account_session_list_item_right_security_issue svg {
+    width: 20px; height: 20px;
+    fill: var(--color-failure);
+    margin-right: 10px;
+}
+.menu_my_account_session_list_item_right_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+    margin: 20px 0px;
+}
+.menu_my_account_session_list_item_right_button_items {
+    width: 100%; height: max-content;
+    display: flex; flex-wrap: wrap;
+    gap: 20px; margin-top: 20px;
+    row-gap: 15px;
+}
+.menu_my_account_session_list_item_right_button {
+    width: 100%; height: max-content;
+    background-color: var(--hover-color);
+    font-size: 13px; color: var(--color4);
+    display: flex; align-items: center;
+    max-width: max-content; padding: 12px 15px;
+    transition: all 0.1s; cursor: pointer;
+    border-radius: 50px; border: solid 1px transparent;
+    line-height: 14px;
+}
+.menu_my_account_session_list_item_right_button svg {
+    width: 18px; height: 18px;
+    fill: var(--color4); margin-right: 10px;
+}
+.menu_my_account_session_list_item_right_button:hover {
+    background-color: var(--border-color);
+    color: var(--color1); border-color: var(--color1);
+}
+.menu_my_account_session_list_item_right_button:hover svg {
+    fill: var(--color1);
+}
+
+@keyframes myAccountSessionListItemDotIcon {
+    0% { fill: var(--color1); }
+    33.333% { fill: var(--color-success); }
+    66.666% { fill: var(--color-failure); }
+    100% { fill: var(--color1); }
+}
+
+@keyframes deleteMyAccountSessionListItem {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.95); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu_my_account_session_list_no_data {
+    width: 100%; height: max-content;
+    padding: 40px; display: flex; align-items: center;
+    flex-direction: column; justify-content: center;
+    text-align: center; box-sizing: border-box;
+}
+.menu_my_account_session_list_no_data svg {
+    width: 60px; height: 60px;
+    fill: var(--color4); margin-bottom: 30px;
+}
+.menu_my_account_session_list_no_data_title {
+    width: 100%; height: max-content;
+    font-weight: bold; font-size: 18px;
+    color: var(--color1); line-height: calc(18px * 1.5);
+}
+.menu_my_account_session_list_no_data_description {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color6);
+    margin-top: 5px; line-height: calc(14px * 1.5);
+}

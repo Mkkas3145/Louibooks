@@ -1,0 +1,35 @@
+
+
+@media screen and (max-width: 700px) {
+    .user_navigation_created_work_list_sort {
+        margin-top: 5px;
+    }
+}
+
+
+.user_navigation_created_work_list_sort {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    margin-bottom: 20px;
+}
+
+.user_navigation_created_work_list_no_data {
+    width: 100%; height: max-content;
+    padding: 40px; display: flex; align-items: center;
+    flex-direction: column; justify-content: center;
+    text-align: center; box-sizing: border-box;
+}
+.user_navigation_created_work_list_no_data svg {
+    width: 60px; height: 60px;
+    fill: var(--color4); margin-bottom: 30px;
+}
+.user_navigation_created_work_list_no_data_title {
+    width: 100%; height: max-content;
+    font-weight: bold; font-size: 18px;
+    color: var(--color1); line-height: calc(18px * 1.5);
+}
+.user_navigation_created_work_list_no_data_description {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color6);
+    margin-top: 5px; line-height: calc(14px * 1.5);
+}

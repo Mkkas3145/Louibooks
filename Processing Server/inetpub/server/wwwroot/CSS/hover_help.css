@@ -1,0 +1,35 @@
+
+
+
+
+@keyframes show_hover_help {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes hide_hover_help {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.hover_help {
+    position: fixed; width: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+    height: -webkit-fill-available;
+    height: fill-available;
+    top: 0px; left: 0px;
+    z-index: 999; display: none;
+    pointer-events: none;
+}
+
+.hover_help_box {
+    max-width: 400px;
+    width: max-content; height: max-content;
+    background-color: var(--background-color);
+    box-shadow: 0px 0px 3px var(--shadow-color);
+    border-radius: 10px; position: relative;
+    left: 0px; top: 0px; padding: 15px 18px;
+    font-size: 13px; color: var(--color1);
+    backdrop-filter: blur(20px);
+
+    line-height: calc(13px * 1.5);
+}

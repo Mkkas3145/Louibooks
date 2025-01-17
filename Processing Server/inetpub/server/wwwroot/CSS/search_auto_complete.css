@@ -1,0 +1,110 @@
+
+
+.search_auto_complete_box_items {
+    width: 100%; height: max-content;
+}
+.search_auto_complete_box_item_wrap {
+    width: 100%; display: flex; align-items: center;
+}
+.search_auto_complete_box_item {
+    width: 100%; height: max-content; display: flex;
+    align-items: center; padding: 10px 15px; cursor: pointer;
+    box-sizing: border-box; transition: all 0.1s; box-sizing: border-box;
+}
+.search_auto_complete_box_item_focus {
+    background-color: var(--hover-color);
+}
+.search_auto_complete_box_item_left {
+    width: 20px; height: max-content;
+    margin-right: 10px;
+}
+.search_auto_complete_box_item_left svg {
+    width: 18px; height: 18px;
+    fill: var(--color6); margin-left: 1.5px;
+}
+.search_auto_complete_box_item_center {
+    width: calc(100% - 65px); height: max-content;
+}
+.search_auto_complete_box_item_text {
+    width: 100%; height: max-content;
+    font-size: 16px; color: var(--color1);
+    line-height: calc(16px * 1.5);
+    font-weight: bold;
+}
+.search_auto_complete_box_item_date {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+}
+
+.search_auto_complete_box_item_cover {
+    width: 30px; height: 45px;
+    transform: translateX(-5px);
+    border-radius: 5px; overflow: hidden;
+}
+.search_auto_complete_box_item_cover img {
+    width: 100%; height: 100%;
+    object-fit: cover; opacity: 1;
+}
+
+.search_auto_complete_box_item_profile {
+    width: 30px; height: 30px;
+    transform: translateX(-5px);
+}
+.search_auto_complete_box_item_profile img {
+    width: 100%; height: 100%;
+    object-fit: cover; opacity: 1;
+    animation: none !important;
+}
+.search_auto_complete_box_item_profile video {
+    width: 100%; height: 100%;
+    object-fit: cover; opacity: 1;
+    animation: none !important;
+}
+
+.search_auto_complete_box_item_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+
+    display: -webkit-box; -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical; overflow: hidden;
+}
+
+.search_auto_complete_box_item_wrap_right {
+    width: 0px; height: 0px;
+    display: flex; align-items: center;
+    justify-content: right; transition: opacity 1s;
+}
+.search_auto_complete_box_item_wrap_right_box {
+    width: 45px; height: 45px;
+    min-width: 45px; cursor: pointer;
+    display: flex; justify-content: center;
+    align-items: center; border-radius: 50%;
+}
+.search_auto_complete_box_item_wrap_right_box:hover {
+    background-color: var(--hover-color);
+}
+.search_auto_complete_box_item_wrap_right_box svg {
+    width: 17px; height: 17px;
+    fill: var(--color6);
+}
+
+
+/* 스크린 키보드 */
+.search_auto_complete_screen_keyboard .search_auto_complete_box_item_left {
+    margin-right: 15px;
+}
+.search_auto_complete_screen_keyboard .search_auto_complete_box_item_center {
+    width: calc(100% - 70px);
+}
+.search_auto_complete_screen_keyboard .search_auto_complete_box_item {
+    padding: 12px 15px;
+}
+
+
+/* 검색어 완성 버튼 숨기기 */
+.hide_complete_button_search_auto_complete .search_auto_complete_box_item_wrap_right {
+    display: none;
+}
+.hide_complete_button_search_auto_complete .search_auto_complete_box_item_center {
+    width: 100%;
+}

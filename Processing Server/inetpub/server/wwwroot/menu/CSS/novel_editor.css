@@ -1,0 +1,318 @@
+
+
+@media screen and (max-width: 700px) {
+    .novel_editor_contents_box {
+        width: 100% !important;
+        margin: 0px !important;
+        padding: 0px !important;
+        margin-top: 10px !important;
+    }
+    .novel_editor_header {
+        background-color: var(--background-color) !important;
+    }
+    .novel_editor_add_item {
+        width: calc(100% - 30px) !important;
+        margin: 0px !important;
+    }
+}
+
+
+.novel_editor_contents {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    flex-direction: column; margin: 20px 0px;
+    margin-bottom: calc(calc(var(--vh, 1vh) * 100) / 2);
+    margin-top: 0px;
+}
+.novel_editor_contents_box {
+    width: calc(100% - 40px); height: max-content;
+    margin: 20px; border-radius: 10px;
+    max-width: 1000px; margin-bottom: 0px;
+}
+
+
+
+.novel_editor_header {
+    width: 100%; height: 55px;
+    position: sticky; top: 0px;
+    display: flex; align-items: center;
+    background-color: var(--pc-background-color);
+    z-index: 1;
+}
+.novel_editor_header_left {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    margin-left: 15px;
+}
+.novel_editor_header_right {
+    width: max-content; min-width: max-content; height: max-content;
+    display: flex; align-items: center; margin-left: 10px;
+}
+
+.novel_editor_header_right_save {
+    width: 40px; height: 40px;
+    display: flex; justify-content: center;
+    align-items: center; margin-right: 10px;
+    border-radius: 50%; transition: all 0.1s;
+    cursor: pointer; pointer-events: none;
+}
+.novel_editor_header_right_save:hover {
+    background-color: var(--hover-color);
+}
+.novel_editor_header_right_save svg {
+    width: 20px; height: 20px;
+    fill: var(--color9);
+}
+.novel_editor_header_right_save_activate {
+    pointer-events: all;
+}
+.novel_editor_header_right_save_activate svg {
+    fill: var(--color1);
+}
+
+
+
+.novel_editor_header_right_more {
+    width: 40px; height: 40px;
+    display: flex; justify-content: center;
+    align-items: center; margin-right: 10px;
+    border-radius: 50%; transition: all 0.1s;
+    cursor: pointer;
+}
+.novel_editor_header_right_more:hover {
+    background-color: var(--hover-color);
+}
+.novel_editor_header_right_more svg {
+    width: 20px; height: 20px;
+    fill: var(--color1);
+}
+
+
+
+@keyframes deleteNovelEditorItem {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.95); }
+}
+@keyframes addNovelEditorItem {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+
+.novel_editor_title {
+    width: calc(100% - 30px); height: max-content;
+    font-size: 20px; color: var(--color1);
+    caret-color: transparent; outline: none;
+    background-color: transparent;
+    padding: 20px 15px; border-radius: 5px;
+    transition: all 0.1s; font-weight: bold;
+}
+.novel_editor_title:focus {
+    background-color: var(--hover-color);
+}
+.novel_editor_title[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: var(--color9);
+    cursor: text;
+}
+
+
+.novel_editor_item {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    border-radius: 5px; transition: all 0.1s;
+}
+.novel_editor_item_left {
+    width: max-content; height: max-content;
+    display: flex; align-items: center;
+    margin-right: 5px; min-width: max-content;
+}
+.novel_editor_item_left_bar {
+    width: 3px; height: 0px; opacity: 0;
+    background-color: var(--site-color-light);
+    border-radius: 6px; transition: all 0.1s;
+}
+.novel_editor_item_left_line {
+    width: max-content; height: 22px;
+    font-size: 15px; color: var(--color9);
+    margin-left: 15px; transition: all 0.1s;
+    line-height: 22px; text-align: right;
+    overflow: hidden;
+}
+.novel_editor_item_left_line span {
+    white-space: nowrap;
+}
+.novel_editor_item_text {
+    width: 100%; height: max-content;
+    font-size: 16px; color: var(--color1);
+    background-color: transparent;
+    outline: none; padding: 10px;
+    caret-color: transparent;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+}
+.novel_editor_item_focus {
+    background: var(--hover-color);
+}
+.novel_editor_item_focus .novel_editor_item_left_line {
+    color: var(--site-color-light);
+}
+.novel_editor_item_focus .novel_editor_item_left_bar {
+    height: 22px; opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+.novel_editor_add_item {
+    width: calc(100% - 70px); height: max-content;
+    font-size: 15px; color: var(--color6);
+    padding: 10px 15px; max-width: 970px;
+    transition: all 0.1s; cursor: pointer;
+    border-radius: 5px; display: flex; align-items: center;
+    margin: 0px 20px; border-radius: 50px;
+}
+.novel_editor_add_item:hover {
+    background-color: var(--hover-color);
+}
+.novel_editor_add_item svg {
+    width: 20px; height: 20px;
+    fill: var(--color6); margin-right: 15px;
+}
+
+
+
+
+.novel_editor_drag {
+    width: 100%; height: max-content;
+    transform: scale(0.95);
+    background-color: var(--hover-color);
+    border-radius: 5px;
+}
+
+
+
+
+
+.novel_editor_image {
+    width: 100%; height: max-content;
+    margin-top: 5px; margin-bottom: 5px;
+    border-radius: 5px; overflow: hidden;
+    cursor: pointer; transition: all 0.1s;
+    box-sizing: border-box;
+}
+.novel_editor_image:hover {
+    transform: scale(0.975);
+}
+.novel_editor_image:hover img {
+    filter: grayscale(50%);
+}
+.novel_editor_image img {
+    width: 100%; height: max-content;
+    transition: all 0.1s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.novel_editor_header_info {
+    width: 100%; height: 0px;
+    position: sticky; top: 55px;
+    display: flex; justify-content: end;
+    z-index: 1;
+}
+.novel_editor_header_info_box {
+    width: max-content; height: max-content;
+    padding: 7px 14px; border-radius: 50px;
+    background-color: var(--box-color-trans);
+    margin-right: 0px; margin-top: 0px;
+    display: flex; align-items: center;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.novel_editor_header_info_box_item {
+    font-size: 15px; color: var(--color1);
+    display: flex; align-items: center;
+}
+.novel_editor_header_info_box_item svg {
+    width: 20px; height: 20px;
+    margin-right: 6px; fill: var(--color1);
+}
+.novel_editor_header_info_box_item:not(:first-child) {
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes showNovelEditorItemDubbing {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+@keyframes hideNovelEditorItemDubbing {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+.novel_editor_item_dubbing {
+    width: 38px; min-width: 38px; height: 38px; min-height: 38px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; cursor: pointer; transition: all 0.1s;
+}
+.novel_editor_item_dubbing svg {
+    width: 18px; height: 18px;
+    fill: var(--color3);
+}
+.novel_editor_item_dubbing:hover {
+    background-color: var(--hover-color);
+}

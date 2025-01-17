@@ -1,0 +1,5 @@
+Client Id:
+JDJhJDA0JE5CbUwwbXFidi9SZ2xhSWdNWjkwNHVyenB2Qk1LR2dTcUlsT05u
+
+Client SecretKey:
+ay54VVhwdHVOdlB6NG1L

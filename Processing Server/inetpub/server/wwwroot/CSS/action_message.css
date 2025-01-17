@@ -1,0 +1,76 @@
+
+
+
+
+@keyframes show_action_message {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0px); }
+}
+@keyframes hide_action_message {
+    0% { opacity: 1; transform: translateY(0px); }
+    100% { opacity: 0; transform: translateY(10px); }
+}
+
+.action_message {
+    position: fixed; width: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+    height: -webkit-fill-available;
+    height: fill-available;
+    top: 0px; left: 0px; z-index: 999;
+    display: flex; pointer-events: none;
+    align-items: flex-end; justify-content: left;
+}
+
+.action_message_box_isFooter {
+    margin-bottom: 65px !important;
+}
+.action_message_box {
+    width: 100%; height: max-content;
+    padding: 5px 7px; margin: 0px 30px; margin-bottom: 30px;
+    background-color: var(--box-color-reversal);
+    border-radius: 30px; max-width: max-content;
+    box-shadow: 0px 0px 3px var(--shadow-color);
+    pointer-events: all; display: none; align-items: center;
+    transition: all 0.1s;
+}
+.action_message_box_text {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--box-color);
+    padding: 8px 15px; line-height: calc(15px * 1.5);
+    padding-left: 12px;
+}
+@keyframes actionMessageBoxSvgAni {
+    0% { opacity: 0.5; transform: scale(0.75); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0.5; transform: scale(0.75); }
+}
+.action_message_box_text svg {
+    width: 22px; height: 22px;
+    fill: var(--box-color); margin-right: 15px;
+    animation: actionMessageBoxSvgAni 1s infinite;
+}
+.action_message_box_undo {
+    width: max-content; min-width: max-content; height: max-content;
+    font-size: 14px; color: var(--site-color-light); font-weight: bold;
+    cursor: pointer; transition: all 0.1s; padding: 10px 15px;
+    border-radius: 50px;
+}
+.action_message_box_undo:hover {
+    background-color: var(--site-color-trans2);
+}
+.action_message_box_undo .ripple {
+    background-color: var(--box-click-ripples-color-reversal);
+}
+
+@media screen and (max-width: 700px) {
+    .action_message {
+        justify-content: center;
+    }
+    .action_message_box {
+        margin: 0px 15px;
+        margin-bottom: 15px;
+    }
+    .action_message_box_isFooter {
+        margin-bottom: 45px;
+    }
+}

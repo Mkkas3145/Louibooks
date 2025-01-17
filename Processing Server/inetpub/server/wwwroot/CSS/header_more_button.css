@@ -1,0 +1,193 @@
+
+.header_more_button {
+    position: fixed; width: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+    height: -webkit-fill-available;
+    height: fill-available;
+    top: 0px; left: 0px;
+    z-index: 2; display: none;
+}
+
+.header_more_button_box {
+    width: max-content; height: max-content;
+    background-color: var(--box-color);
+    box-shadow: 0px 0px 3px var(--shadow-color);
+    border-radius: 10px; position: relative;
+    left: 0px; top: 0px; min-width: 280px;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+.header_more_button_profile_user_info {
+    width: calc(100% - 40px); height: max-content;
+    display: flex; flex-direction: column;
+    align-items: center; padding: 15px 20px;
+}
+.header_more_button_profile_user_info_img {
+    width: 50px; height: 50px;
+    border-radius: 50%; overflow: hidden;
+    cursor: pointer; display: flex;
+    justify-content: center; align-items: center;
+}
+.header_more_button_profile_user_info_img_inside {
+    width: 50px; height: 50px;
+    position: absolute; transition: all 0.1s;
+}
+.header_more_button_profile_user_info_img_inside img {
+    width: 50px; height: 50px;
+    object-fit: cover; position: absolute;
+}
+.header_more_button_profile_user_info_img_inside:hover {
+    opacity: 0.25; filter: blur(5px);
+}
+.header_more_button_profile_user_info_img_icon {
+    width: 20px; height: 20px;
+    position: absolute; pointer-events: none;
+    opacity: 0; transition: all 0.1s;
+}
+.header_more_button_profile_user_info_img_icon svg {
+    fill: var(--color1);
+}
+.header_more_button_profile_user_info_img:hover .header_more_button_profile_user_info_img_icon {
+    opacity: 1;
+}
+.header_more_button_profile_user_info_nickname {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    margin-top: 15px; text-align: center;
+}
+.header_more_button_profile_user_info_email {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color6);
+    margin-top: 3px; text-align: center;
+}
+
+
+
+.header_more_button_profile_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+}
+
+
+.header_more_button_profile_items {
+    width: 100%; height: max-content;
+    padding: 5px 0px;
+}
+.header_more_button_profile_item {
+    width: calc(100% - 40px); padding: 9px 20px;
+    display: flex; align-items: center;
+    transition: all 0.1s; cursor: pointer;
+}
+.header_more_button_profile_item:hover {
+    background-color: var(--hover-color);
+}
+.header_more_button_profile_item svg {
+    width: 22px; height: 22px;
+    fill: var(--color1); margin-right: 15px;
+}
+.header_more_button_profile_item_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+    margin-right: 10px;
+}
+.header_more_button_profile_item_right {
+    width: 13px; height: 13px;
+}
+.header_more_button_profile_item_right svg {
+    width: 13px; height: 13px;
+    fill: var(--color1); margin-left: 5px;
+}
+
+.header_more_button_profile_item_other_account {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+}
+.header_more_button_profile_item_other_account_img {
+    width: 32px; min-width: 32px; height: 32px;
+    background-color: var(--border-color);
+    border-radius: 50%; overflow: hidden;
+}
+.header_more_button_profile_item_other_account_img img {
+    width: 32px; height: 32px;
+    object-fit: cover;
+}
+.header_more_button_profile_item_other_account_info {
+    width: 100%; height: max-content;
+    margin-left: 20px;
+}
+.header_more_button_profile_item_other_account_info_nickname {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+}
+.header_more_button_profile_item_other_account_info_state {
+    width: 100%; height: max-content;
+    font-size: 12px; color: var(--color6);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header_more_button_profile_settings {
+    width: calc(100% - 30px); height: max-content;
+    display: flex; align-items: center;
+    padding: 7px 15px;
+}
+.header_more_button_profile_settings_left {
+    width: 18px; height: 18px;
+    padding: 10px; margin-right: 15px;
+    border-radius: 50%; cursor: pointer;
+}
+.header_more_button_profile_settings_left svg {
+    width: 18px; height: 18px;
+    fill: var(--color1);
+}
+.header_more_button_profile_settings_title {
+    width: calc(100% - 50px); height: max-content;
+    font-size: 15px; color: var(--color1);
+}
+
+.header_more_button_profile_settings_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+}
+
+.header_more_button_profile_settings_items {
+    width: 100%; height: max-content;
+    padding: 5px 0px;
+}
+.header_more_button_profile_settings_item {
+    width: calc(100% - 40px); height: max-content;
+    display: flex; align-items: center; padding: 9px 20px;
+    cursor: pointer; transition: all 0.1s;
+}
+.header_more_button_profile_settings_item:hover {
+    background-color: var(--hover-color);
+}
+.header_more_button_profile_settings_item svg {
+    width: 22px; height: 22px;
+    fill: var(--color1); margin-right: 15px;
+}
+.header_more_button_profile_settings_item_title {
+    width: calc(100% - 44px); height: max-content;
+    font-size: 14px; color: var(--color1);
+}

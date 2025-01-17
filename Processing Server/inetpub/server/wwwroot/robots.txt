@@ -1,0 +1,25 @@
+<?php
+
+    include_once('default_function.php');
+
+    $sitemapIndex = 0;
+    $sitemapText = "";
+
+    $urlCount = count(getUrlSiteMap());
+    while(true) {
+        if ($urlCount > (50000 * $sitemapIndex)) {
+            $sitemapIndex ++;
+        } else {
+            break;
+        }
+    }
+
+    for ($i = 0; $i < $sitemapIndex; $i++) {
+        $sitemapText .= "Sitemap: https://louibooks.com/sitemap.xml?index=" . $i . "\n";
+    }
+
+    echo "User-agent: *
+Allow: /
+" . $sitemapText . "";
+
+?>

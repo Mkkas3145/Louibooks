@@ -1,0 +1,127 @@
+
+
+@media screen and (max-width: 700px) {
+    .menu_withdrawal {
+        padding: 10px !important;
+    }
+}
+
+.menu_withdrawal {
+    width: 100%; height: max-content;
+    box-sizing: border-box; padding: 20px;
+    margin-left: auto; margin-right: auto;
+    max-width: 650px;
+}
+
+.menu_withdrawal_profile {
+    width: 100px; height: 100px;
+    border-radius: 50%; overflow: hidden;
+    margin-left: auto; margin-right: auto;
+}
+.menu_withdrawal_title {
+    width: 100%; height: max-content;
+    font-size: 18px; color: var(--color1);
+    font-weight: bold; text-align: center;
+    margin-top: 20px;
+}
+.menu_withdrawal_description {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color6);
+    text-align: center; margin-top: 5px;
+}
+
+.menu_withdrawal_items {
+    width: 100%; height: max-content;
+    margin-top: 30px; border-radius: 20px;
+    background-color: var(--hover-color);
+}
+.menu_withdrawal_item_line {
+    width: calc(100% - 40px); height: 1px;
+    background-color: var(--border-color);
+    margin: 0px 20px;
+}
+.menu_withdrawal_item {
+    width: 100%; height: max-content;
+    padding: 20px; box-sizing: border-box;
+    display: flex; align-items: center;
+}
+.menu_withdrawal_item_left {
+    width: 20px; height: 20px;
+    margin-right: 20px;
+}
+.menu_withdrawal_item_left svg {
+    width: 20px; height: 20px;
+    fill: var(--color1);
+}
+.menu_withdrawal_item_left .profile_element {
+    width: 100%; height: 100%;
+}
+.menu_withdrawal_item_right {
+    width: calc(100% - 40px); height: max-content;
+}
+.menu_withdrawal_item_right_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+    font-weight: bold;
+}
+.menu_withdrawal_item_right_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    margin-top: 3px; line-height: calc(13px * 1.5);
+}
+
+.menu_withdrawal_input {
+    width: 100%; height: max-content;
+    margin-top: 20px;
+}
+.menu_withdrawal_input input {
+    width: 100%; height: max-content;
+    background-color: var(--hover-color);
+    outline: none; border: none; border-radius: 10px;
+    padding: 17px 20px; transition: all 0.1s;
+    color: var(--color1); font-size: 14px;
+    border: solid 1px transparent; box-sizing: border-box;
+}
+.menu_withdrawal_input input:focus {
+    border-color: var(--color1);
+}
+
+.menu_withdrawal_button {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    padding: 12px 18px; box-sizing: border-box;
+    border: solid 1px var(--border-color);
+    border-radius: 50px; transition: all 0.1s;
+    cursor: pointer; justify-content: center;
+    margin-top: 10px;
+}
+.menu_withdrawal_button:hover {
+    background-color: var(--hover-color);
+    border-color: var(--color1); color: var(--color1);
+}
+.menu_withdrawal_button:hover svg {
+    fill: var(--color1);
+}
+.menu_withdrawal_button_icon {
+    width: 20px; height: 20px;
+    margin-right: 15px; min-width: 20px;
+}
+.menu_withdrawal_button_icon svg {
+    width: 20px; height: 20px;
+    fill: var(--color4);
+}
+.menu_withdrawal_button_right {
+    width: calc(100% - 35px); height: max-content;
+    font-size: 14px; color: var(--color4);
+    max-width: max-content;
+}
+.menu_withdrawal_button_disabled {
+    opacity: 0.5; pointer-events: none;
+}
+
+.menu_withdrawal_bottom {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color4);
+    line-height: calc(14px * 1.5); font-style: italic;
+    margin-top: 40px;
+}

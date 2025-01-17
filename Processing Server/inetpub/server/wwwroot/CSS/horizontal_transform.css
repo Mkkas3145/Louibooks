@@ -1,0 +1,38 @@
+
+
+.horizontal_transform {
+    width: 100%; overflow: hidden;
+    transition: height 0.2s;
+}
+
+.horizontal_transform_box {
+    position: absolute;
+    display: flex; align-items: center;
+    pointer-events: none; z-index: 1;
+}
+.horizontal_transform_box_item {
+    width: 40px; height: 40px;
+    background-color: var(--box-color);
+    box-shadow: 0px 0px 3px var(--shadow-color);
+    border-radius: 50%; display: flex;
+    justify-content: center; align-items: center;
+    position: relative; cursor: pointer;
+    transition: all 0.1s; pointer-events: all;
+    display: none;
+}
+.horizontal_transform_box_item svg {
+    width: 20px; height: 20px;
+    fill: var(--color1);
+}
+.horizontal_transform_box_item:hover {
+    background-color: var(--hover-color);
+}
+
+@keyframes showHorizontalTransform {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+@keyframes hideHorizontalTransform {
+    0% { transform: scale(1); }
+    100% { transform: scale(0); }
+}

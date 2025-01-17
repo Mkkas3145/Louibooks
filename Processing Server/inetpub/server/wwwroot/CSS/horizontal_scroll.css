@@ -1,0 +1,44 @@
+
+
+
+
+.horizontal_scroll {
+    overflow-x: auto !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+.horizontal_scroll::-webkit-scrollbar {
+    display: none !important;
+}
+
+.horizontal_scroll_box {
+    position: absolute;
+    display: flex; align-items: center;
+    pointer-events: none;
+}
+.horizontal_scroll_box_item {
+    width: 40px; height: 40px;
+    background-color: var(--box-color);
+    box-shadow: 0px 0px 3px var(--shadow-color);
+    border-radius: 50%; display: flex;
+    justify-content: center; align-items: center;
+    position: relative; cursor: pointer;
+    transition: all 0.1s; pointer-events: all;
+    display: none; z-index: 1;
+}
+.horizontal_scroll_box_item svg {
+    width: 20px; height: 20px;
+    fill: var(--color1);
+}
+.horizontal_scroll_box_item:hover {
+    background-color: var(--hover-color);
+}
+
+@keyframes showHorizontalScroll {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+@keyframes hideHorizontalScroll {
+    0% { transform: scale(1); }
+    100% { transform: scale(0); }
+}

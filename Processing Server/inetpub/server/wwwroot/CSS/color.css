@@ -1,0 +1,165 @@
+
+:root {
+    --site-color-light: #4d8df5;
+    --site-color-trans: #4d8df540;
+    --site-color-trans2: #4d8df520;
+    --box-click-ripples-color: #00000030;
+    --box-click-ripples-color-reversal: #ffffff30;
+
+    --pc-background-color: #ffffff;
+    --background-color: #ffffff;
+    --box-color: #ffffff;
+    --box-color-2: #ffffff;
+    --box-color-trans: #ffffffbb;
+    --box-color-reversal: #202020;
+    --border-color: #eeeeee;
+    --border-color-trans: #eeeeeebb;
+    --border-color-trans2: #eeeeee80;
+    --select-list-selected: #e6e6e6;
+    --popup-background-color: #00000070;
+    --hover-color: #f5f5f5;
+    --scroll-stick-color: #ddddddaa;
+    --scroll-stick-color-hover: #bbbbbbaa;
+    --scroll-stick-color-active: #999999aa;
+
+    --search-box-color: #f3f3f3;
+    --search-border-color: #eeeeee;
+
+    --image-loading-color-start: #eeeeee;
+    --image-loading-color-end: #dddddd;
+
+    --color1: #000000;
+    --color2: #101010;
+    --color3: #202020;
+    --color4: #303030;
+    --color5: #404040;
+    --color6: #505050;
+    --color7: #606060;
+    --color8: #707070;
+    --color9: #808080;
+    --color10: #909090;
+    --color11: #aaaaaa;
+
+    --color-failure: #F05146;
+    --color-failure-trans: #F05146bb;
+    --color-failure-trans2: #F0514620;
+    --color-success: #00a233;
+    --color-success-trans: #00a233bb;
+    --color-success-trans2: #00a23320;
+    --color-warning: #e8b600;
+    --color-warning-trans: #e8b600bb;
+    --color-warning-trans2: #e8b60020;
+    --color-folder: #ffc800;
+
+    --shadow-color: #00000030;
+
+    --button-type1-border-color: #bbbbbb;
+
+    --part_list_title_viewed: #aaaaaa;
+}
+.dark_mode {
+    --site-color-light: #8ab4f8;
+    --site-color-trans: #8ab4f840;
+    --site-color-trans2: #8ab4f820;
+    --box-click-ripples-color: #ffffff30;
+    --box-click-ripples-color-reversal: #00000030;
+
+    --pc-background-color: #0e0e0e;
+    --background-color: #101010;
+    --box-color: #101010;
+    --box-color-2: #121212;
+    --box-color-trans: #101010bb;
+    --box-color-reversal: #ffffff;
+    --border-color: #202020;
+    --border-color-trans: #202020bb;
+    --border-color-trans2: #20202080;
+    --select-list-selected: #2e2e2e;
+    --hover-color: #181818;
+    --scroll-stick-color: #50505050;
+    --scroll-stick-color-hover: #70707050;
+    --scroll-stick-color-active: #90909050;
+
+    --search-box-color: #151515;
+    --search-border-color: #202020;
+
+    --image-loading-color-start: #353535;
+    --image-loading-color-end: #404040;
+
+    --color1: #ffffff;
+    --color2: #eeeeee;
+    --color3: #dddddd;
+    --color4: #cccccc;
+    --color5: #bbbbbb;
+    --color6: #aaaaaa;
+    --color7: #909090;
+    --color8: #808080;
+    --color9: #707070;
+    --color10: #606060;
+    --color11: #505050;
+
+    --button-type1-border-color: #606060;
+
+    --color-warning: #ffe37d;
+    --color-warning-trans: #ffe37dbb;
+    --color-warning-trans2: #ffe37d20;
+    --color-folder: #ffe37d;
+    --color-success: #00dd46;
+    --color-success-trans2: #00dd4620;
+
+    --part_list_title_viewed: #707070;
+
+    --shadow-color: #202020aa;
+}
+.black_mode {
+    --site-color-light: #8ab4f8;
+    --site-color-trans: #8ab4f840;
+    --site-color-trans2: #8ab4f820;
+    --box-click-ripples-color: #ffffff30;
+    --box-click-ripples-color-reversal: #00000030;
+
+    --pc-background-color: #000000;
+    --background-color: #000000;
+    --box-color: #000000;
+    --box-color-2: #030303;
+    --box-color-trans: #000000bb;
+    --box-color-reversal: #ffffff;
+    --border-color: #202020;
+    --border-color-trans: #202020bb;
+    --border-color-trans2: #20202080;
+    --select-list-selected: #1e1e1e;
+    --hover-color: #151515;
+    --scroll-stick-color: #40404040;
+    --scroll-stick-color-hover: #60606050;
+    --scroll-stick-color-active: #80808050;
+
+    --search-box-color: #101010;
+    --search-border-color: #151515;
+
+    --image-loading-color-start: #252525;
+    --image-loading-color-end: #303030;
+
+    --color1: #ffffff;
+    --color2: #eeeeee;
+    --color3: #dddddd;
+    --color4: #cccccc;
+    --color5: #bbbbbb;
+    --color6: #aaaaaa;
+    --color7: #909090;
+    --color8: #808080;
+    --color9: #707070;
+    --color10: #606060;
+    --color11: #505050;
+
+    --button-type1-border-color: #606060;
+
+    --color-warning: #ffe37d;
+    --color-warning-trans: #ffe37dbb;
+    --color-warning-trans2: #ffe37d20;
+    --color-folder: #ffe37d;
+    --color-success: #00dd46;
+    --color-success-trans2: #00dd4620;
+
+    --part_list_title_viewed: #707070;
+
+    --shadow-color: #202020aa;
+}

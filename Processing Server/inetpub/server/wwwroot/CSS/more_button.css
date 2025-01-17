@@ -1,0 +1,57 @@
+
+.more_button {
+    position: fixed; width: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+    height: -webkit-fill-available;
+    height: fill-available;
+    top: 0px; left: 0px;
+    z-index: 2; display: none;
+}
+
+@keyframes show_more_button {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+@keyframes hide_more_button {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.9); }
+}
+
+.more_button_box {
+    width: max-content; height: max-content;
+    background-color: var(--box-color-2);
+    border: solid 1px var(--border-color);
+    border-radius: 10px; position: relative;
+    left: 0px; top: 0px; overflow: hidden;
+    padding: 5px 0px; box-sizing: border-box;
+}
+.more_button_item {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    padding: 10px 20px; cursor: pointer;
+    transition: all 0.1s; box-sizing: border-box;
+}
+.more_button_item:hover {
+    background-color: var(--hover-color);
+}
+.more_button_item_icon {
+    width: 20px; min-width: 20px; height: 20px;
+    display: flex; align-items: center;
+    margin-right: 15px;
+}
+.more_button_item_icon svg {
+    width: 22px; height: 22px;
+    fill: var(--color1);
+}
+.more_button_item_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    padding: 5px;
+}
+
+.more_button_item_delete .more_button_item_title {
+    color: var(--color-failure);
+}
+.more_button_item_delete .more_button_item_icon svg {
+    fill: var(--color-failure);
+}

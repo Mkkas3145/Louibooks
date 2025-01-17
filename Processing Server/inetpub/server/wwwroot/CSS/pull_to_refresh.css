@@ -1,0 +1,27 @@
+
+
+
+.pull_to_refresh {
+    position: fixed; overflow: hidden;
+    display: flex; justify-content: center;
+    z-index: 1; pointer-events: none;
+}
+.pull_to_refresh_box {
+    width: 40px; height: 40px;
+    background-color: var(--border-color);
+    display: flex; justify-content: center;
+    align-items: center; border-radius: 50%;
+    margin-top: -50px;
+}
+.pull_to_refresh_box_icon {
+    width: 28px; height: 28px;
+}
+.pull_to_refresh_box_icon canvas {
+    width: 28px; height: 28px;
+    fill: var(--color1);
+}
+
+.pull_to_refresh_box_loading {
+    width: max-content; height: max-content;
+    display: none;
+}

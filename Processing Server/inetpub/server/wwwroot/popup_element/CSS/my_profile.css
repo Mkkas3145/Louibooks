@@ -1,0 +1,355 @@
+
+
+
+
+@media screen and (max-width: 700px) {
+    .popup_my_profile {
+        min-width: unset !important;
+        max-width: unset !important;
+    }
+}
+
+.popup_my_profile {
+    width: 100%; height: max-content;
+    min-width: 400px; max-width: 500px;
+}
+.popup_my_profile_top {
+    width: 100%; height: max-content;
+}
+.popup_my_profile_line {
+    width: 100%; height: 1px;
+    background-color: var(--border-color);
+}
+.popup_my_profile_user_info {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    transition: all 0.1s; padding: 20px 15px;
+    box-sizing: border-box; cursor: pointer;
+}
+.popup_my_profile_user_info:hover {
+    background-color: var(--hover-color);
+}
+.popup_my_profile_user_info_left {
+    width: 40px; height: 40px;
+    margin-right: 20px;
+}
+.popup_my_profile_user_info_center {
+    width: calc(100% - 95px); height: max-content;
+}
+.popup_my_profile_user_info_center_nickname {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.popup_my_profile_user_info_center_email {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    margin-top: 5px;
+
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.popup_my_profile_user_info_right {
+    width: 15px; height: 15px; margin-left: 20px;
+}
+.popup_my_profile_user_info_right svg {
+    width: 15px; height: 15px;
+    transition: transform 0.2s;
+    fill: var(--color4);
+}
+.popup_my_profile_user_info[read_more = "true"] .popup_my_profile_user_info_right svg {
+    transform: rotate(0.5turn);
+}
+
+
+.popup_my_profile_user_info_read_more {
+    width: 100%; height: max-content;
+    display: none; transition: all 0.2s;
+    overflow: hidden;
+}
+.popup_my_profile_user_info_read_more_contents {
+    width: calc(100% - 55px); height: max-content;
+    margin: 5px 0px; margin-left: 55px;
+}
+
+
+
+.popup_my_profile_user_info_other_account {
+    width: 100%; height: max-content;
+    padding: 15px 0px; box-sizing: border-box;
+}
+.popup_my_profile_user_info_other_account_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color4);
+    padding: 0px 20px; box-sizing: border-box;
+    padding-bottom: 10px;
+}
+.popup_my_profile_user_info_other_account_items {
+    width: 100%; height: max-content;
+}
+.popup_my_profile_user_info_other_account_item {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    padding: 10px 20px; box-sizing: border-box;
+    cursor: pointer; transition: all 0.1s;
+}
+.popup_my_profile_user_info_other_account_item:hover {
+    background-color: var(--hover-color);
+}
+.popup_my_profile_user_info_other_account_item_left {
+    width: 25px; height: 25px;
+    fill: var(--color1); margin-right: 15px;
+}
+.popup_my_profile_user_info_other_account_item_right {
+    width: calc(100% - 50px); height: max-content;
+}
+.popup_my_profile_user_info_other_account_item_right_nickname {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.popup_my_profile_user_info_other_account_item_right_states {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    margin-top: 3px;
+}
+
+
+
+.popup_my_profile_user_rank {
+    width: 100%; height: max-content;
+    padding: 20px; box-sizing: border-box;
+    display: flex;
+}
+.popup_my_profile_user_rank_left {
+    width: 30px; height: 30px;
+    margin-right: 25px;
+}
+.popup_my_profile_user_rank_left svg {
+    width: 30px; height: 30px;
+}
+.popup_my_profile_user_rank_right {
+    width: calc(100% - 55px); height: max-content;
+}
+.popup_my_profile_user_rank_right_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+}
+.popup_my_profile_user_rank_right_line_wrap {
+    width: 100%; height: 5px;
+    background-color: var(--border-color);
+    margin-top: 10px; border-radius: 10px;
+    overflow: hidden;
+}
+.popup_my_profile_user_rank_right_line {
+    width: 0%; height: 5px;
+    background-color: var(--site-color-light);
+    border-radius: 10px; transition: all 1s;
+}
+.popup_my_profile_user_rank_right_description {
+    width: 100%; height: max-content;
+    margin-top: 5px; font-size: 13px;
+    line-height: calc(13px * 1.5);
+    color: var(--color6);
+}
+
+
+
+.popup_my_profile_menu {
+    width: 100%; height: max-content;
+    padding: 15px 0px; box-sizing: border-box;
+}
+.popup_my_profile_menu_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color4);
+    padding: 0px 20px; box-sizing: border-box;
+    padding-bottom: 10px;
+}
+.popup_my_profile_menu_item {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    padding: 12px 20px; box-sizing: border-box;
+    transition: all 0.1s; cursor: pointer;
+}
+.popup_my_profile_menu_item:hover {
+    background-color: var(--hover-color);
+}
+.popup_my_profile_menu_item_left {
+    width: 20px; height: 20px;
+    margin-right: 20px;
+}
+.popup_my_profile_menu_item_left svg {
+    width: 20px; height: 20px;
+    fill: var(--color1);
+}
+.popup_my_profile_menu_item_right {
+    width: calc(100% - 40px); height: max-content;
+    font-size: 14px; color: var(--color1);
+
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+
+
+.popup_my_profile_settings {
+    width: 100%; height: max-content;
+    padding: 15px 0px; box-sizing: border-box;
+}
+.popup_my_profile_settings_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color4);
+    padding: 0px 20px; box-sizing: border-box;
+    padding-bottom: 10px;
+}
+.popup_my_profile_settings_item {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    padding: 12px 20px; box-sizing: border-box;
+    transition: all 0.1s; cursor: pointer;
+}
+.popup_my_profile_settings_item:hover {
+    background-color: var(--hover-color);
+}
+.popup_my_profile_settings_item_left {
+    width: 20px; height: 20px;
+    margin-right: 20px;
+}
+.popup_my_profile_settings_item_left svg {
+    width: 20px; height: 20px;
+    fill: var(--color1);
+}
+.popup_my_profile_settings_item_center {
+    width: calc(100% - 75px); height: max-content;
+}
+.popup_my_profile_settings_item_center_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.popup_my_profile_settings_item_center_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    margin-top: 3px;
+
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.popup_my_profile_settings_item_right {
+    width: 15px; height: 15px;
+    margin-left: 20px;
+}
+.popup_my_profile_settings_item_right svg {
+    width: 15px; height: 15px;
+    fill: var(--color6);
+}
+
+
+
+
+
+
+
+
+
+
+.popup_my_profile_settings_menu_top {
+    width: 100%; height: max-content;
+    padding: 10px 15px; box-sizing: border-box;
+    border-bottom: solid 1px var(--border-color);
+    display: flex; align-items: center;
+}
+.popup_my_profile_settings_menu_top_left {
+    width: 45px; height: 45px;
+    display: flex; justify-content: center;
+    margin-right: 20px; align-items: center;
+    border-radius: 50%; cursor: pointer;
+}
+.popup_my_profile_settings_menu_top_left:hover {
+    background-color: var(--hover-color);
+}
+.popup_my_profile_settings_menu_top_left svg {
+    width: 17px; height: 17px;
+    fill: var(--color1);
+}
+.popup_my_profile_settings_menu_top_right {
+    width: calc(100% - 65px); height: max-content;
+    font-size: 15px; color: var(--color1);
+}
+
+.popup_my_profile_settings_menu_items {
+    width: 100%; height: max-content;
+    padding: 10px; box-sizing: border-box;
+}
+.popup_my_profile_settings_menu_item {
+    width: 100%; height: max-content;
+    padding: 13px 15px; box-sizing: border-box;
+    display: flex; align-items: center;
+    cursor: pointer; transition: all 0.1s;
+    border-radius: 10px;
+}
+.popup_my_profile_settings_menu_item:not(:first-child) {
+    margin-top: 10px;
+}
+.popup_my_profile_settings_menu_item:hover {
+    background-color: var(--hover-color);
+}
+.popup_my_profile_settings_menu_item_right {
+    width: 100%; height: max-content;
+}
+.popup_my_profile_settings_menu_item_right_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    line-height: calc(15px * 1.5);
+}
+.popup_my_profile_settings_menu_item_right_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    line-height: calc(13px * 1.5);
+}
+.popup_my_profile_settings_menu_item_left {
+    width: 20px; height: 20px;
+    margin-right: 20px; opacity: 0;
+}
+.popup_my_profile_settings_menu_item_left svg {
+    width: 20px; height: 20px;
+    fill: var(--color1);
+}
+.popup_my_profile_settings_menu_item_image {
+    width: 20px; height: 20px;
+    position: absolute;
+}
+.popup_my_profile_settings_menu_item_image img {
+    width: 20px; height: 20px;
+    object-fit: contain;
+}
+.popup_my_profile_settings_menu_item[checked = "true"] .popup_my_profile_settings_menu_item_left {
+    opacity: 1;
+}
+.popup_my_profile_settings_menu_item[checked = "true"] .popup_my_profile_settings_menu_item_image {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes myProfileBuyPremium {
+    0% { fill: var(--color1); transform: scale(0.8); }
+    40% { fill: var(--color-failure); transform: scale(1.2); }
+    50% { fill: var(--site-color-light); }
+    60% { fill: var(--site-color-light); transform: scale(1.2); }
+    100% { fill: var(--color1); transform: scale(0.8); }
+}

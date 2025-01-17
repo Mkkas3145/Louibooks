@@ -1,0 +1,252 @@
+
+
+.workspace_work_contents_left_work_part_list {
+    width: 100%; height: max-content;
+    margin-bottom: 20px; margin-top: 20px;
+}
+.workspace_work_contents_left_work_part_list_top {
+    width: 100%; display: flex; align-items: center;
+}
+.workspace_work_contents_left_work_part_list_top_upload {
+    width: max-content; height: max-content;
+    padding: 9px 14px; border-radius: 50px;
+    margin-right: auto; color: var(--color4);
+    font-size: 14px; min-width: max-content;
+    display: flex; align-items: center;
+    cursor: pointer; transition: all 0.1s;
+    margin-left: 10px; position: relative;
+    left: 10px;
+}
+.workspace_work_contents_left_work_part_list_top_upload svg {
+    width: 20px; height: 20px;
+    fill: var(--color4); margin-right: 10px;
+}
+.workspace_work_contents_left_work_part_list_top_upload:hover {
+    background-color: var(--hover-color);
+    color: var(--color1);
+}
+.workspace_work_contents_left_work_part_list_top_upload:hover svg {
+    fill: var(--color1);
+}
+.workspace_work_part_list_chapter_contents_items {
+    width: 100%; height: max-content;
+}
+.workspace_work_contents_left_work_part_list_items_more {
+    width: calc(100% + 20px); height: max-content;
+    margin-left: -10px; display: none;
+    transition: all 0.2s; overflow: hidden;
+}
+.workspace_work_contents_left_work_part_list_item {
+    width: calc(100% - 20px); height: max-content;
+    padding: 10px; cursor: pointer; transition: all 0.1s;
+    border-radius: 5px;
+}
+.workspace_work_contents_left_work_part_list_item:hover {
+    background-color: var(--hover-color);
+}
+.workspace_work_contents_left_work_part_list_item_title {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+}
+.workspace_work_contents_left_work_part_list_item_category {
+    width: max-content; height: max-content;
+    padding: 4px 9px; background-color: var(--border-color);
+    border-radius: 5px; font-size: 13px; color: var(--color1);
+    margin-right: 10px; min-width: max-content;
+}
+
+.workspace_work_contents_left_work_part_list_item_info {
+    width: 100%; height: max-content;
+    margin-top: 5px; display: flex; align-items: center;
+}
+.workspace_work_contents_left_work_part_list_item_info_item {
+    width: max-content; height: max-content;
+    color: var(--color4); font-size: 13px;
+    display: flex; align-items: center;
+}
+.workspace_work_contents_left_work_part_list_item_info_item svg {
+    width: 15px; height: 15px;
+    fill: var(--color4); margin-right: 5px;
+}
+.workspace_work_contents_left_work_part_list_item_info_item:not(:first-child) {
+    margin-left: 10px;
+}
+
+.workspace_work_contents_left_work_part_list_item_info_item_percent {
+    font-size: 13px; margin-left: 5px;
+    font-weight: bold; border-radius: 5px;
+    padding: 2px 6px;
+}
+.workspace_work_contents_left_work_part_list_item_info_item_percent[value = "0"] {
+    background-color: var(--color-success-trans2);
+    color: var(--color-success);
+}
+.workspace_work_contents_left_work_part_list_item_info_item_percent[value = "1"] {
+    background-color: var(--color-failure-trans2);
+    color: var(--color-failure);
+}
+
+.workspace_work_contents_left_work_part_list_top_left {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.workspace_work_part_list_chapter {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    margin-bottom: 5px;
+}
+.workspace_work_part_list_chapter_left {
+    width: 100%; max-width: max-content; height: max-content;
+    color: var(--color1); font-size: 14px;
+    display: flex; align-items: center;
+    margin-right: 20px;
+}
+.workspace_work_part_list_chapter_left_text {
+    overflow: hidden; text-overflow: ellipsis;
+    -webkit-line-clamp: 1; -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+.workspace_work_part_list_chapter_right {
+    width: max-content;
+    display: flex; align-items: center;
+    margin-left: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.workspace_work_part_list_chapter_contents {
+    width: 100%; height: max-content;
+    display: flex; flex-direction: column;
+    row-gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.workspace_work_part_list_no_data {
+    width: 100%; height: max-content;
+    padding: 40px; display: flex; align-items: center;
+    flex-direction: column; justify-content: center;
+    text-align: center; box-sizing: border-box;
+}
+.workspace_work_part_list_no_data svg {
+    width: 60px; height: 60px;
+    fill: var(--color4); margin-bottom: 30px;
+}
+.workspace_work_part_list_no_data_title {
+    width: 100%; height: max-content;
+    font-weight: bold; font-size: 18px;
+    color: var(--color1); line-height: calc(18px * 1.5);
+}
+.workspace_work_part_list_no_data_description {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color6);
+    margin-top: 5px; line-height: calc(14px * 1.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.workspace_work_contents_left_work_part_list_top_chapter_upload {
+    border: solid 1px var(--border-color);
+    padding: 9px 14px; border-radius: 50px;
+    margin-right: auto; color: var(--color4);
+    display: flex; align-items: center;
+    cursor: pointer; transition: all 0.1s;
+    font-size: 14px;
+}
+.workspace_work_contents_left_work_part_list_top_chapter_upload_text {
+    overflow: hidden; text-overflow: ellipsis;
+    -webkit-line-clamp: 1; -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+.workspace_work_contents_left_work_part_list_top_chapter_upload:not(:first-child) {
+    margin-left: 10px;
+}
+.workspace_work_contents_left_work_part_list_top_chapter_upload svg {
+    width: 20px; height: 20px;
+    fill: var(--color4); margin-right: 10px;
+    min-width: 20px;
+}
+.workspace_work_contents_left_work_part_list_top_chapter_upload:hover {
+    border-color: var(--color1);
+    background-color: var(--hover-color);
+    color: var(--color1);
+}
+.workspace_work_contents_left_work_part_list_top_chapter_upload:hover svg {
+    fill: var(--color1);
+}
+
+.workspace_work_contents_left_work_part_list_top_chapter_upload_disabled {
+    color: var(--color9);
+    pointer-events: none;
+}
+.workspace_work_contents_left_work_part_list_top_chapter_upload_disabled svg {
+    fill: var(--color9);
+}

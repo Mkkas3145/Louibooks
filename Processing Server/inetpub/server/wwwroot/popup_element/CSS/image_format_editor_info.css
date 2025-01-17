@@ -1,0 +1,93 @@
+
+
+@media screen and (min-width: 700px) {
+    .image_format_editor_info {
+        width: 350px !important;
+    }
+}
+
+.image_format_editor_info {
+    width: 100%; height: max-content;
+    padding: 20px; box-sizing: border-box;
+}
+.image_format_editor_info_title {
+    width: 100%; height: max-content;
+    font-size: 14px; color: var(--color1);
+    margin-bottom: 20px;
+}
+
+.image_format_editor_info_items {
+    width: 100%; height: max-content;
+}
+.image_format_editor_info_item {
+    width: 100%; height: max-content;
+    background-color: var(--hover-color);
+    padding: 9px 15px; box-sizing: border-box;
+    display: flex; align-items: center;
+    border-radius: 20px; flex-wrap: wrap;
+}
+.image_format_editor_info_item:not(:first-child) {
+    margin-top: 20px;
+}
+.image_format_editor_info_item_title {
+    width: max-content; height: max-content;
+    font-size: 13px; color: var(--color1);
+    line-height: 22px; margin-right: 5px;
+}
+.image_format_editor_info_item_value {
+    width: max-content; height: max-content;
+    font-size: 13px; color: var(--color4);
+    line-height: 22px; font-weight: bold;
+}
+
+
+
+
+.image_format_editor_info_condition_met {
+    width: 100%; height: max-content;
+    margin-bottom: 15px;
+}
+.image_format_editor_info_condition_met_item {
+    width: 100%; height: max-content;
+    display: flex;
+}
+.image_format_editor_info_condition_met_item:not(:first-child) {
+    margin-top: 20px;
+}
+.image_format_editor_info_condition_met_item_left {
+    width: 40px; height: 40px; border-radius: 50%;
+    background-color: var(--border-color);
+    border-radius: 50%; margin-right: 20px;
+    display: flex; justify-content: center;
+    align-items: center;
+}
+.image_format_editor_info_condition_met_item_left svg {
+    width: 20px; height: 20px;
+}
+
+.image_format_editor_info_condition_met_item_left[checked = "false"] {
+    background-color: var(--border-color);
+}
+.image_format_editor_info_condition_met_item_left[checked = "false"] svg {
+    fill: var(--color1);
+}
+.image_format_editor_info_condition_met_item_left[checked = "true"] {
+    background-color: var(--box-color-reversal);
+}
+.image_format_editor_info_condition_met_item_left[checked = "true"] svg {
+    fill: var(--box-color);
+}
+
+.image_format_editor_info_condition_met_item_right {
+    width: calc(100% - 60px); height: max-content;
+}
+.image_format_editor_info_condition_met_item_right_title {
+    width: 100%; height: max-content;
+    color: var(--color1); font-size: 13px;
+    font-weight: bold;
+}
+.image_format_editor_info_condition_met_item_right_description {
+    width: 100%; height: max-content;
+    color: var(--color4); font-size: 12px;
+    margin-top: 3px;
+}

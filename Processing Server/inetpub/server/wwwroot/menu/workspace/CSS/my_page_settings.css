@@ -1,0 +1,228 @@
+
+
+@media screen and (max-width: 700px) {
+    .workspace_my_page_settings {
+        padding: 10px !important;
+    }
+    .workspace_my_page_settings_art_contents {
+        flex-direction: column;
+    }
+    .workspace_my_page_settings_art_contents_left {
+        width: 100% !important; margin-right: 0px !important;
+    }
+    .workspace_my_page_settings_art_contents_right {
+        width: 100% !important; margin-top: 10px;
+    }
+}
+
+
+
+.workspace_my_page_settings_top {
+    width: 100%; height: 50px;
+    position: sticky; top: 55px;
+    background-color: var(--box-color);
+    display: flex; align-items: center;
+    z-index: 1;
+}
+.workspace_my_page_settings_top_left {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+}
+.workspace_my_page_settings_top_left_icon {
+    width: 40px; min-width: 40px;
+    height: 40px; border-radius: 50%;
+    display: flex; justify-content: center;
+    align-items: center; transition: all 0.1s;
+    margin-left: 5px;
+}
+.workspace_my_page_settings_top_left_icon svg {
+    width: 17px; height: 17px;
+    fill: var(--color1);
+}
+.workspace_my_page_settings_top_left_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color1);
+    margin-left: 5px; margin-right: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.workspace_my_page_settings_top_right {
+    width: min-content; min-width: max-content;
+    height: max-content; display: flex;
+    align-items: center;
+}
+.workspace_my_page_settings_top_right_undo {
+    width: max-content; height: max-content;
+    padding: 9px 16px; border-radius: 50px;
+    color: var(--color9); font-size: 14px;
+    cursor: pointer; margin-right: 5px;
+    transition: all .1s; pointer-events: none;
+}
+.workspace_my_page_settings_top_right_undo:hover {
+    background-color: var(--hover-color);
+}
+.workspace_my_page_settings_top_right_undo_possible {
+    color: var(--color1); pointer-events: all;
+}
+.workspace_my_page_settings_top_right_save {
+    width: max-content; height: max-content;
+    padding: 9px 16px; border-radius: 50px;
+    background-color: var(--border-color);
+    color: var(--color9); font-size: 14px;
+    cursor: pointer; margin-right: 5px;
+    pointer-events: none;
+}
+.workspace_my_page_settings_top_right_save_possible {
+    background-color: var(--box-color-reversal);
+    color: var(--box-color); pointer-events: all;
+}
+.workspace_my_page_settings_top_right_more {
+    width: 40px; height: 40px;
+    border-radius: 50%; cursor: pointer;
+    display: flex; justify-content: center;
+    align-items: center; transition: all .1s;
+    margin-right: 5px;
+}
+.workspace_my_page_settings_top_right_more svg {
+    width: 17px; height: 17px;
+    fill: var(--color1);
+}
+.workspace_my_page_settings_top_right_more:hover {
+    background-color: var(--hover-color);
+}
+
+
+
+
+
+
+.workspace_my_page_settings {
+    width: 100%; height: max-content;
+    padding: 20px; box-sizing: border-box;
+    max-width: 900px; margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+.workspace_my_page_settings_title {
+    width: 100%; height: max-content;
+    font-size: 15px; color: var(--color2);
+    font-weight: bold;
+}
+.workspace_my_page_settings_description {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color6);
+    line-height: calc(13px * 1.5);
+    margin-top: 5px;
+}
+
+
+
+
+
+.workspace_my_page_settings_profile {
+    width: 100%; height: max-content;
+    margin-bottom: 40px;
+}
+.workspace_my_page_settings_profile_contents {
+    width: 100%; height: max-content;
+    display: flex; margin-top: 10px;
+    align-items: center;
+}
+.workspace_my_page_settings_profile_contents_left {
+    width: 100px; height: 100px;
+    border-radius: 50%; overflow: hidden;
+    margin-right: 20px;
+}
+.workspace_my_page_settings_profile_contents_left .my_profile {
+    width: 100%; height: 100%;
+}
+.workspace_my_page_settings_profile_contents_right {
+    width: calc(100% - 120px); height: max-content;
+}
+.workspace_my_page_settings_profile_contents_right_button {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    color: var(--site-color-light);
+    max-width: max-content; padding: 10px 15px;
+    border-radius: 50px; transition: all 0.1s;
+    cursor: pointer; font-size: 14px;
+}
+.workspace_my_page_settings_profile_contents_right_button svg {
+    width: 20px; height: 20px;
+    fill: var(--site-color-light);
+    margin-right: 10px;
+}
+.workspace_my_page_settings_profile_contents_right_button:hover {
+    background-color: var(--site-color-trans2);
+}
+
+
+
+
+
+.workspace_my_page_settings_art {
+    width: 100%; height: max-content;
+    margin-bottom: 40px;
+}
+.workspace_my_page_settings_art_contents {
+    width: 100%; height: max-content;
+    display: flex; margin-top: 10px;
+}
+.workspace_my_page_settings_art_contents_left {
+    width: 350px; height: max-content;
+    aspect-ratio: 4 / 1; border-radius: 10px;
+    overflow: hidden; margin-right: 20px;
+    background-color: var(--border-color);
+}
+.workspace_my_page_settings_art_contents_left img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.workspace_my_page_settings_art_contents_left video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.workspace_my_page_settings_art_contents_right {
+    width: calc(100% - 370px); height: max-content;
+}
+.workspace_my_page_settings_art_contents_right_text {
+    width: 100%; height: max-content;
+    font-size: 13px; color: var(--color4);
+    line-height: calc(13px * 1.5);
+}
+.workspace_my_page_settings_art_contents_right_items {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    margin-top: 10px; gap: 15px;
+}
+.workspace_my_page_settings_art_contents_right_item {
+    width: 100%; height: max-content;
+    display: flex; align-items: center;
+    color: var(--site-color-light);
+    max-width: max-content; padding: 9px 15px;
+    border-radius: 50px; transition: all 0.1s;
+    cursor: pointer; font-size: 14px;
+}
+.workspace_my_page_settings_art_contents_right_item svg {
+    width: 20px; height: 20px;
+    fill: var(--site-color-light);
+    margin-right: 10px; min-width: 20px;
+}
+.workspace_my_page_settings_art_contents_right_item:hover {
+    background-color: var(--site-color-trans2);
+}
+
+.workspace_my_page_settings_art_contents_right_item_delete {
+    color: var(--color-failure);
+}
+.workspace_my_page_settings_art_contents_right_item_delete svg {
+    fill: var(--color-failure);
+}
+.workspace_my_page_settings_art_contents_right_item_delete:hover {
+    background-color: var( --color-failure-trans2);
+}
